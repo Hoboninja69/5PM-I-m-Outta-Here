@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,20 +10,11 @@ public class InputManager : MonoBehaviour
     public static Vector2 cursorPosition { get { return Input.mousePosition; } }
     public static Ray cursorRay { get { return Camera.main.ScreenPointToRay (Input.mousePosition); } }
 
-    public delegate void MouseMoved (Vector2 movement);
-    public event MouseMoved OnMouseMoved;
-
-    public delegate void MouseDownLeft ();
-    public event MouseDownLeft OnMouseDownLeft;
-    
-    public delegate void MouseUpLeft ();
-    public event MouseUpLeft OnMouseUpLeft;
-    
-    public delegate void MouseDownRight ();
-    public event MouseDownRight OnMouseDownRight;
-    
-    public delegate void MouseUpRight ();
-    public event MouseUpRight OnMouseUpRight;
+    public event Action<Vector2> OnMouseMoved;
+    public event Action OnMouseDownLeft;
+    public event Action OnMouseUpLeft;
+    public event Action OnMouseDownRight;
+    public event Action OnMouseUpRight;
 
     private void Awake ()
     {

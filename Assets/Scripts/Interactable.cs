@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    public delegate void Interact ();
-    public Interact OnInteract;
+    public event Action OnInteract;
+    public void Interact () => OnInteract?.Invoke ();
 }
