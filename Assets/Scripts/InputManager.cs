@@ -13,8 +13,11 @@ public class InputManager : MonoBehaviour
     public event Action<Vector2> OnMouseMoved;
     public event Action OnMouseDownLeft;
     public event Action OnMouseUpLeft;
+    public event Action OnMouseStayLeft;
     public event Action OnMouseDownRight;
     public event Action OnMouseUpRight;
+    public event Action OnMouseStayRight;
+    public event Action<float> OnMouseWheel;
 
     private void Awake ()
     {
@@ -33,19 +36,29 @@ public class InputManager : MonoBehaviour
     {
         Vector2 mouseInput = new Vector2 (Input.GetAxis ("Mouse X"), Input.GetAxis ("Mouse Y"));
         if (mouseInput.magnitude > 0f)
-            OnMouseMoved?.Invoke (mouseInput); 
-        
+            OnMouseMoved?.Invoke (mouseInput);
+
+        float mouseWheel = Input.GetAxis ("Mouse ScrollWheel");
+        if (mouseWheel != 0)
+            OnMouseWheel?.Invoke (mouseWheel);
+
         if (Input.GetMouseButtonDown (0))
             OnMouseDownLeft?.Invoke ();
 
         if (Input.GetMouseButtonUp (0))
             OnMouseUpLeft?.Invoke ();
+
+        if (Input.GetMouseButton (0))
+            OnMouseStayLeft?.Invoke ();
         
         if (Input.GetMouseButtonDown (1))
             OnMouseDownRight?.Invoke ();
 
         if (Input.GetMouseButtonUp (1))
             OnMouseUpRight?.Invoke ();
+
+        if (Input.GetMouseButton (1))
+            OnMouseStayRight?.Invoke ();
     }
 
     public static bool CastFromCursor (out RaycastHit hitInfo, int layerMask = ~0, float maxDistance = Mathf.Infinity, QueryTriggerInteraction queryTriggerInteraction = QueryTriggerInteraction.UseGlobal)
