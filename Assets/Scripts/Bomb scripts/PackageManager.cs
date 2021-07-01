@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class PackageManager: MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public PackageControl[] boxes;
+   
     void Start()
     {
-        
+        int selectedBox = Random.Range(0, boxes.Length);
+        boxes[selectedBox].hasBomb = true;
+
+        foreach (PackageControl box in boxes)
+        {
+            box.Initialise();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

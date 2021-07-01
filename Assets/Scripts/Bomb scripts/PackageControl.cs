@@ -14,7 +14,7 @@ public class PackageControl : MonoBehaviour
     private bool OpenTrue;
 
     // Start is called before the first frame update
-    void Start()
+    public void Initialise()
     {
         BoxInteractable = GetComponent<Interactable>();
         BoxInteractable.OnInteract += ClickOn;
