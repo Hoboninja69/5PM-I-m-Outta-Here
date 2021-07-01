@@ -5,14 +5,16 @@ using UnityEngine;
 public class TRMovement : MonoBehaviour
 {
     public float moveSpeed = 10f;
-    public float turnSpeed = 10f;
+    public float turnSpeed = 30f;
     public float jumpHeight = 30f;
     public float minRotation = -30f;
     public float maxRotation = 30f;
     private float rotation = 0f;
     private Rigidbody rb;
     private float initialRotation;
-
+    //private bool leftmouse
+    //private bool rightmouse
+    //private float stun
 
 
     // Start is called before the first frame update
@@ -56,12 +58,14 @@ public class TRMovement : MonoBehaviour
 
         }
 
-        if (Input.GetKey(KeyCode.Space) == true && Mathf.Abs(this.GetComponent<Rigidbody>().velocity.y) < 0.01f)
-        {
-            this.GetComponent<Rigidbody>().velocity += Vector3.up * this.jumpHeight;
-        }
-
-
+       //private void OnMouseLeftUp
+       // leftmouse = true
+       // private void OnMouseLeftDown
+       //leftmouse = false
+       //private void OnMouseRightUp
+       //rightmouse = true
+       //private void OnMouseRightDown
+       //rightmouse = false 
 
     }
     // Add a gravititational force to the character as it jumps to make it fall faster. 
