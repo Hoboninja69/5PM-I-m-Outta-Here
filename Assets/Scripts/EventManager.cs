@@ -7,14 +7,11 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager Instance;
 
-    public event Action OnGameStart;
-    public void GameStart () => OnGameStart?.Invoke ();
+    public event Action<Microgame> OnMicrogameLoad;
+    public void MicrogameLoad (Microgame microgame) => OnMicrogameLoad?.Invoke (microgame);
 
-    public event Action OnMicrogameLoad;
-    public void MicrogameLoad () => OnMicrogameLoad?.Invoke ();
-
-    public event Action OnMicrogameStart;
-    public void MicrogameStart () => OnMicrogameStart?.Invoke ();
+    public event Action<Microgame> OnMicrogameStart;
+    public void MicrogameStart (Microgame microgame) => OnMicrogameStart?.Invoke (microgame);
 
     public event Action<MicrogameResult> OnMicrogameEnd;
     public void MicrogameEnd (MicrogameResult result) => OnMicrogameEnd?.Invoke (result);
@@ -28,7 +25,10 @@ public class EventManager : MonoBehaviour
     public void Initialise ()
     {
         if (Instance != null)
+        {
             Destroy (this);
+            return;
+        }
         else
         {
             Instance = this;

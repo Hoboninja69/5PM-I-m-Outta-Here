@@ -12,9 +12,9 @@ public class CountDownTimer : MonoBehaviour
         EventManager.Instance.OnMicrogameStart += OnMicrogameStart;
     }
 
-    public void OnMicrogameStart ()
+    public void OnMicrogameStart (Microgame microgame)
     {
-        totalTime = MicrogameManager.Instance.currentMicrogame.TimerLength;
+        totalTime = microgame.TimerLength;
         timeLeft = totalTime;
 
         InvokeRepeating ("Tick", 0, 1);

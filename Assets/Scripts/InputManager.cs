@@ -22,7 +22,10 @@ public class InputManager : MonoBehaviour
     private void Awake ()
     {
         if (Instance != null)
+        {
             Destroy (this);
+            return;
+        }
         else
         {
             Instance = this;

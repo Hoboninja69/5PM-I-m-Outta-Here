@@ -20,16 +20,20 @@ public class MicrogameManager : MonoBehaviour
     public void Initialise ()
     {
         if (Instance != null)
+        {
             Destroy (this);
+            return;
+        }
         else
         {
             Instance = this;
             DontDestroyOnLoad (gameObject);
         }
 
-        EventManager.Instance.OnGameStart += RandomiseMicrogameQueue;
         EventManager.Instance.OnMicrogameEnd += NextMicrogame;
         EventManager.Instance.OnUIButtonPressed += OnUIButtonPressed;
+
+        RandomiseMicrogameQueue ();
     }
 
     public void RandomiseMicrogameQueue ()
@@ -51,13 +55,13 @@ public class MicrogameManager : MonoBehaviour
     {
         SceneManager.LoadScene (currentMicrogame.SceneName);
         Time.timeScale = 0;
-        EventManager.Instance.MicrogameLoad ();
+        EventManager.Instance.MicrogameLoad (currentMicrogame);
     }
 
     public void StartCurrent ()
     {
         Time.timeScale = 1;
-        EventManager.Instance.MicrogameStart ();
+        EventManager.Instance.MicrogameStart (currentMicrogame);
     }
 
     private void NextMicrogame (MicrogameResult result)
@@ -74,7 +78,6 @@ public class MicrogameManager : MonoBehaviour
 
     private void OnDestroy ()
     {
-        EventManager.Instance.OnGameStart -= RandomiseMicrogameQueue;
         EventManager.Instance.OnMicrogameEnd -= NextMicrogame;
         EventManager.Instance.OnUIButtonPressed -= OnUIButtonPressed;
     }

@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance;
+
+    public Sound[] sounds;
+    private Sound[] microgameSounds;
+
     [SerializeField]
     private GameObject infoScreen, timer, resultScreen;
     [SerializeField]
@@ -12,6 +17,17 @@ public class UIManager : MonoBehaviour
 
     public void Initialise ()
     {
+        if (Instance != null)
+        {
+            Destroy (this);
+            return;
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad (gameObject);
+        }
+
         EventManager.Instance.OnUIButtonPressed += OnUIButtonPressed;
         EventManager.Instance.OnMicrogameLoad += OnMicrogameLoad;
         EventManager.Instance.OnMicrogameStart += OnMicrogameStart;
@@ -28,14 +44,14 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void OnMicrogameLoad ()
+    private void OnMicrogameLoad (Microgame microgame)
     {
         infoScreen.SetActive (true);
-        infoScreenTitle.text = MicrogameManager.Instance.currentMicrogame.Title;
-        infoScreenDescription.text = MicrogameManager.Instance.currentMicrogame.Description;
+        infoScreenTitle.text = microgame.Title;
+        infoScreenDescription.text = microgame.Description;
     }
 
-    private void OnMicrogameStart ()
+    private void OnMicrogameStart (Microgame microgame)
     {
         infoScreen.SetActive (false);
         timer.SetActive (true);

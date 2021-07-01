@@ -9,7 +9,10 @@ public class GameManager : MonoBehaviour
     private void Awake ()
     {
         if (Instance != null)
+        {
             Destroy (this);
+            return;
+        }
         else
         {
             Instance = this;
@@ -24,12 +27,11 @@ public class GameManager : MonoBehaviour
 
     private void StartGame ()
     {
-        EventManager.Instance.GameStart ();
-
         //usually the hallway scene would be loaded first
         //and then the microgame manager would load the microgame scene
         //before triggering this event
-        EventManager.Instance.MicrogameLoad ();
+        //EventManager.Instance.MicrogameLoad ();
+        MicrogameManager.Instance.LoadCurrent ();
     }
 
     private void OnMicrogameEnd (MicrogameResult result)
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour
         FindObjectOfType<EventManager> ().Initialise ();
         FindObjectOfType<MicrogameManager> ().Initialise ();
         FindObjectOfType<UIManager> ().Initialise ();
+        FindObjectOfType<AudioManager> ().Initialise ();
         FindObjectOfType<CountDownTimer> ().Initialise ();
     }
 

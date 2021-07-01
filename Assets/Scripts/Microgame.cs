@@ -10,4 +10,5 @@ public class Microgame : ScriptableObject
     public string Description;
     public string SceneName;
     public int TimerLength;
+    public Sound[] MicrogameSounds;
 }
