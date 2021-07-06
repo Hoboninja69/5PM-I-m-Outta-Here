@@ -7,11 +7,8 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-    public Sound[] sounds;
-    private Sound[] microgameSounds;
-
     [SerializeField]
-    private GameObject infoScreen, timer, resultScreen;
+    private GameObject infoScreen, timer, resultScreen, canvas;
     [SerializeField]
     private Text infoScreenTitle, infoScreenDescription, timerText, resultScreenResult;
 
@@ -19,12 +16,14 @@ public class UIManager : MonoBehaviour
     {
         if (Instance != null)
         {
+            Destroy (canvas);
             Destroy (this);
             return;
         }
         else
         {
             Instance = this;
+            DontDestroyOnLoad (canvas);
             DontDestroyOnLoad (gameObject);
         }
 

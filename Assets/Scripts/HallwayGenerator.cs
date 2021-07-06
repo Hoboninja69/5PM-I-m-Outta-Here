@@ -5,20 +5,7 @@ using UnityEngine;
 public class HallwayGenerator : MonoBehaviour
 {
     public GameObject chunk;
-
-    HallChunkConfig configToSpawn;
-
-    private void Start ()
-    {
-        HallChunkConfig[] configs = Generate (10);
-        configToSpawn = configs[0];
-        Invoke ("SpawnCoworker", 2f);
-    }
-
-    private void SpawnCoworker ()
-    {
-        configToSpawn.associatedChunk.SpawnCoworker ();
-    }
+    public HallChunkConfig[] configs { get; private set; }
 
     /*private HallChunkConfig[][] configArray = new HallChunkConfig[10][];
 
@@ -65,7 +52,7 @@ public class HallwayGenerator : MonoBehaviour
 
     public HallChunkConfig[] Generate (int chunkCount)
     {
-        HallChunkConfig[] configs = new HallChunkConfig[chunkCount];
+        configs = new HallChunkConfig[chunkCount];
         for (int i = 0; i < chunkCount; i++)
             configs[i] = Instantiate (chunk, Vector3.zero + Vector3.forward * 10 * i, Quaternion.identity, transform).GetComponent<HallChunk> ().Generate ();
         //generate end chunk
@@ -74,6 +61,7 @@ public class HallwayGenerator : MonoBehaviour
 
     public void Generate (HallChunkConfig[] configs)
     {
+        this.configs = configs;
         for (int i = 0; i < configs.Length; i++)
             Instantiate (chunk, Vector3.zero + Vector3.forward * 10 * i, Quaternion.identity, transform).GetComponent<HallChunk> ().Generate (configs[i]);
     }

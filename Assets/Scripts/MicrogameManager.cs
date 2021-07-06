@@ -30,6 +30,7 @@ public class MicrogameManager : MonoBehaviour
             DontDestroyOnLoad (gameObject);
         }
 
+        EventManager.Instance.OnMicrogameLoadTrigger += LoadCurrent;
         EventManager.Instance.OnMicrogameEnd += NextMicrogame;
         EventManager.Instance.OnUIButtonPressed += OnUIButtonPressed;
 
@@ -51,6 +52,11 @@ public class MicrogameManager : MonoBehaviour
         currentMicrogameIndex = 0;
     }
 
+    public void LoadHallway ()
+    {
+        SceneManager.LoadScene ("TransitionHallway");
+    }
+
     public void LoadCurrent ()
     {
         SceneManager.LoadScene (currentMicrogame.SceneName);
@@ -64,10 +70,12 @@ public class MicrogameManager : MonoBehaviour
         EventManager.Instance.MicrogameStart (currentMicrogame);
     }
 
+
     private void NextMicrogame (MicrogameResult result)
     {
         print ("Microgame Ended. Result: " + result);
         currentMicrogameIndex++;
+        LoadHallway ();
     }
 
     private void OnUIButtonPressed (string buttonName)
@@ -78,6 +86,7 @@ public class MicrogameManager : MonoBehaviour
 
     private void OnDestroy ()
     {
+        EventManager.Instance.OnMicrogameLoadTrigger -= LoadCurrent;
         EventManager.Instance.OnMicrogameEnd -= NextMicrogame;
         EventManager.Instance.OnUIButtonPressed -= OnUIButtonPressed;
     }

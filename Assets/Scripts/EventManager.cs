@@ -7,6 +7,9 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager Instance;
 
+    public event Action OnMicrogameLoadTrigger;
+    public void MicrogameLoadTrigger () => OnMicrogameLoadTrigger?.Invoke ();
+
     public event Action<Microgame> OnMicrogameLoad;
     public void MicrogameLoad (Microgame microgame) => OnMicrogameLoad?.Invoke (microgame);
 

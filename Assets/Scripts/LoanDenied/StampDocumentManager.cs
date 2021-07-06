@@ -30,6 +30,6 @@ public class StampDocumentManager : MonoBehaviour
             currentDocument.FlyIn ();
             currentDocument.GetComponent<StampDocument> ().OnDocumentStamped += NextDocument;
         }
-        else print ("complete!");
+        else EventManager.Instance.MicrogameEnd (MicrogameResult.Win);
     }
 }

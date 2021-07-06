@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != null)
         {
+            Destroy (gameObject);
             Destroy (this);
             return;
         }
@@ -31,7 +32,9 @@ public class GameManager : MonoBehaviour
         //and then the microgame manager would load the microgame scene
         //before triggering this event
         //EventManager.Instance.MicrogameLoad ();
-        MicrogameManager.Instance.LoadCurrent ();
+
+        //MicrogameManager.Instance.LoadCurrent ();
+        MicrogameManager.Instance.LoadHallway ();
     }
 
     private void OnMicrogameEnd (MicrogameResult result)
@@ -41,11 +44,11 @@ public class GameManager : MonoBehaviour
 
     private void InitialiseScripts ()
     {
-        FindObjectOfType<EventManager> ().Initialise ();
-        FindObjectOfType<MicrogameManager> ().Initialise ();
-        FindObjectOfType<UIManager> ().Initialise ();
-        FindObjectOfType<AudioManager> ().Initialise ();
-        FindObjectOfType<CountDownTimer> ().Initialise ();
+        FindObjectOfType<EventManager> ()?.Initialise ();
+        FindObjectOfType<MicrogameManager> ()?.Initialise ();
+        FindObjectOfType<UIManager> ()?.Initialise ();
+        FindObjectOfType<AudioManager> ()?.Initialise ();
+        FindObjectOfType<CountDownTimer> ()?.Initialise ();
     }
 
     private void SubscribeToEvents ()
