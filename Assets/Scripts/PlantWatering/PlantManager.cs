@@ -26,14 +26,12 @@ public class PlantManager : MonoBehaviour
             if (++currentIndex >= plants.Length)
             {
                 currentPlantActive = false;
-                print ("Just Right");
-                //EventManager.Instance.MicrogameEnd (MicrogameResult.Win);
+                EventManager.Instance.MicrogameEnd (MicrogameResult.Win);
             }
             else
                 StartCoroutine (FocusCurrentPlant ());
         }
-        else print ("Too Much Water!");
-            //EventManager.Instance.MicrogameEnd (MicrogameResult.Lose);
+        else EventManager.Instance.MicrogameEnd (MicrogameResult.Lose);
     }
 
     private IEnumerator FocusCurrentPlant ()

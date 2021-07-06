@@ -26,6 +26,18 @@ public class GameManager : MonoBehaviour
         StartGame ();
     }
 
+    public void PauseGame ()
+    {
+        Time.timeScale = 0;
+        EventManager.Instance.Freeze ();
+    }
+
+    public void ResumeGame ()
+    {
+        Time.timeScale = 1;
+        EventManager.Instance.Unfreeze ();
+    }
+
     private void StartGame ()
     {
         //usually the hallway scene would be loaded first
@@ -35,11 +47,6 @@ public class GameManager : MonoBehaviour
 
         //MicrogameManager.Instance.LoadCurrent ();
         MicrogameManager.Instance.LoadHallway ();
-    }
-
-    private void OnMicrogameEnd (MicrogameResult result)
-    {
-        //load transition scene
     }
 
     private void InitialiseScripts ()
@@ -53,6 +60,6 @@ public class GameManager : MonoBehaviour
 
     private void SubscribeToEvents ()
     {
-        EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
+
     }
 }

@@ -19,6 +19,8 @@ public class InputManager : MonoBehaviour
     public event Action OnMouseStayRight;
     public event Action<float> OnMouseWheel;
 
+    private bool frozen = false;
+
     private void Awake ()
     {
         if (Instance != null)
@@ -33,10 +35,15 @@ public class InputManager : MonoBehaviour
         }
         
         Cursor.lockState = CursorLockMode.Confined;
+
+        EventManager.Instance.OnFreeze += OnFreeze;
+        EventManager.Instance.OnUnfreeze += OnUnfreeze;
     }
 
     private void Update()
     {
+        if (frozen) return;
+
         Vector2 mouseInput = new Vector2 (Input.GetAxis ("Mouse X"), Input.GetAxis ("Mouse Y"));
         if (mouseInput.magnitude > 0f)
             OnMouseMoved?.Invoke (mouseInput);
@@ -73,4 +80,8 @@ public class InputManager : MonoBehaviour
     {
         return Physics.Raycast (cursorRay, maxDistance, layerMask, queryTriggerInteraction);
     }
+
+    private void OnFreeze () => frozen = true;
+
+    private void OnUnfreeze () => frozen = false;
 }

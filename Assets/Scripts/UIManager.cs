@@ -38,7 +38,8 @@ public class UIManager : MonoBehaviour
     {
         switch (buttonName)
         {
-            case "":
+            case "MicrogameResultOK":
+                resultScreen.SetActive (false);
                 return;
         }
     }

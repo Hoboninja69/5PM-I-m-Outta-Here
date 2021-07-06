@@ -35,7 +35,6 @@ public class WaterGauge : MonoBehaviour
 
     public void SetTargetBand (float min, float margin)
     {
-        print (min + margin);
         targetBand.localPosition = new Vector3 (targetBand.localPosition.x, Mathf.Lerp (targetBandBottom, targetBandTop, min), targetBand.localPosition.z);
         targetBand.localScale = new Vector2 (1, Mathf.Lerp (0, totalHeight, margin));
     }
