@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent (typeof(Interactable))]
+[RequireComponent(typeof(Interactable))]
 public class PackageControl : MonoBehaviour
 {
     public bool hasBomb;
@@ -13,7 +13,6 @@ public class PackageControl : MonoBehaviour
     private Interactable BoxInteractable;
     private bool OpenTrue;
 
-    // Start is called before the first frame update
     public void Initialise()
     {
         BoxInteractable = GetComponent<Interactable>();
@@ -31,12 +30,20 @@ public class PackageControl : MonoBehaviour
             SetOpen(true);
             Debug.Log("box opened");
 
+           // if (hasBomb)
+           //     EventManager.Instance.MicrogameEnd(MicrogameResult.win);
+           
         }
     }
 
-    void SetOpen (bool open)
+    void SetOpen(bool open)
     {
         Box_Closed.SetActive(!open);
         Box_Open.SetActive(open);
     }
+
+
+    
+
+
 }
