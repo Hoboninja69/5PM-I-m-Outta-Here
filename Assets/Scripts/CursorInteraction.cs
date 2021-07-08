@@ -21,7 +21,7 @@ public class CursorInteraction : MonoBehaviour
         if (InputManager.CastFromCursor (out RaycastHit hit, interactMask, maxRaycastDistance, interactWithTriggers))
         {
             if (hit.collider.TryGetComponent (out Interactable interactable))
-                interactable.OnInteract?.Invoke ();
+                interactable.Interact ();
         }
     }
 
