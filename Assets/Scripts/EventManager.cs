@@ -7,6 +7,15 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager Instance;
 
+    public event Action OnFreeze;
+    public void Freeze () => OnFreeze?.Invoke ();
+    
+    public event Action OnUnfreeze;
+    public void Unfreeze () => OnUnfreeze?.Invoke ();
+
+    public event Action OnTransitionSceneEnd;
+    public void TransitionSceneEnd () => OnTransitionSceneEnd?.Invoke ();
+
     public event Action<Microgame> OnMicrogameLoad;
     public void MicrogameLoad (Microgame microgame) => OnMicrogameLoad?.Invoke (microgame);
 

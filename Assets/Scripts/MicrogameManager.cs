@@ -14,8 +14,11 @@ public class MicrogameManager : MonoBehaviour
     [SerializeField]
     private int microgamesPerGame;
 
-    private Microgame[] microgameQueue;
-    private int currentMicrogameIndex;
+    [HideInInspector]
+    public Microgame[] microgameQueue { get; private set; }
+    [HideInInspector]
+    public int currentMicrogameIndex { get; private set; }
+    public int remainingMicrogames { get { return microgameQueue.Length - currentMicrogameIndex; } }
 
     public void Initialise ()
     {
@@ -30,7 +33,8 @@ public class MicrogameManager : MonoBehaviour
             DontDestroyOnLoad (gameObject);
         }
 
-        EventManager.Instance.OnMicrogameEnd += NextMicrogame;
+        EventManager.Instance.OnTransitionSceneEnd += LoadCurrent;
+        EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
         EventManager.Instance.OnUIButtonPressed += OnUIButtonPressed;
 
         RandomiseMicrogameQueue ();
@@ -51,34 +55,49 @@ public class MicrogameManager : MonoBehaviour
         currentMicrogameIndex = 0;
     }
 
+    public void LoadHallway ()
+    {
+        SceneManager.LoadScene ("TransitionHallway");
+    }
+
     public void LoadCurrent ()
     {
         SceneManager.LoadScene (currentMicrogame.SceneName);
-        Time.timeScale = 0;
+        GameManager.Instance.PauseGame ();
         EventManager.Instance.MicrogameLoad (currentMicrogame);
     }
 
     public void StartCurrent ()
     {
-        Time.timeScale = 1;
+        GameManager.Instance.ResumeGame ();
         EventManager.Instance.MicrogameStart (currentMicrogame);
     }
 
-    private void NextMicrogame (MicrogameResult result)
+
+    private void OnMicrogameEnd (MicrogameResult result)
     {
-        print ("Microgame Ended. Result: " + result);
-        currentMicrogameIndex++;
+        GameManager.Instance.PauseGame ();
     }
 
     private void OnUIButtonPressed (string buttonName)
     {
-        if (buttonName == "MicrogameStart")
-            StartCurrent ();
+        switch (buttonName)
+        {
+            case "MicrogameInfoOK":
+                StartCurrent ();
+                break;
+            case "MicrogameResultOK":
+                GameManager.Instance.ResumeGame ();
+                currentMicrogameIndex++;
+                LoadHallway ();
+                break;
+        }
     }
 
     private void OnDestroy ()
     {
-        EventManager.Instance.OnMicrogameEnd -= NextMicrogame;
+        EventManager.Instance.OnTransitionSceneEnd -= LoadCurrent;
+        EventManager.Instance.OnMicrogameEnd -= OnMicrogameEnd;
         EventManager.Instance.OnUIButtonPressed -= OnUIButtonPressed;
     }
 }
