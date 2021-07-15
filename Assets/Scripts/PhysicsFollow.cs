@@ -21,18 +21,25 @@ public class PhysicsFollow : MonoBehaviour
     public Vector3 target;
 
     private Rigidbody rb;
+    private float originalDrag;
 
     private void Start ()
     {
         rb = GetComponent<Rigidbody> ();
         rb.useGravity = false;
+        originalDrag = rb.drag;
         rb.drag = dampening;
     }
 
     private void FixedUpdate ()
     {
         rb.AddForce (gravityMultiplier * Physics.gravity, ForceMode.Acceleration);
-        if (!following || transform.position == target) return;
+        if (!following || transform.position == target)
+        {
+            rb.drag = originalDrag;
+            return;
+        }
+        rb.drag = dampening;
 
         Vector3 displacement = transform.position - target;
 

@@ -28,12 +28,14 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame ()
     {
+        print ("PAUSED");
         Time.timeScale = 0;
         EventManager.Instance.Freeze ();
     }
 
     public void ResumeGame ()
     {
+        print ("UNPAUSED");
         Time.timeScale = 1;
         EventManager.Instance.Unfreeze ();
     }
@@ -54,6 +56,7 @@ public class GameManager : MonoBehaviour
         FindObjectOfType<EventManager> ()?.Initialise ();
         FindObjectOfType<MicrogameManager> ()?.Initialise ();
         FindObjectOfType<UIManager> ()?.Initialise ();
+        FindObjectOfType<InputManager> ()?.Initialise ();
         FindObjectOfType<AudioManager> ()?.Initialise ();
         FindObjectOfType<CountDownTimer> ()?.Initialise ();
     }

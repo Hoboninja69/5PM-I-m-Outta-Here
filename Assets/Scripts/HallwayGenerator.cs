@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HallwayGenerator : MonoBehaviour
 {
-    public GameObject chunk;
+    public GameObject chunk, endChunk;
     public HallChunkConfig[] configs { get; private set; }
 
     /*private HallChunkConfig[][] configArray = new HallChunkConfig[10][];
@@ -50,19 +50,39 @@ public class HallwayGenerator : MonoBehaviour
             Generate (configArray[index]);
     }*/
 
+
     public HallChunkConfig[] Generate (int chunkCount)
     {
         configs = new HallChunkConfig[chunkCount];
         for (int i = 0; i < chunkCount; i++)
             configs[i] = Instantiate (chunk, Vector3.zero + Vector3.forward * 10 * i, Quaternion.identity, transform).GetComponent<HallChunk> ().Generate ();
-        //generate end chunk
+        Instantiate (endChunk, Vector3.zero + Vector3.forward * 10 * configs.Length, Quaternion.identity, transform);
         return configs;
     }
+    
+    public HallChunkConfig[] Generate (int chunkCount, out GameObject endChunk)
+    {
+        configs = new HallChunkConfig[chunkCount];
+        for (int i = 0; i < chunkCount; i++)
+            configs[i] = Instantiate (chunk, Vector3.zero + Vector3.forward * 10 * i, Quaternion.identity, transform).GetComponent<HallChunk> ().Generate ();
+        endChunk = Instantiate (this.endChunk, Vector3.zero + Vector3.forward * 10 * configs.Length, Quaternion.identity, transform);
+        return configs;
+    }
+
 
     public void Generate (HallChunkConfig[] configs)
     {
         this.configs = configs;
         for (int i = 0; i < configs.Length; i++)
             Instantiate (chunk, Vector3.zero + Vector3.forward * 10 * i, Quaternion.identity, transform).GetComponent<HallChunk> ().Generate (configs[i]);
+        Instantiate (endChunk, Vector3.zero + Vector3.forward * 10 * configs.Length, Quaternion.identity, transform);
+    }
+
+    public void Generate (HallChunkConfig[] configs, out GameObject endChunk)
+    {
+        this.configs = configs;
+        for (int i = 0; i < configs.Length; i++)
+            Instantiate (chunk, Vector3.zero + Vector3.forward * 10 * i, Quaternion.identity, transform).GetComponent<HallChunk> ().Generate (configs[i]);
+        endChunk = Instantiate (this.endChunk, Vector3.zero + Vector3.forward * 10 * configs.Length, Quaternion.identity, transform);
     }
 }
