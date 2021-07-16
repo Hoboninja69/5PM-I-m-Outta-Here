@@ -1423,8 +1423,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allMicrogames:
+  - {fileID: 11400000, guid: 139f88cd50933c242bcc37eb5a847293, type: 2}
   - {fileID: 11400000, guid: 468d8678eae2ac446b773fbf05d3167c, type: 2}
-  microgamesPerGame: 1
+  microgamesPerGame: 2
   failCount: 0
 --- !u!114 &1799700457
 MonoBehaviour:

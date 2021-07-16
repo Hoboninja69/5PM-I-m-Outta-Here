@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class ThrowController : MonoBehaviour
 {
-    public GameObject airplane;
+    public GameObject ball;
     public OscillatingGauge angleGauge, powerGauge;
-    public Transform throwArm, spawn;
+    public Transform angleIndicator, spawn;
     public Vector2 angleRange;
 
     private State state;
-    private AirplaneController thrownPlane;
 
     private void Awake ()
     {
@@ -35,14 +34,14 @@ public class ThrowController : MonoBehaviour
     {
         state = State.Throwing;
         powerGauge.SetActive (false);
-        thrownPlane = Instantiate (airplane, spawn.position, spawn.rotation).GetComponent<AirplaneController> ();
-        thrownPlane.throwPower = powerGauge.value;
+        //thrownPlane = Instantiate (ball, spawn.position, spawn.rotation).GetComponent<AirplaneController> ();
+        //thrownPlane.throwPower = powerGauge.value;
     }
 
     private void Update ()
     {
         if (state == State.AngleChoose)
-            throwArm.localRotation = Quaternion.Euler (Vector3.zero + Vector3.up * Mathf.Lerp (angleRange.x, angleRange.y, angleGauge.value));
+            angleIndicator.localRotation = Quaternion.Euler (Vector3.zero + Vector3.up * Mathf.Lerp (angleRange.x, angleRange.y, angleGauge.value));
     }
 
     enum State
