@@ -36,8 +36,11 @@ public class InputManager : MonoBehaviour
         
         Cursor.lockState = CursorLockMode.Confined;
 
-        EventManager.Instance.OnFreeze += OnFreeze;
-        EventManager.Instance.OnUnfreeze += OnUnfreeze;
+        if (EventManager.Instance != null)
+        {
+            EventManager.Instance.OnFreeze += OnFreeze;
+            EventManager.Instance.OnUnfreeze += OnUnfreeze;
+        }
     }
 
     private void Update()
