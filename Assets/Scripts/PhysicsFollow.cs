@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent (typeof (Rigidbody))]
 public class PhysicsFollow : MonoBehaviour
 {
+    public bool following = true;
     public float gravityMultiplier;
     [Range (0, 20)]
     public float attractionForce;
@@ -15,8 +16,6 @@ public class PhysicsFollow : MonoBehaviour
     public float objectRadius;  //A rough estimate of the object's radius again for clipping resistance
     public LayerMask obstacle; //Layers that the object should not clip through
 
-    [HideInInspector]
-    public bool following = true;
     [HideInInspector]
     public Vector3 target;
 
@@ -34,7 +33,7 @@ public class PhysicsFollow : MonoBehaviour
     private void FixedUpdate ()
     {
         rb.AddForce (gravityMultiplier * Physics.gravity, ForceMode.Acceleration);
-        if (!following || transform.position == target)
+        if (!following)
         {
             rb.drag = originalDrag;
             return;
