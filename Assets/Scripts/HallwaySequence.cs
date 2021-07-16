@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class HallwaySequence : MonoBehaviour
 {
+    public Animator camAnimator;
     private HallwayGenerator generator;
 
     private static List<HallChunkConfig> remainingConfigs;
-
 
     private void Start()
     {
@@ -17,18 +17,30 @@ public class HallwaySequence : MonoBehaviour
 
     private IEnumerator Sequence ()
     {
+        GameObject endChunk;
         if (remainingConfigs == null)
-            remainingConfigs = new List<HallChunkConfig> (generator.Generate (MicrogameManager.Instance.remainingMicrogames + 1));
+            remainingConfigs = new List<HallChunkConfig> (generator.Generate (MicrogameManager.Instance.remainingMicrogames + 1, out endChunk));
         else
         {
             remainingConfigs.RemoveAt (0);
-            generator.Generate (remainingConfigs.ToArray ());
+            generator.Generate (remainingConfigs.ToArray (), out endChunk);
         }
         yield return new WaitForSeconds (2f);
 
-        generator.configs[1].associatedChunk.SpawnCoworker ();
-        yield return new WaitForSeconds (0.5f);
+        if (MicrogameManager.Instance.remainingMicrogames > 0)
+        {
+            generator.configs[1].associatedChunk.SpawnCoworker ();
+            yield return new WaitForSeconds (0.5f);
 
-        EventManager.Instance.TransitionSceneEnd ();
+            EventManager.Instance.TransitionSceneEnd ();
+        }
+        else
+        {
+            endChunk.GetComponentInChildren<Animator> ().SetTrigger ("Open");
+
+            yield return new WaitForSeconds (1f);
+
+            camAnimator.SetTrigger ("WalkAgain");
+        }
     }
 }

@@ -19,6 +19,8 @@ public class MicrogameManager : MonoBehaviour
     [HideInInspector]
     public int currentMicrogameIndex { get; private set; }
     public int remainingMicrogames { get { return microgameQueue.Length - currentMicrogameIndex; } }
+    [HideInInspector]
+    public int failCount;
 
     public void Initialise ()
     {
@@ -76,6 +78,9 @@ public class MicrogameManager : MonoBehaviour
 
     private void OnMicrogameEnd (MicrogameResult result)
     {
+        if (result != MicrogameResult.Win)
+            failCount++;
+
         GameManager.Instance.PauseGame ();
     }
 
@@ -84,12 +89,15 @@ public class MicrogameManager : MonoBehaviour
         switch (buttonName)
         {
             case "MicrogameInfoOK":
+                print ("INFO OK PRESSED");
                 StartCurrent ();
                 break;
             case "MicrogameResultOK":
                 GameManager.Instance.ResumeGame ();
                 currentMicrogameIndex++;
-                LoadHallway ();
+                if (failCount < 3)
+                    LoadHallway ();
+                //else load fail scene
                 break;
         }
     }

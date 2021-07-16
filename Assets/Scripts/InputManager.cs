@@ -21,7 +21,7 @@ public class InputManager : MonoBehaviour
 
     private bool frozen = false;
 
-    private void Awake ()
+    public void Initialise ()
     {
         if (Instance != null)
         {
@@ -36,8 +36,11 @@ public class InputManager : MonoBehaviour
         
         Cursor.lockState = CursorLockMode.Confined;
 
-        EventManager.Instance.OnFreeze += OnFreeze;
-        EventManager.Instance.OnUnfreeze += OnUnfreeze;
+        if (EventManager.Instance != null)
+        {
+            EventManager.Instance.OnFreeze += OnFreeze;
+            EventManager.Instance.OnUnfreeze += OnUnfreeze;
+        }
     }
 
     private void Update()
@@ -81,7 +84,17 @@ public class InputManager : MonoBehaviour
         return Physics.Raycast (cursorRay, maxDistance, layerMask, queryTriggerInteraction);
     }
 
-    private void OnFreeze () => frozen = true;
+    //private void OnFreeze () => frozen = true;
+    void OnFreeze ()
+    {
+        frozen = true;
+        print ("INPUT FROZEN");
+    }
 
-    private void OnUnfreeze () => frozen = false;
+    //private void OnUnfreeze () => frozen = false;
+    void OnUnfreeze ()
+    {
+        frozen = false;
+        print ("INPUT UNFROZEN");
+    }
 }
