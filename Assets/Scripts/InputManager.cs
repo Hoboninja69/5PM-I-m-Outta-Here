@@ -19,7 +19,9 @@ public class InputManager : MonoBehaviour
     public event Action OnMouseStayRight;
     public event Action<float> OnMouseWheel;
 
-    private void Awake ()
+    private bool frozen = false;
+
+    public void Initialise ()
     {
         if (Instance != null)
         {
@@ -31,12 +33,20 @@ public class InputManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad (gameObject);
         }
-
+        
         Cursor.lockState = CursorLockMode.Confined;
+
+        if (EventManager.Instance != null)
+        {
+            EventManager.Instance.OnFreeze += OnFreeze;
+            EventManager.Instance.OnUnfreeze += OnUnfreeze;
+        }
     }
 
     private void Update()
     {
+        if (frozen) return;
+
         Vector2 mouseInput = new Vector2 (Input.GetAxis ("Mouse X"), Input.GetAxis ("Mouse Y"));
         if (mouseInput.magnitude > 0f)
             OnMouseMoved?.Invoke (mouseInput);
@@ -72,5 +82,19 @@ public class InputManager : MonoBehaviour
     public static bool CastFromCursor (int layerMask = ~0, float maxDistance = Mathf.Infinity, QueryTriggerInteraction queryTriggerInteraction = QueryTriggerInteraction.UseGlobal)
     {
         return Physics.Raycast (cursorRay, maxDistance, layerMask, queryTriggerInteraction);
+    }
+
+    //private void OnFreeze () => frozen = true;
+    void OnFreeze ()
+    {
+        frozen = true;
+        print ("INPUT FROZEN");
+    }
+
+    //private void OnUnfreeze () => frozen = false;
+    void OnUnfreeze ()
+    {
+        frozen = false;
+        print ("INPUT UNFROZEN");
     }
 }

@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Stampable
+  - MaleHead
+  - MaleSuit
+  - Female_SkinForSkirt
+  - Female_TrouserSuit
+  - Female_SkirtSuit
+  - Female_SkinForTrousers
+  - Win
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -15,8 +23,6 @@ TagManager:
   - Obstacle
   - IgnoreObstacle
   - Interactable
-  - 
-  - 
   - 
   - 
   - 
