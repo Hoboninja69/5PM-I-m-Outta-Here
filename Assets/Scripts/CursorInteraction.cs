@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CursorInteraction : MonoBehaviour
 {
+    public static CursorInteraction Instance;
+
     [SerializeField]
     private LayerMask interactMask;
     [SerializeField]
@@ -11,9 +13,25 @@ public class CursorInteraction : MonoBehaviour
     [SerializeField]
     private QueryTriggerInteraction interactWithTriggers;
 
-    private void Start ()
+    public void Initialise ()
     {
-        InputManager.Instance.OnMouseDownLeft += OnMouseDownLeft;
+        if (Instance != null)
+        {
+            Destroy (this);
+            return;
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad (gameObject);
+        }
+
+        Cursor.lockState = CursorLockMode.Confined;
+
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.OnMouseDownLeft += OnMouseDownLeft;
+        }
     }
 
     private void OnMouseDownLeft ()

@@ -6,12 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LoanDenied.unity
-    guid: 33b11dd6bc414b149b2e666725562b06
-  - enabled: 1
     path: Assets/Scenes/TransitionHallway.unity
     guid: 3ddbc0b8d6f65ec4791d6e2fcd07e2aa
   - enabled: 1
+    path: Assets/Scenes/LoanDenied.unity
+    guid: 33b11dd6bc414b149b2e666725562b06
+  - enabled: 1
     path: Assets/Scenes/PlantWatering.unity
     guid: 14602ed64c6f9aa4882163c6903f9b64
+  - enabled: 1
+    path: Assets/Scenes/DeskClean.unity
+    guid: d438d39eab96f894595fb58ec10e8418
+  - enabled: 1
+    path: Assets/Scenes/BombDefuse.unity
+    guid: efb3f21f781bb52478cbffab0a25fd1d
+  - enabled: 1
+    path: Assets/Scenes/TempleRunnerSample.unity
+    guid: a2e5a438b507f214cb9a8ea434e0f86a
   m_configObjects: {}

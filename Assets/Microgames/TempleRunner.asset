@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d5479f47d850cf409204feae3bc8e9a, type: 3}
+  m_Name: TempleRunner
+  m_EditorClassIdentifier: 
+  Title: Office Chair Joyride
+  Description: "Your colleagues legs are numb from sitting in an office chair all
+    day and they don\u2019t think they can walk all the way down the hall to hand
+    your boss some important paperwork. Give them a hand by pushing them, in their
+    office chair, down the hallway within the time limit by using both mouse buttons
+    to direct the chair. Running into furniture and other objects will slow you down
+    so watch out!"
+  SceneName: TempleRunnerSample
+  TimerLength: 15
+  MicrogameSounds: []

@@ -13,6 +13,7 @@ public class EndGame : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
+            EventManager.Instance.MicrogameEnd (MicrogameResult.Win);
             if (collision.gameObject.TryGetComponent(out TRMovement Move))
             {
                 Move.enabled = false;

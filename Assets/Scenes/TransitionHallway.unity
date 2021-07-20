@@ -718,10 +718,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1378,6 +1378,7 @@ GameObject:
   - component: {fileID: 1799700455}
   - component: {fileID: 1799700461}
   - component: {fileID: 1799700462}
+  - component: {fileID: 1799700463}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1423,9 +1424,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allMicrogames:
+  - {fileID: 11400000, guid: aefb1d239b1875f47b4a91c92c2b45cf, type: 2}
   - {fileID: 11400000, guid: 139f88cd50933c242bcc37eb5a847293, type: 2}
+  - {fileID: 11400000, guid: 542e4ae3b7901ea42a81aa16ea8f122c, type: 2}
   - {fileID: 11400000, guid: 468d8678eae2ac446b773fbf05d3167c, type: 2}
-  microgamesPerGame: 2
+  - {fileID: 11400000, guid: cd4fed68fafeec741b6476c36485bc87, type: 2}
+  microgamesPerGame: 5
   failCount: 0
 --- !u!114 &1799700457
 MonoBehaviour:
@@ -1509,6 +1513,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf50f0cc134a264586d7e7ebb5cd5cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1799700463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799700454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b2b681193b75274eb487e7aff30890f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactMask:
+    serializedVersion: 2
+    m_Bits: 256
+  maxRaycastDistance: 50
+  interactWithTriggers: 0
 --- !u!1 &1828746625
 GameObject:
   m_ObjectHideFlags: 0
