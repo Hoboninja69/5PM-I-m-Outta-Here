@@ -13,12 +13,9 @@ MonoBehaviour:
   m_Name: TempleRunner
   m_EditorClassIdentifier: 
   Title: Office Chair Joyride
-  Description: "Your colleagues legs are numb from sitting in an office chair all
-    day and they don\u2019t think they can walk all the way down the hall to hand
-    your boss some important paperwork. Give them a hand by pushing them, in their
-    office chair, down the hallway within the time limit by using both mouse buttons
-    to direct the chair. Running into furniture and other objects will slow you down
-    so watch out!"
+  Description: Your colleagues legs are numb from sitting in an office chair all
+    day. Give them a hand by pushing them, in their office chair, down the hallway
+    using the left and right mouse buttons to steer. Watch out for obstacles!
   SceneName: TempleRunnerSample
   TimerLength: 15
   MicrogameSounds: []

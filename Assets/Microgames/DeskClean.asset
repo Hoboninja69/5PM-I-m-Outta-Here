@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Surprise Desk Inspection
   Description: "There\u2019s about to be a surprise desk inspection and your colleague
-    is too busy running errands to clean their desk in time! Help them out by cleaning
-    up all the clutter on their desk but wiping everything off onto the floor. Wipe
-    the cloth across the screen using the mouse to push everything off the desk."
+    is too busy running errands to clean their desk in time! Help them clean their
+    desk by picking up a cloth and wiping everything onto the floor!"
   SceneName: DeskClean
-  TimerLength: 10
+  TimerLength: 15
   MicrogameSounds: []
+  showCursor: 1

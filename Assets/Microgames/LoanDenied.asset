@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: LoanDenied
   m_EditorClassIdentifier: 
   Title: Loan Denied
-  Description: Stamp
+  Description: "Using a \u201Cdenied\u201D stamp, click to stamp all the loan documents
+    within the time limit."
   SceneName: LoanDenied
-  TimerLength: 20
+  TimerLength: 10
+  MicrogameSounds: []
+  showCursor: 0
