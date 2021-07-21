@@ -475,10 +475,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 279868497228186305, guid: 7b81cad938623aa46b6eb5c2f3b1c8a9, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 279868497228292601, guid: 7b81cad938623aa46b6eb5c2f3b1c8a9, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -802,6 +798,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 489881721}
+  - component: {fileID: 489881723}
   - component: {fileID: 489881720}
   - component: {fileID: 489881722}
   m_Layer: 0
@@ -851,9 +848,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 256
   maxRaycastDistance: 20
   interactWithTriggers: 0
+--- !u!114 &489881723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489881719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a84e8263a647946bb0f1fa24c84c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &570919455
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -991,7 +1000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 279868497228186305, guid: 7b81cad938623aa46b6eb5c2f3b1c8a9, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 279868497228292601, guid: 7b81cad938623aa46b6eb5c2f3b1c8a9, type: 3}
       propertyPath: m_RootOrder
@@ -1543,7 +1552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 279868497228186305, guid: 7b81cad938623aa46b6eb5c2f3b1c8a9, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 279868497228292601, guid: 7b81cad938623aa46b6eb5c2f3b1c8a9, type: 3}
       propertyPath: m_RootOrder
@@ -2202,7 +2211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 279868497228186305, guid: 7b81cad938623aa46b6eb5c2f3b1c8a9, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 279868497228292601, guid: 7b81cad938623aa46b6eb5c2f3b1c8a9, type: 3}
       propertyPath: m_RootOrder
@@ -3256,7 +3265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 279868497228186305, guid: 7b81cad938623aa46b6eb5c2f3b1c8a9, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 279868497228292601, guid: 7b81cad938623aa46b6eb5c2f3b1c8a9, type: 3}
       propertyPath: m_RootOrder
@@ -3695,7 +3704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 279868497228186305, guid: 7b81cad938623aa46b6eb5c2f3b1c8a9, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 279868497228292601, guid: 7b81cad938623aa46b6eb5c2f3b1c8a9, type: 3}
       propertyPath: m_RootOrder

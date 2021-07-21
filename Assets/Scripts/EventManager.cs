@@ -47,9 +47,9 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    private void Awake ()
-    {
-        if (Instance != this)
-            Destroy (this);
-    }
+    //private void Awake ()
+    //{
+    //    if (Instance != this)
+    //        Destroy (this);
+    //}
 }

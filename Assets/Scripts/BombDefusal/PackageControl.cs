@@ -24,14 +24,15 @@ public class PackageControl : MonoBehaviour
 
     void ClickOn()
     {
+        print ("clicked");
         if (!OpenTrue)
         {
             OpenTrue = true;
             SetOpen(true);
             Debug.Log("box opened");
 
-           // if (hasBomb)
-           //     EventManager.Instance.MicrogameEnd(MicrogameResult.win);
+            if (hasBomb)
+                EventManager.Instance.MicrogameEnd(MicrogameResult.Win);
            
         }
     }
