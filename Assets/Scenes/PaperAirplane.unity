@@ -1962,10 +1962,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6067185528594298527, guid: 6845a2c0f2813d64aa1c2584057dfcd3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 85f8e6d518e4daa419caaef3d0a3d66d, type: 2}
     - target: {fileID: 919132149155446097, guid: 6845a2c0f2813d64aa1c2584057dfcd3, type: 3}
       propertyPath: m_Name
       value: Paper_plane
       objectReference: {fileID: 0}
+    - target: {fileID: 5901893356585517859, guid: 6845a2c0f2813d64aa1c2584057dfcd3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 85f8e6d518e4daa419caaef3d0a3d66d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6845a2c0f2813d64aa1c2584057dfcd3, type: 3}
 --- !u!4 &586582873 stripped

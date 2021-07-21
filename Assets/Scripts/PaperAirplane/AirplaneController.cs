@@ -52,7 +52,7 @@ public class AirplaneController : MonoBehaviour
 
     private void OnCollisionEnter (Collision collision)
     {
-        if (collision.collider.CompareTag ("Obstacle"))
+        if (!fall && collision.collider.CompareTag ("Obstacle"))
         {
             EventManager.Instance?.MicrogameEnd (MicrogameResult.Lose, 1f);
             fall = true;
