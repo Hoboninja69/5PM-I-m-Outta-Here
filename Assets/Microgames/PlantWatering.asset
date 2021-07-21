@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: PlantWatering
   m_EditorClassIdentifier: 
   Title: Plant Watering
-  Description: Use the scroll-wheel to water the plants, be careful not to overfill
-    them!
+  Description: Use the scroll-wheel to water the plants up to the green indicator,
+    be careful not to overfill them!
   SceneName: PlantWatering
   TimerLength: 18
+  MicrogameSounds: []

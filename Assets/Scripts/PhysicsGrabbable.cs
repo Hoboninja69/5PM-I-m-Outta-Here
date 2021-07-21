@@ -33,7 +33,7 @@ public class PhysicsGrabbable : MonoBehaviour
     private void FixedUpdate ()
     {
         follow.target = offset + Tools.GetRayPlaneIntersectionPoint (
-            useObjectPosition? transform.position : movementPlane.position, movementPlane.up, InputManager.cursorRay);
+            useObjectPosition ? transform.position : movementPlane.position, movementPlane.up, InputManager.cursorRay);
     }
 
     private void Grab ()
@@ -41,7 +41,7 @@ public class PhysicsGrabbable : MonoBehaviour
         OnGrabbed?.Invoke ();
         InputManager.Instance.OnMouseUpLeft += Drop;
         if (!snapToCursor)
-            offset = transform.position - Tools.GetRayPlaneIntersectionPoint (transform.position, -Camera.main.transform.forward, InputManager.cursorRay); 
+            offset = transform.position - Tools.GetRayPlaneIntersectionPoint (useObjectPosition ? transform.position : movementPlane.position, movementPlane.up, InputManager.cursorRay); 
         if (hideCursor)
             Cursor.visible = false;
 
