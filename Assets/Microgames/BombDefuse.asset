@@ -13,12 +13,9 @@ MonoBehaviour:
   m_Name: BombDefuse
   m_EditorClassIdentifier: 
   Title: 'Bomb Scare! '
-  Description: Someone has called in a bomb scare! While everyone in the building
-    evacuates, you must use the sound of the ticking bomb to find which package it
-    is hidden in and to stop it from exploding! Click on the box you think the ticking
-    is coming from. You have three chances to guess the correct package, otherwise
-    you die! If you guess it right, you stop the bomb from going off and you get
-    to live another day. Yay!
+  Description: Someone has called in a bomb scare! Click the packages and find the
+    bomb in time and you get to live another day. Yay!
   SceneName: BombDefuse
   TimerLength: 5
   MicrogameSounds: []
+  showCursor: 1

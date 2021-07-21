@@ -41,6 +41,10 @@ public class HallwaySequence : MonoBehaviour
             yield return new WaitForSeconds (1f);
 
             camAnimator.SetTrigger ("WalkAgain");
+
+            yield return new WaitForSeconds (3.5f);
+
+            Application.Quit ();
         }
     }
 }

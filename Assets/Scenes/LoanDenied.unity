@@ -310,7 +310,6 @@ GameObject:
   - component: {fileID: 313382859}
   - component: {fileID: 313382857}
   - component: {fileID: 313382858}
-  - component: {fileID: 313382861}
   m_Layer: 0
   m_Name: Stamp
   m_TagString: Untagged
@@ -361,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6d965c1cc3d7c4c8bc5cc0b85e94fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  following: 1
   gravityMultiplier: 0
   attractionForce: 10.71
   dampening: 34.6
@@ -369,7 +369,6 @@ MonoBehaviour:
   obstacle:
     serializedVersion: 2
     m_Bits: 320
-  following: 1
   target: {x: 0, y: 0, z: 0}
 --- !u!54 &313382859
 Rigidbody:
@@ -400,18 +399,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.66, y: 0.25, z: 0.27}
   m_Center: {x: -0.0024611938, y: 0.1, z: 0.012304907}
---- !u!114 &313382861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313382855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4189eea2e99e83a4991581cc8aa442ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &316593876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 111386, guid: 0b9c8290611031e459c2596b4ee0f3bc, type: 3}
@@ -604,7 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4faece54d63ba74f9a04e4c59be06d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  docCount: 5
+  docCount: 6
   documentVariations:
   - {fileID: 7182641548230014833, guid: bb161018aeb9fea4db12b6503ac5dd8b, type: 3}
 --- !u!4 &606498394

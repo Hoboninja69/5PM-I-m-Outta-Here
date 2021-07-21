@@ -14,7 +14,6 @@ public class AirplaneController : MonoBehaviour
 
     private void Start ()
     {
-        Cursor.visible = false;
         currentSpeed = launchSpeed;
         rb = GetComponent<Rigidbody> ();
         InputManager.Instance.OnMouseMoved += MouseMoved;
@@ -55,7 +54,7 @@ public class AirplaneController : MonoBehaviour
     {
         if (collision.collider.CompareTag ("Obstacle"))
         {
-            EventManager.Instance?.MicrogameEnd (MicrogameResult.Lose, 1.5f);
+            EventManager.Instance?.MicrogameEnd (MicrogameResult.Lose, 1f);
             fall = true;
             return;
         }
@@ -76,7 +75,7 @@ public class AirplaneController : MonoBehaviour
     {
         if (other.CompareTag ("Win"))
         {
-            EventManager.Instance?.MicrogameEnd (MicrogameResult.Win, 1.5f);
+            EventManager.Instance?.MicrogameEnd (MicrogameResult.Win, 0.5f);
             camConstraint.constraintActive = false;
             autoPilot = true;
         }

@@ -73,6 +73,7 @@ public class MicrogameManager : MonoBehaviour
     {
         GameManager.Instance.ResumeGame ();
         EventManager.Instance.MicrogameStart (currentMicrogame);
+        Cursor.visible = currentMicrogame.showCursor;
     }
 
 

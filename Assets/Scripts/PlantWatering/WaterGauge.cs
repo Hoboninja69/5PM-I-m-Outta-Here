@@ -10,7 +10,7 @@ public class WaterGauge : MonoBehaviour
 
     private float bottomPortion, totalHeight, targetBandBottom, targetBandTop;
 
-    private void Start ()
+    public void Initialise ()
     {
         bottomPortion = 0.5f / (maxBodySize + 0.5f);
         totalHeight = 0.5f + maxBodySize;
