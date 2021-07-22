@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent (typeof (Rigidbody))]
 public class PhysicsFollow : MonoBehaviour
 {
+    public bool following = true;
     public float gravityMultiplier;
     [Range (0, 20)]
     public float attractionForce;
@@ -16,23 +17,28 @@ public class PhysicsFollow : MonoBehaviour
     public LayerMask obstacle; //Layers that the object should not clip through
 
     [HideInInspector]
-    public bool following = true;
-    [HideInInspector]
     public Vector3 target;
 
     private Rigidbody rb;
+    private float originalDrag;
 
     private void Start ()
     {
         rb = GetComponent<Rigidbody> ();
         rb.useGravity = false;
+        originalDrag = rb.drag;
         rb.drag = dampening;
     }
 
     private void FixedUpdate ()
     {
         rb.AddForce (gravityMultiplier * Physics.gravity, ForceMode.Acceleration);
-        if (!following || transform.position == target) return;
+        if (!following)
+        {
+            rb.drag = originalDrag;
+            return;
+        }
+        rb.drag = dampening;
 
         Vector3 displacement = transform.position - target;
 

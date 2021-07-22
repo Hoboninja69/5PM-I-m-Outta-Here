@@ -22,7 +22,7 @@ public class StampDocument : MonoBehaviour
         if (stamped || animating) return;
 
         print ((stampAttemptPoint - stampPoint.position).sqrMagnitude / 0.01f);
-        if ((stampAttemptPoint - stampPoint.position).sqrMagnitude < 0.01f)
+        if ((stampAttemptPoint - stampPoint.position).sqrMagnitude < 0.05f)
         {
             print ("got it");
             stamped = true;

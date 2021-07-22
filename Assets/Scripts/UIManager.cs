@@ -7,24 +7,23 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-    public Sound[] sounds;
-    private Sound[] microgameSounds;
-
     [SerializeField]
-    private GameObject infoScreen, timer, resultScreen;
+    private GameObject infoScreen, timer, resultScreen, canvas;
     [SerializeField]
-    private Text infoScreenTitle, infoScreenDescription, timerText, resultScreenResult;
+    private Text infoScreenTitle, infoScreenDescription, timerText, timerShadowText, resultScreenTitle, resultScreenSubtitle;
 
     public void Initialise ()
     {
         if (Instance != null)
         {
+            Destroy (canvas);
             Destroy (this);
             return;
         }
         else
         {
             Instance = this;
+            DontDestroyOnLoad (canvas);
             DontDestroyOnLoad (gameObject);
         }
 
@@ -39,13 +38,15 @@ public class UIManager : MonoBehaviour
     {
         switch (buttonName)
         {
-            case "":
+            case "MicrogameResultOK":
+                resultScreen.SetActive (false);
                 return;
         }
     }
 
     private void OnMicrogameLoad (Microgame microgame)
     {
+        Cursor.visible = true;
         infoScreen.SetActive (true);
         infoScreenTitle.text = microgame.Title;
         infoScreenDescription.text = microgame.Description;
@@ -60,13 +61,30 @@ public class UIManager : MonoBehaviour
     private void OnTimerTick (int timeLeft)
     {
         timerText.text = timeLeft.ToString ();
+        timerShadowText.text = timeLeft.ToString ();
     }
 
     private void OnMicrogameEnd (MicrogameResult result)
     {
+        Cursor.visible = true;
         timer.SetActive (false);
         resultScreen.SetActive (true);
-        resultScreenResult.text = "Result: " + result;
+        resultScreenTitle.text = "Result: " + result;
+        switch (result)
+        {
+            case MicrogameResult.Win:
+                resultScreenTitle.text = "YOU DID IT!";
+                resultScreenSubtitle.text = "Great job, intern! Now get out of my office.";
+                break;
+            case MicrogameResult.Lose:
+                resultScreenTitle.text = "UH OH...";
+                resultScreenSubtitle.text = "Yeah... I'm going to have to tell your boss about this one.";
+                break;
+            case MicrogameResult.OutOfTime:
+                resultScreenTitle.text = "TOO SLOW!";
+                resultScreenSubtitle.text = "Yeah... I'm going to have to tell your boss about this one.";
+                break;
+        }
     }
 
     private void OnDestroy ()

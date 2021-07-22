@@ -21,6 +21,7 @@ public class PlantController : MonoBehaviour
         maxCapacity = minCapacity + Random.Range (overfillMarginRange.x, overfillMarginRange.y);
 
         gauge.gameObject.SetActive (false);
+        gauge.Initialise ();
         gauge.SetTargetBand (minCapacity, maxCapacity - minCapacity);
         gauge.SetGauge (currentCapacity);
     }

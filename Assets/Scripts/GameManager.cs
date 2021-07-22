@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     {
         if (Instance != null)
         {
+            Destroy (gameObject);
             Destroy (this);
             return;
         }
@@ -25,31 +26,45 @@ public class GameManager : MonoBehaviour
         StartGame ();
     }
 
+    public void PauseGame ()
+    {
+        print ("PAUSED");
+        Time.timeScale = 0;
+        EventManager.Instance.Freeze ();
+    }
+
+    public void ResumeGame ()
+    {
+        print ("UNPAUSED");
+        Time.timeScale = 1;
+        EventManager.Instance.Unfreeze ();
+    }
+
     private void StartGame ()
     {
         //usually the hallway scene would be loaded first
         //and then the microgame manager would load the microgame scene
         //before triggering this event
         //EventManager.Instance.MicrogameLoad ();
-        MicrogameManager.Instance.LoadCurrent ();
-    }
 
-    private void OnMicrogameEnd (MicrogameResult result)
-    {
-        //load transition scene
+        //MicrogameManager.Instance.LoadCurrent ();
+        if (MicrogameManager.Instance != null)
+            MicrogameManager.Instance.LoadHallway ();
     }
 
     private void InitialiseScripts ()
     {
-        FindObjectOfType<EventManager> ().Initialise ();
-        FindObjectOfType<MicrogameManager> ().Initialise ();
-        FindObjectOfType<UIManager> ().Initialise ();
-        FindObjectOfType<AudioManager> ().Initialise ();
-        FindObjectOfType<CountDownTimer> ().Initialise ();
+        FindObjectOfType<EventManager> ()?.Initialise ();
+        FindObjectOfType<MicrogameManager> ()?.Initialise ();
+        FindObjectOfType<UIManager> ()?.Initialise ();
+        FindObjectOfType<InputManager> ()?.Initialise ();
+        FindObjectOfType<CursorInteraction> ()?.Initialise ();
+        FindObjectOfType<AudioManager> ()?.Initialise ();
+        FindObjectOfType<CountDownTimer> ()?.Initialise ();
     }
 
     private void SubscribeToEvents ()
     {
-        EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
+
     }
 }

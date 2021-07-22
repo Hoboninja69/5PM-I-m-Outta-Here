@@ -361,6 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6d965c1cc3d7c4c8bc5cc0b85e94fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  following: 1
   gravityMultiplier: 0
   attractionForce: 10.71
   dampening: 34.6
@@ -369,7 +370,6 @@ MonoBehaviour:
   obstacle:
     serializedVersion: 2
     m_Bits: 320
-  following: 1
   target: {x: 0, y: 0, z: 0}
 --- !u!54 &313382859
 Rigidbody:
@@ -604,7 +604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4faece54d63ba74f9a04e4c59be06d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  docCount: 10
+  docCount: 6
   documentVariations:
   - {fileID: 7182641548230014833, guid: bb161018aeb9fea4db12b6503ac5dd8b, type: 3}
 --- !u!4 &606498394
@@ -1521,6 +1521,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1709971590}
+  - component: {fileID: 1709971592}
   - component: {fileID: 1709971591}
   m_Layer: 0
   m_Name: GameManager
@@ -1553,6 +1554,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: faf50f0cc134a264586d7e7ebb5cd5cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1709971592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709971589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a84e8263a647946bb0f1fa24c84c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1787628010
