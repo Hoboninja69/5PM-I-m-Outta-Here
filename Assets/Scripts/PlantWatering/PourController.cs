@@ -14,12 +14,14 @@ public class PourController : MonoBehaviour
     private float unmultPourSpeed;
     private ParticleSystem.MainModule waterMain;
     private ParticleSystem.EmissionModule waterEmission;
+    private AudioSource source;
 
     private void Start ()
     {
         InputManager.Instance.OnMouseWheel += OnMouseWheel;
         waterMain = waterParticleSystem.main;
         waterEmission = waterParticleSystem.emission;
+        source = GetComponent<AudioSource> ();
 
         SetParticleProperties ();
     }
@@ -27,6 +29,7 @@ public class PourController : MonoBehaviour
     private void OnMouseWheel (float amount)
     {
         unmultPourSpeed = Mathf.Clamp01 (unmultPourSpeed + amount * speedIncrementMult);
+        source.volume = unmultPourSpeed;
 
         Vector3 rotation = transform.rotation.eulerAngles;
         rotation.x = unmultPourSpeed * -70;
