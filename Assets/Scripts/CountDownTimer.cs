@@ -24,6 +24,7 @@ public class CountDownTimer : MonoBehaviour
 
         EventManager.Instance.OnMicrogameStart += OnMicrogameStart;
         EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
+        EventManager.Instance.OnTimerPause += OnTimerPause;
     }
 
     private void OnMicrogameStart (Microgame microgame)
@@ -35,6 +36,11 @@ public class CountDownTimer : MonoBehaviour
     }
 
     private void OnMicrogameEnd (MicrogameResult result)
+    {
+        CancelInvoke ();
+    }
+
+    private void OnTimerPause ()
     {
         CancelInvoke ();
     }

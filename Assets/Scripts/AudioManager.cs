@@ -21,9 +21,12 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad (gameObject);
         }
 
-        EventManager.Instance.OnMicrogameLoad += GetMicrogameSounds;
-        EventManager.Instance.OnMicrogameLoad += PlayMicrogameMusic;
-        EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
+        if (EventManager.Instance != null)
+        {
+            EventManager.Instance.OnMicrogameLoad += GetMicrogameSounds;
+            EventManager.Instance.OnMicrogameLoad += PlayMicrogameMusic;
+            EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
+        }
 
         foreach (Sound sound in sounds)
             AddSoundSource (sound);

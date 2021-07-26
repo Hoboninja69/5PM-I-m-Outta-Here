@@ -162,6 +162,10 @@ PrefabInstance:
       propertyPath: plants.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1028418774271028499, guid: 7ffdb1f0e1085a4479835fb9c00ef4ea, type: 3}
+      propertyPath: overfillMarginRange.x
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1028418775337183881, guid: 7ffdb1f0e1085a4479835fb9c00ef4ea, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -836,6 +840,10 @@ PrefabInstance:
       propertyPath: plants.Array.data[2]
       value: 
       objectReference: {fileID: 4300000, guid: 1523ee628a88a6646a63423d968911ec, type: 3}
+    - target: {fileID: 1028418774271028499, guid: 7ffdb1f0e1085a4479835fb9c00ef4ea, type: 3}
+      propertyPath: overfillMarginRange.x
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1028418775337183881, guid: 7ffdb1f0e1085a4479835fb9c00ef4ea, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1584,6 +1592,10 @@ PrefabInstance:
       propertyPath: plants.Array.data[3]
       value: 
       objectReference: {fileID: 4300000, guid: 1523ee628a88a6646a63423d968911ec, type: 3}
+    - target: {fileID: 1028418774271028499, guid: 7ffdb1f0e1085a4479835fb9c00ef4ea, type: 3}
+      propertyPath: overfillMarginRange.x
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1028418775337183881, guid: 7ffdb1f0e1085a4479835fb9c00ef4ea, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -7624,6 +7636,10 @@ PrefabInstance:
     - target: {fileID: 1028418774271028499, guid: 7ffdb1f0e1085a4479835fb9c00ef4ea, type: 3}
       propertyPath: plants.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1028418774271028499, guid: 7ffdb1f0e1085a4479835fb9c00ef4ea, type: 3}
+      propertyPath: overfillMarginRange.x
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1028418775337183881, guid: 7ffdb1f0e1085a4479835fb9c00ef4ea, type: 3}
       propertyPath: m_RootOrder

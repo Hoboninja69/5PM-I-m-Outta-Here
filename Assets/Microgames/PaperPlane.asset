@@ -22,7 +22,16 @@ MonoBehaviour:
   OutOfTimeMessage: How did you make such a slow plane?
   SceneName: PaperAirplane
   TimerLength: 10
-  Sounds: []
+  Sounds:
+  - clips:
+    - {fileID: 8300000, guid: aebec63a88fa0764ab21e611073a8dd8, type: 3}
+    - {fileID: 8300000, guid: 3187bc9b88f156d469b99b0a3865dac0, type: 3}
+    - {fileID: 8300000, guid: 229649557df05a749bba72d5c70543c4, type: 3}
+    source: {fileID: 0}
+    name: PaperImpact
+    volume: 0.25
+    pitch: 2
+    loop: 0
   Music:
     clips: []
     source: {fileID: 0}
