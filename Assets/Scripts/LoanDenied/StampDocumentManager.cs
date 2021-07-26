@@ -20,15 +20,16 @@ public class StampDocumentManager : MonoBehaviour
         if (currentDocument != null)
         {
             currentDocument.FlyOut ();
-            currentDocument.GetComponent<StampDocument> ().OnDocumentStamped -= NextDocument;
+            currentDocument.OnDocumentStamped -= NextDocument;
         }
 
         if (++currentDocIndex < docCount)
         {
             currentDocument = Instantiate (documentVariations[Random.Range (0, documentVariations.Length)],
                 transform.position + transform.right * -4, Quaternion.identity, transform).GetComponent<StampDocument> ();
+            currentDocument.Initialise ();
             currentDocument.FlyIn ();
-            currentDocument.GetComponent<StampDocument> ().OnDocumentStamped += NextDocument;
+            currentDocument.OnDocumentStamped += NextDocument;
         }
         else EventManager.Instance.MicrogameEnd (MicrogameResult.Win);
     }

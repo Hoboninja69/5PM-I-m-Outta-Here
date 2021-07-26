@@ -16,7 +16,17 @@ MonoBehaviour:
   Description: "There\u2019s about to be a surprise desk inspection and your colleague
     is too busy running errands to clean their desk in time! Help them clean their
     desk by picking up a cloth and wiping everything onto the floor!"
+  WinMessage: 
+  LoseMessage: 
+  OutOfTimeMessage: 
   SceneName: DeskClean
-  TimerLength: 15
-  MicrogameSounds: []
+  TimerLength: 10
+  Sounds: []
+  Music:
+    clips: []
+    source: {fileID: 0}
+    name: 
+    volume: 1
+    pitch: 1
+    loop: 0
   showCursor: 1

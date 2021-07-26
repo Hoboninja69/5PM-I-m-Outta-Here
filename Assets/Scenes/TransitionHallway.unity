@@ -1030,7 +1030,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 140}
+  m_AnchoredPosition: {x: 1, y: 195}
   m_SizeDelta: {x: 937.95, y: 113.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1428404189
@@ -1193,7 +1193,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.0000235, y: -92}
+  m_AnchoredPosition: {x: 1.0000235, y: -213}
   m_SizeDelta: {x: 120.9301, y: 54.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1583198893
@@ -1401,18 +1401,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - clip: {fileID: 8300000, guid: 8c92f04024cd2ce409ec8faaa6d2f3d3, type: 3}
+  - clips:
+    - {fileID: 8300000, guid: 3918ed9fd5a6a11479a521b99502f08a, type: 3}
     source: {fileID: 0}
-    name: Horn
+    name: Win
     volume: 1
     pitch: 1
     loop: 0
-  - clip: {fileID: 8300000, guid: 8c92f04024cd2ce409ec8faaa6d2f3d3, type: 3}
+  - clips:
+    - {fileID: 8300000, guid: 79e29150c750db1458517a1b3c42b35b, type: 3}
     source: {fileID: 0}
-    name: LoopHorn
+    name: Lose
     volume: 1
     pitch: 1
-    loop: 1
+    loop: 0
 --- !u!114 &1799700456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1432,6 +1434,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 139f88cd50933c242bcc37eb5a847293, type: 2}
   - {fileID: 11400000, guid: fb902c1d32662f54b948475614bdad12, type: 2}
   - {fileID: 11400000, guid: cd4fed68fafeec741b6476c36485bc87, type: 2}
+  - {fileID: 11400000, guid: 3acd12937cfbcae4c9f2b3eb88064e7b, type: 2}
   microgamesPerGame: 6
   failCount: 0
 --- !u!114 &1799700457
@@ -1575,7 +1578,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 61
+    m_FontSize: 49
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1611,8 +1614,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.0000235, y: -92}
-  m_SizeDelta: {x: 937.95, y: 352.5}
+  m_AnchoredPosition: {x: 1.0000235, y: -13.65951}
+  m_SizeDelta: {x: 937.95, y: 305.8191}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1857269969
 GameObject:

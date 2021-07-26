@@ -25,7 +25,10 @@ public class EventManager : MonoBehaviour
     public event Action<MicrogameResult> OnMicrogameEnd;
     public void MicrogameEnd (MicrogameResult result) => OnMicrogameEnd?.Invoke (result);
     public void MicrogameEnd (MicrogameResult result, float delay) => StartCoroutine (IMicrogameEnd (result, delay));
-    private IEnumerator IMicrogameEnd (MicrogameResult result, float delay) { yield return new WaitForSeconds (delay); OnMicrogameEnd?.Invoke (result); }
+    private IEnumerator IMicrogameEnd (MicrogameResult result, float delay) { OnTimerPause?.Invoke (); yield return new WaitForSeconds (delay); OnMicrogameEnd?.Invoke (result); }
+
+    public event Action OnTimerPause;
+    public void TimerPause () => OnTimerPause?.Invoke ();
 
     public event Action<int> OnTimerTick;
     public void TimerTick (int timeLeft) => OnTimerTick?.Invoke (timeLeft);

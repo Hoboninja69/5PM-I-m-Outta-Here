@@ -15,7 +15,36 @@ MonoBehaviour:
   Title: Loan Denied
   Description: "Using a \u201Cdenied\u201D stamp, click to stamp all the loan documents
     within the time limit."
+  WinMessage: Phew that was a close one, intern. We almost had to give people money!
+  LoseMessage: 
+  OutOfTimeMessage: How did you even manage to screw this up?
   SceneName: LoanDenied
   TimerLength: 10
-  MicrogameSounds: []
+  Sounds:
+  - clips:
+    - {fileID: 8300000, guid: b03518fc5ddedb6489ddf4272d73ef11, type: 3}
+    - {fileID: 8300000, guid: 10c05e770ff0468429448abc1b146376, type: 3}
+    source: {fileID: 0}
+    name: Stamp
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clips:
+    - {fileID: 8300000, guid: f71a727686bd37344ab407ccd824747f, type: 3}
+    - {fileID: 8300000, guid: 44f242f15f9ccd64f8dedbc5ff9927b7, type: 3}
+    source: {fileID: 0}
+    name: Swipe
+    volume: 1
+    pitch: 1
+    loop: 0
+  Music:
+    clips:
+    - {fileID: 8300000, guid: 5c9fbb03ed0ff4840820c8713cc1a4da, type: 3}
+    - {fileID: 8300000, guid: c94a7d455acc5934f92b4c568d3c7022, type: 3}
+    - {fileID: 8300000, guid: 4eceae0e231475b4dbcb205cc2cc19ec, type: 3}
+    source: {fileID: 0}
+    name: Music
+    volume: 1
+    pitch: 1
+    loop: 1
   showCursor: 0

@@ -310,7 +310,6 @@ GameObject:
   - component: {fileID: 313382859}
   - component: {fileID: 313382857}
   - component: {fileID: 313382858}
-  - component: {fileID: 313382861}
   m_Layer: 0
   m_Name: Stamp
   m_TagString: Untagged
@@ -400,18 +399,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.66, y: 0.25, z: 0.27}
   m_Center: {x: -0.0024611938, y: 0.1, z: 0.012304907}
---- !u!114 &313382861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313382855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4189eea2e99e83a4991581cc8aa442ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &316593876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 111386, guid: 0b9c8290611031e459c2596b4ee0f3bc, type: 3}
@@ -1523,6 +1510,7 @@ GameObject:
   - component: {fileID: 1709971590}
   - component: {fileID: 1709971592}
   - component: {fileID: 1709971591}
+  - component: {fileID: 1709971593}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1568,6 +1556,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a84e8263a647946bb0f1fa24c84c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1709971593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709971589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e0b22ab4db7224eab1d6ecce764074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clips:
+    - {fileID: 8300000, guid: b03518fc5ddedb6489ddf4272d73ef11, type: 3}
+    - {fileID: 8300000, guid: 10c05e770ff0468429448abc1b146376, type: 3}
+    source: {fileID: 0}
+    name: Stamp
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clips:
+    - {fileID: 8300000, guid: f71a727686bd37344ab407ccd824747f, type: 3}
+    - {fileID: 8300000, guid: 44f242f15f9ccd64f8dedbc5ff9927b7, type: 3}
+    source: {fileID: 0}
+    name: Swipe
+    volume: 1
+    pitch: 1
+    loop: 0
 --- !u!1001 &1787628010
 PrefabInstance:
   m_ObjectHideFlags: 0

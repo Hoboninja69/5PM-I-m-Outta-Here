@@ -9,13 +9,16 @@ public class AirplaneController : MonoBehaviour
     public UnityEngine.Animations.PositionConstraint camConstraint;
 
     private Rigidbody rb;
+    private AudioSource source;
     private float pitch, roll, yaw, currentSpeed;
+    private Vector3 lastVelocity;
     private bool fall = false, autoPilot = false;
 
     private void Start ()
     {
         currentSpeed = launchSpeed;
         rb = GetComponent<Rigidbody> ();
+        source = GetComponent<AudioSource> ();
         InputManager.Instance.OnMouseMoved += MouseMoved;
     }
 
@@ -27,12 +30,15 @@ public class AirplaneController : MonoBehaviour
 
     private void Update ()
     {
+        source.volume = Mathf.Lerp (0f, 0.25f, (rb.velocity.magnitude - 6) / 10);
         if (fall || autoPilot) return;
 
         roll = Mathf.Lerp (roll, 0, Time.deltaTime * rollReturnSpeed);
         yaw -= roll * yawSensitivity * Time.deltaTime;
         Quaternion targetRotation = Quaternion.Euler (pitch, yaw, roll);
         transform.rotation = targetRotation;
+
+        source.panStereo = Mathf.Lerp (-1f, 1f, (yaw + 30) / 60);
     }
 
     private void FixedUpdate ()
@@ -44,29 +50,27 @@ public class AirplaneController : MonoBehaviour
         }
 
         currentSpeed += pitch * gravityInfluence * Time.fixedDeltaTime;
-        //if (currentSpeed <= 0)
-        //    fall = true;
+        if (currentSpeed <= 0)
+        {
+            EventManager.Instance?.MicrogameEnd (MicrogameResult.Lose, 1f);
+            fall = true;
+        }
 
         rb.velocity = transform.forward * (currentSpeed);
+        lastVelocity = rb.velocity;
     }
 
     private void OnCollisionEnter (Collision collision)
     {
-        if (collision.collider.CompareTag ("Obstacle"))
-        {
-            EventManager.Instance?.MicrogameEnd (MicrogameResult.Lose, 1f);
-            fall = true;
-            return;
-        }
+        AudioManager.Instance.Play ("PaperImpact", Mathf.InverseLerp (0, 12, lastVelocity.magnitude - rb.velocity.magnitude) + 0.05f, Random.Range (0.4f, 1.5f));
 
+        if (fall) return;
         for (int i = 0; i < collision.contactCount; i++)
         {
-            Debug.DrawRay (collision.GetContact (i).point, collision.GetContact (i).normal, Color.blue, 10);
-            print (Vector3.Angle (collision.GetContact (i).normal, transform.forward * currentSpeed));
-            if (Vector3.Angle (collision.GetContact (i).normal, transform.forward * currentSpeed) > 90)
+            if (Vector3.Angle (collision.GetContact (i).normal, lastVelocity) > 90)
             {
+                EventManager.Instance?.MicrogameEnd (MicrogameResult.Lose, 1f);
                 fall = true;
-                break;
             }
         }
     }
