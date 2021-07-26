@@ -4573,10 +4573,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1172314307}
+  - component: {fileID: 1172314305}
   - component: {fileID: 1172314304}
   - component: {fileID: 1172314303}
   - component: {fileID: 1172314302}
-  - component: {fileID: 1172314305}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged

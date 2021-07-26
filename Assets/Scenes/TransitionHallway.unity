@@ -1435,6 +1435,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fb902c1d32662f54b948475614bdad12, type: 2}
   - {fileID: 11400000, guid: cd4fed68fafeec741b6476c36485bc87, type: 2}
   - {fileID: 11400000, guid: 3acd12937cfbcae4c9f2b3eb88064e7b, type: 2}
+  - {fileID: 11400000, guid: 113c92289e5687e4a88bd381a61674d5, type: 2}
   microgamesPerGame: 6
   failCount: 0
 --- !u!114 &1799700457

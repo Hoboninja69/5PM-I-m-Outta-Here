@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PaperJam.unity
     guid: 5a8680dd67d1b8b44ace57313115b73d
+  - enabled: 1
+    path: Assets/Scenes/PaperToss.unity
+    guid: 9345fd65b181ea74ca8e5803643b906c
   m_configObjects: {}

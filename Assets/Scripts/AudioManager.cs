@@ -50,7 +50,7 @@ public class AudioManager : MonoBehaviour
         sound.source.Play ();
     }
 
-    public void Play (AudioSource source, string soundName, float volumeMult = 1, float pitchMult = 1)
+    public void Play (string soundName, AudioSource source, float volumeMult = 1, float pitchMult = 1)
     {
         if (!FindSound (soundName, out Sound sound))
         {

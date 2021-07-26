@@ -46,7 +46,7 @@ public class StampDocument : MonoBehaviour
 
     private void PlaySound ()
     {
-        AudioManager.Instance.Play (source, "Swipe", UnityEngine.Random.Range (0.8f, 1.2f), UnityEngine.Random.Range (0.8f, 1.2f));
+        AudioManager.Instance.Play ("Swipe", source, UnityEngine.Random.Range (0.8f, 1.2f), UnityEngine.Random.Range (0.8f, 1.2f));
     }
 
     IEnumerator AnimateInOut (Vector3 destination)
