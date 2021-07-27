@@ -52,11 +52,9 @@ public class PaperTossController : MonoBehaviour
             rb.AddForce (new Vector3 (InputManager.cursorRay.direction.x, -0.1f, InputManager.cursorRay.direction.z).normalized * rb.velocity.y, ForceMode.Impulse);
     }
 
-    private void OnTriggerEnter (Collider other)
+    private void OnTriggerStay (Collider other)
     {
-        if (other.CompareTag ("Win"))
-            EventManager.Instance.MicrogameEnd (MicrogameResult.Win);
-        else if (!leftDesk && other.CompareTag ("DeskBoundary"))
+        if (!follow.following && !leftDesk && other.CompareTag ("DeskBoundary"))
         {
             leftDesk = true;
             OnLeaveDesk?.Invoke ();
@@ -64,6 +62,7 @@ public class PaperTossController : MonoBehaviour
             interactable.OnInteract -= Grab;
             if (follow.following)
                 InputManager.Instance.OnMouseUpLeft -= Drop;
+            gameObject.layer = 0;
             GetComponent<Interactable> ().active = false;
         }
     }

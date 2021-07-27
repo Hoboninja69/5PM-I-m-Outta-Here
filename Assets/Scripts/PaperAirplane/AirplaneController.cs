@@ -69,8 +69,10 @@ public class AirplaneController : MonoBehaviour
         {
             if (Vector3.Angle (collision.GetContact (i).normal, lastVelocity) > 90)
             {
-                EventManager.Instance?.MicrogameEnd (MicrogameResult.Lose, 1f);
+                print ("LOSE");
                 fall = true;
+                EventManager.Instance?.MicrogameEnd (MicrogameResult.Lose, 1f);
+                break;
             }
         }
     }
