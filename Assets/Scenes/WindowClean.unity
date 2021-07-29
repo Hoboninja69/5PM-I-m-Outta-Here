@@ -502,10 +502,10 @@ GameObject:
   m_Component:
   - component: {fileID: 705713677}
   - component: {fileID: 705713676}
-  - component: {fileID: 705713675}
   - component: {fileID: 705713674}
   - component: {fileID: 705713673}
   - component: {fileID: 705713672}
+  - component: {fileID: 705713675}
   m_Layer: 0
   m_Name: Input
   m_TagString: Untagged
@@ -559,10 +559,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 705713671}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4189eea2e99e83a4991581cc8aa442ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b2b681193b75274eb487e7aff30890f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  interactMask:
+    serializedVersion: 2
+    m_Bits: 0
+  maxRaycastDistance: 0
+  interactWithTriggers: 0
 --- !u!114 &705713676
 MonoBehaviour:
   m_ObjectHideFlags: 0
