@@ -96,7 +96,7 @@ public class MicrogameManager : MonoBehaviour
             case "MicrogameResultOK":
                 GameManager.Instance.ResumeGame ();
                 currentMicrogameIndex++;
-                if (failCount < 3)
+                //if (failCount < 3)
                     LoadHallway ();
                 //else load fail scene
                 break;

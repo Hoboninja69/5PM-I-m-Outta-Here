@@ -21,7 +21,8 @@ MonoBehaviour:
   LoseMessage: 
   OutOfTimeMessage: How did you make such a slow plane?
   SceneName: PaperAirplane
-  TimerLength: 10
+  TimerLength: 15
+  timerIsWin: 0
   Sounds:
   - clips:
     - {fileID: 8300000, guid: aebec63a88fa0764ab21e611073a8dd8, type: 3}
