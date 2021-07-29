@@ -6,20 +6,16 @@ using UnityEngine;
 [RequireComponent (typeof (Interactable))]
 [RequireComponent (typeof (Rigidbody))]
 [RequireComponent (typeof (PhysicsFollow))]
-public class PhysicsGrabbable : MonoBehaviour
+public class PaperTossController : MonoBehaviour
 {
-    public bool snapToCursor;
     public bool hideCursor;
-    public bool useObjectPosition;
     public Transform movementPlane;
-    public float maxReleaseVelocity;
-    public event Action OnGrabbed;
-    public event Action OnDropped;
+    public event Action OnLeaveDesk;
 
     private Interactable interactable;
     private PhysicsFollow follow;
     private Rigidbody rb;
-    private Vector3 offset;
+    private bool leftDesk = false;
 
     private void Start ()
     {
@@ -32,18 +28,13 @@ public class PhysicsGrabbable : MonoBehaviour
 
     private void FixedUpdate ()
     {
-        follow.target = offset + Tools.GetRayPlaneIntersectionPoint (
-            useObjectPosition ? transform.position : movementPlane.position, movementPlane.up, InputManager.cursorRay);
+        if (!leftDesk)
+            follow.target = Tools.GetRayPlaneIntersectionPoint (movementPlane.position, movementPlane.up, InputManager.cursorRay);
     }
 
     private void Grab ()
     {
-        OnGrabbed?.Invoke ();
         InputManager.Instance.OnMouseUpLeft += Drop;
-        if (!snapToCursor)
-            offset = Tools.GetRayPlaneIntersectionPoint (movementPlane.position, movementPlane.up,
-                new Ray (Camera.main.transform.position, transform.position - Camera.main.transform.position)) -
-                Tools.GetRayPlaneIntersectionPoint (movementPlane.position, movementPlane.up, InputManager.cursorRay);
         if (hideCursor)
             Cursor.visible = false;
 
@@ -52,13 +43,28 @@ public class PhysicsGrabbable : MonoBehaviour
 
     private void Drop ()
     {
-        OnDropped?.Invoke ();
         InputManager.Instance.OnMouseUpLeft -= Drop;
         if (hideCursor)
             Cursor.visible = true;
 
         follow.following = false;
-        rb.velocity = Vector3.ClampMagnitude (rb.velocity, maxReleaseVelocity);
+        if (rb.velocity.y > 0)
+            rb.AddForce (new Vector3 (InputManager.cursorRay.direction.x, -0.1f, InputManager.cursorRay.direction.z).normalized * rb.velocity.y, ForceMode.Impulse);
+    }
+
+    private void OnTriggerStay (Collider other)
+    {
+        if (!follow.following && !leftDesk && other.CompareTag ("DeskBoundary"))
+        {
+            leftDesk = true;
+            OnLeaveDesk?.Invoke ();
+
+            interactable.OnInteract -= Grab;
+            if (follow.following)
+                InputManager.Instance.OnMouseUpLeft -= Drop;
+            gameObject.layer = 0;
+            GetComponent<Interactable> ().active = false;
+        }
     }
 
     private void OnDestroy ()

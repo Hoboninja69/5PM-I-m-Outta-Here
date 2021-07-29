@@ -6,6 +6,7 @@ public class CountDownTimer : MonoBehaviour
 {
     public static CountDownTimer Instance;
 
+    private bool timerIsWin;
     private int totalTime;
     private int timeLeft;
 
@@ -29,6 +30,7 @@ public class CountDownTimer : MonoBehaviour
 
     private void OnMicrogameStart (Microgame microgame)
     {
+        timerIsWin = microgame.timerIsWin;
         totalTime = microgame.TimerLength;
         timeLeft = totalTime;
 
@@ -50,7 +52,7 @@ public class CountDownTimer : MonoBehaviour
         EventManager.Instance.TimerTick (timeLeft--);
 
         if (timeLeft < 0)
-            EventManager.Instance.MicrogameEnd (MicrogameResult.OutOfTime);
+            EventManager.Instance.MicrogameEnd (timerIsWin ? MicrogameResult.Win : MicrogameResult.OutOfTime);
     }
 
     private void OnDestroy ()

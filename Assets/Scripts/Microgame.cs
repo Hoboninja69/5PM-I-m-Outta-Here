@@ -10,6 +10,7 @@ public class Microgame : ScriptableObject
     public string Description, WinMessage, LoseMessage, OutOfTimeMessage;
     public string SceneName;
     public int TimerLength;
+    public bool timerIsWin = false;
     public Sound[] Sounds;
     public Sound Music;
     public bool showCursor;

@@ -84,17 +84,17 @@ public class InputManager : MonoBehaviour
         return Physics.Raycast (cursorRay, maxDistance, layerMask, queryTriggerInteraction);
     }
 
-    //private void OnFreeze () => frozen = true;
-    void OnFreeze ()
-    {
-        frozen = true;
-        print ("INPUT FROZEN");
-    }
+    private void OnFreeze () => frozen = true;
+    //void OnFreeze ()
+    //{
+    //    frozen = true;
+    //    //print ("INPUT FROZEN");
+    //}
 
-    //private void OnUnfreeze () => frozen = false;
-    void OnUnfreeze ()
-    {
-        frozen = false;
-        print ("INPUT UNFROZEN");
-    }
+    private void OnUnfreeze () => frozen = false;
+    //void OnUnfreeze ()
+    //{
+    //    frozen = false;
+    //    print ("INPUT UNFROZEN");
+    //}
 }

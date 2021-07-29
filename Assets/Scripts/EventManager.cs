@@ -24,8 +24,9 @@ public class EventManager : MonoBehaviour
 
     public event Action<MicrogameResult> OnMicrogameEnd;
     public void MicrogameEnd (MicrogameResult result) => OnMicrogameEnd?.Invoke (result);
-    public void MicrogameEnd (MicrogameResult result, float delay) => StartCoroutine (IMicrogameEnd (result, delay));
-    private IEnumerator IMicrogameEnd (MicrogameResult result, float delay) { OnTimerPause?.Invoke (); yield return new WaitForSeconds (delay); OnMicrogameEnd?.Invoke (result); }
+    public void MicrogameEnd (MicrogameResult result, float delay) { if (!microgameEndBusy) StartCoroutine (IMicrogameEnd (result, delay)); }
+    private IEnumerator IMicrogameEnd (MicrogameResult result, float delay) { microgameEndBusy = true; OnTimerPause?.Invoke (); yield return new WaitForSeconds (delay); OnMicrogameEnd?.Invoke (result); microgameEndBusy = false; }
+    private bool microgameEndBusy = false;
 
     public event Action OnTimerPause;
     public void TimerPause () => OnTimerPause?.Invoke ();
