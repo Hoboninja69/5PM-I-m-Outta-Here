@@ -7,9 +7,11 @@ public class Microgame : ScriptableObject
 {
     public string Title;
     [Multiline ()]
-    public string Description;
+    public string Description, WinMessage, LoseMessage, OutOfTimeMessage;
     public string SceneName;
     public int TimerLength;
-    public Sound[] MicrogameSounds;
+    public bool timerIsWin = false;
+    public Sound[] Sounds;
+    public Sound Music;
     public bool showCursor;
 }

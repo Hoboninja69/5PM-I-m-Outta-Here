@@ -69,20 +69,24 @@ public class UIManager : MonoBehaviour
         Cursor.visible = true;
         timer.SetActive (false);
         resultScreen.SetActive (true);
-        resultScreenTitle.text = "Result: " + result;
+
+        Microgame currentMicrogame = MicrogameManager.Instance.currentMicrogame;
         switch (result)
         {
             case MicrogameResult.Win:
                 resultScreenTitle.text = "YOU DID IT!";
-                resultScreenSubtitle.text = "Great job, intern! Now get out of my office.";
+                resultScreenSubtitle.text = currentMicrogame.WinMessage != "" ? currentMicrogame.WinMessage :
+                    "Great job, intern! Now get out of my office.";
                 break;
             case MicrogameResult.Lose:
                 resultScreenTitle.text = "UH OH...";
-                resultScreenSubtitle.text = "Yeah... I'm going to have to tell your boss about this one.";
+                resultScreenSubtitle.text = currentMicrogame.LoseMessage != "" ? currentMicrogame.LoseMessage :
+                    "Yeah... I'm going to have to tell your boss about this one.";
                 break;
             case MicrogameResult.OutOfTime:
                 resultScreenTitle.text = "TOO SLOW!";
-                resultScreenSubtitle.text = "Yeah... I'm going to have to tell your boss about this one.";
+                resultScreenSubtitle.text = currentMicrogame.OutOfTimeMessage != "" ? currentMicrogame.OutOfTimeMessage :
+                    "Yeah... I'm going to have to tell your boss about this one.";
                 break;
         }
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
+    public bool active = true;
     public event Action OnInteract;
-    public void Interact () => OnInteract?.Invoke ();
+    public void Interact () { if (active) OnInteract?.Invoke (); }
 }

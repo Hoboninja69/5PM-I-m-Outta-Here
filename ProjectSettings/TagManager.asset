@@ -13,6 +13,8 @@ TagManager:
   - Female_SkinForTrousers
   - Win
   - Obstacle
+  - DeskBoundary
+  - PaperBall
   layers:
   - Default
   - TransparentFX

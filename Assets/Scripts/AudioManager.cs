@@ -7,7 +7,9 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
 
     public Sound[] sounds;
+
     private Sound[] microgameSounds;
+    private Sound currentSong;
 
     public void Initialise ()
     {
@@ -19,7 +21,12 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad (gameObject);
         }
 
-        EventManager.Instance.OnMicrogameLoad += GetMicrogameSounds;
+        if (EventManager.Instance != null)
+        {
+            EventManager.Instance.OnMicrogameLoad += GetMicrogameSounds;
+            EventManager.Instance.OnMicrogameLoad += PlayMicrogameMusic;
+            EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
+        }
 
         foreach (Sound sound in sounds)
             AddSoundSource (sound);
@@ -38,8 +45,30 @@ public class AudioManager : MonoBehaviour
 
         sound.source.volume = sound.volume * volumeMult;
         sound.source.pitch = sound.pitch * pitchMult;
+        sound.source.clip = sound.GetClip ();
 
         sound.source.Play ();
+    }
+
+    public void Play (string soundName, AudioSource source, float volumeMult = 1, float pitchMult = 1)
+    {
+        if (!FindSound (soundName, out Sound sound))
+        {
+            Debug.LogError ("Could not Play sound \"" + soundName + "\" (not found)");
+            return;
+        }
+
+        if (source == null)
+        {
+            Debug.LogError ("Audiosource is null.");
+            return;
+        }
+
+        source.volume = sound.volume * volumeMult;
+        source.pitch = sound.pitch * pitchMult;
+        source.clip = sound.GetClip ();
+
+        source.Play ();
     }
 
     public AudioSource PlayAtLocation (string soundName, Vector3 location, float spatialBlend, float volumeMult = 1, float pitchMult = 1)
@@ -53,7 +82,7 @@ public class AudioManager : MonoBehaviour
         GameObject soundObject = new GameObject ();
         soundObject.transform.position = location;
         AudioSource source = soundObject.AddComponent<AudioSource> ();
-        source.clip = sound.clip;
+        source.clip = sound.GetClip ();
         source.volume = sound.volume * volumeMult;
         source.pitch = sound.pitch * pitchMult;
         source.spatialBlend = spatialBlend;
@@ -61,7 +90,29 @@ public class AudioManager : MonoBehaviour
 
         source.Play ();
         if (!source.loop && source.pitch != 0)
-            Destroy (soundObject, sound.clip.length * Mathf.Abs (source.pitch));
+            Destroy (soundObject, source.clip.length * Mathf.Abs (source.pitch));
+
+        return source;
+    }
+
+    public AudioSource PlayAtLocation (string soundName, Transform target, float spatialBlend, float volumeMult = 1, float pitchMult = 1)
+    {
+        if (!FindSound (soundName, out Sound sound))
+        {
+            Debug.LogError ("Could not Play sound \"" + soundName + "\" at location (not found)");
+            return null;
+        }
+
+        AudioSource source = target.gameObject.AddComponent<AudioSource> ();
+        source.clip = sound.GetClip ();
+        source.volume = sound.volume * volumeMult;
+        source.pitch = sound.pitch * pitchMult;
+        source.spatialBlend = spatialBlend;
+        source.loop = sound.loop;
+
+        source.Play ();
+        if (!source.loop && source.pitch != 0)
+            Destroy (source, source.clip.length * Mathf.Abs (source.pitch));
 
         return source;
     }
@@ -85,9 +136,34 @@ public class AudioManager : MonoBehaviour
                 Destroy (sound.source);
         }    
 
-        microgameSounds = microgame.MicrogameSounds;
+        microgameSounds = microgame.Sounds;
         foreach (Sound sound in sounds)
             AddSoundSource (sound);
+    }
+
+    private void PlayMicrogameMusic (Microgame microgame)
+    {
+        if (microgame.Music == null || microgame.Music.clips.Length == 0) return;
+
+        currentSong = microgame.Music;
+
+        if (currentSong.source != null)
+            SetSoundSource (currentSong.source, currentSong);
+        else
+            AddSoundSource (currentSong);
+
+        currentSong.source.Play ();
+    }
+
+    private void OnMicrogameEnd (MicrogameResult result)
+    {
+        if (currentSong != null)
+            currentSong.source.Stop ();
+
+        if (result == MicrogameResult.Win)
+            Play ("Win");
+        else
+            Play ("Lose");
     }
 
     private bool FindSound (string soundName, out Sound foundSound)
@@ -103,21 +179,41 @@ public class AudioManager : MonoBehaviour
     private void AddSoundSource (Sound sound)
     {
         sound.source = gameObject.AddComponent<AudioSource> ();
-        sound.source.clip = sound.clip;
+        sound.source.clip = sound.GetClip ();
         sound.source.volume = sound.volume;
         sound.source.pitch = sound.pitch;
         sound.source.loop = sound.loop;
+    }
+    
+    private void SetSoundSource (AudioSource source, Sound sound)
+    {
+        print ("Setting sound source for sound \"" + sound.name + "\"");
+        sound.source = source;
+        source.clip = sound.GetClip ();
+        source.volume = sound.volume;
+        source.pitch = sound.pitch;
+        source.loop = sound.loop;
     }
 }
 
 [System.Serializable]
 public class Sound
 {
-    public AudioClip clip;
+    public AudioClip[] clips;
     [HideInInspector]
     public AudioSource source;
 
     public string name;
     public float volume = 1, pitch = 1;
     public bool loop;
+
+    public AudioClip GetClip ()
+    {
+        if (clips.Length == 0)
+        {
+            Debug.LogError ("No clips specified for sound \"" + name + "\"");
+            return null;
+        }
+        return clips[Random.Range (0, clips.Length)];
+    }
 }
