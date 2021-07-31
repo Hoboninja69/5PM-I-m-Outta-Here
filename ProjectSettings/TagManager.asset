@@ -15,6 +15,7 @@ TagManager:
   - Obstacle
   - DeskBoundary
   - PaperBall
+  - Spider
   layers:
   - Default
   - TransparentFX
