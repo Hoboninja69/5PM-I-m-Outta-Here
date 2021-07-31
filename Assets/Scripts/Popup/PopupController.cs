@@ -22,7 +22,12 @@ public class PopupController : MonoBehaviour
     private void OnCloseUp ()
     {
         //play close animation
-        OnClose?.Invoke ();
+        OnClose?.Invoke (this);
         Destroy (gameObject);
+    }
+
+    private void OnDrawGizmos ()
+    {
+        Tools.DrawBox (transform.position, popupSize, transform.rotation.eulerAngles, Color.blue);
     }
 }

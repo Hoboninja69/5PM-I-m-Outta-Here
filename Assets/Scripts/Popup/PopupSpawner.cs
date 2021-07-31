@@ -4,24 +4,26 @@ using UnityEngine;
 
 public class PopupSpawner : MonoBehaviour
 {
-    public GameObject PopUp;
+    public GameObject[] PopUps;
     public Vector2 screenSize;
     public float initialDelay, finalDelay, delayIncreaseRate;
 
     private int remaining;
     private float delay;
+    private bool allClosed = false;
 
     private void Start ()
     {
         delay = initialDelay;
+        StartCoroutine (SpawnPopups ());
     }
 
     IEnumerator SpawnPopups ()
     {
-        while (remaining <= 0)
+        while (!allClosed)
         {
-            remaining++;
-            Instantiate (PopUp, RandomScreenPosition (), Quaternion.identity, transform).GetComponent<PopupController> ().OnClose += OnPopupClose;
+            SpawnPopup ();
+
             yield return new WaitForSeconds (delay);
 
             if (delay < finalDelay)
@@ -31,13 +33,28 @@ public class PopupSpawner : MonoBehaviour
 
     private void OnPopupClose (PopupController popup)
     {
+        if (--remaining <= 0)
+            allClosed = true;
         popup.OnClose -= OnPopupClose;
-        
+        print (remaining);
     }
 
-    private Vector3 RandomScreenPosition ()
+    private void SpawnPopup ()
     {
-        Vector2 centerOffset = new Vector2 (Random.Range (-screenSize.x / 2, screenSize.x / 2), Random.Range (-screenSize.y / 2, screenSize.y / 2));
-        return transform.position + transform.right * centerOffset.x + transform.up * centerOffset.y;
+        remaining++;
+        PopupController popup = Instantiate (PopUps[Random.Range (0, PopUps.Length)], transform).GetComponent<PopupController> ();
+        popup.OnClose += OnPopupClose;
+        popup.transform.localPosition = RandomScreenPosition (popup.popupSize);
+    }
+
+    private Vector2 RandomScreenPosition (Vector2 popupSize)
+    {
+        Vector2 maxOffset = new Vector2 (screenSize.x - popupSize.x, screenSize.y - popupSize.y) / 2;
+        return new Vector2 (Random.Range (-maxOffset.x, maxOffset.x), Random.Range (-maxOffset.y, maxOffset.y));
+    }
+
+    private void OnDrawGizmos ()
+    {
+        Tools.DrawBox (transform.position, screenSize, transform.rotation.eulerAngles, Color.white);
     }
 }
