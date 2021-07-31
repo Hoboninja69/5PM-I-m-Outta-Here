@@ -4,19 +4,29 @@ using UnityEngine;
 
 public class PackageManager: MonoBehaviour
 {
+    public int minOpenCount;
 
-    public PackageControl[] boxes;
+    private int openCount;
+    private PackageControl[] boxes;
+    private bool bombFound = false;
    
     void Start()
     {
-        int selectedBox = Random.Range(0, boxes.Length);
-        boxes[selectedBox].hasBomb = true;
+        boxes = GetComponentsInChildren<PackageControl>();
 
         foreach (PackageControl box in boxes)
         {
-            box.Initialise();
+            box.OnBoxOpen += BoxOpen;
         }
     }
 
-
+    private void BoxOpen (PackageControl box)
+    {
+        if (!bombFound && ++openCount >= minOpenCount && Random.Range(0, boxes.Length - openCount + 1) == 0)
+        {
+            box.SetBomb(true);
+            bombFound = true;
+            EventManager.Instance.MicrogameEnd(MicrogameResult.Win);
+        }
+    }
 }
