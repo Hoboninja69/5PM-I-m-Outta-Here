@@ -4596,7 +4596,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebff2e4f433c3474cbea4bb3351431d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchSpeed: 10
+  launchSpeed: 3
+  targetSpeed: 7
+  speedLerpTime: 2
   gravityInfluence: 0.25
   rollReturnSpeed: 2
   pitchSensitivity: 0.7

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class AirplaneController : MonoBehaviour
 {
-    public float launchSpeed, gravityInfluence, rollReturnSpeed;
+    public float launchSpeed, targetSpeed, speedLerpTime, gravityInfluence, rollReturnSpeed;
     public float pitchSensitivity, rollSensitivity, yawSensitivity;
     public UnityEngine.Animations.PositionConstraint camConstraint;
 
     private Rigidbody rb;
     private AudioSource source;
-    private float pitch, roll, yaw, currentSpeed;
+    private float pitch, roll, yaw, currentSpeed, startTime;
     private Vector3 lastVelocity;
     private bool fall = false, autoPilot = false;
 
@@ -24,12 +24,15 @@ public class AirplaneController : MonoBehaviour
 
     private void MouseMoved (Vector2 movement)
     {
-        pitch = Mathf.Clamp (pitch + movement.y * pitchSensitivity, -75, 75);
+        pitch = Mathf.Clamp (pitch - movement.y * pitchSensitivity, -75, 75);
         roll = Mathf.Clamp (roll - movement.x * rollSensitivity, -60, 60);
     }
 
     private void Update ()
     {
+        if (currentSpeed < targetSpeed)
+            currentSpeed = Mathf.Lerp (launchSpeed, targetSpeed, (Time.time - startTime) / speedLerpTime);
+
         source.volume = Mathf.Lerp (0f, 0.25f, (rb.velocity.magnitude - 6) / 10);
         if (fall || autoPilot) return;
 
@@ -50,11 +53,11 @@ public class AirplaneController : MonoBehaviour
         }
 
         currentSpeed += pitch * gravityInfluence * Time.fixedDeltaTime;
-        if (currentSpeed <= 0)
-        {
-            EventManager.Instance?.MicrogameEnd (MicrogameResult.Lose, 1f);
-            fall = true;
-        }
+        //if (currentSpeed <= 0)
+        //{
+        //    EventManager.Instance?.MicrogameEnd (MicrogameResult.Lose, 1f);
+        //    fall = true;
+        //}
 
         rb.velocity = transform.forward * (currentSpeed);
         lastVelocity = rb.velocity;

@@ -20,7 +20,8 @@ MonoBehaviour:
   LoseMessage: 
   OutOfTimeMessage: 
   SceneName: DeskClean
-  TimerLength: 10
+  TimerLength: 12
+  timerIsWin: 0
   Sounds: []
   Music:
     clips: []

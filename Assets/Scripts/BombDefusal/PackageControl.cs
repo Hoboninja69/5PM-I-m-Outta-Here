@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,45 +6,43 @@ using UnityEngine;
 [RequireComponent(typeof(Interactable))]
 public class PackageControl : MonoBehaviour
 {
-    public bool hasBomb;
     public GameObject Box_Closed;
     public GameObject Box_Open;
     public GameObject Bomb;
 
+    public event Action<PackageControl> OnBoxOpen;
+
     private Interactable BoxInteractable;
-    private bool OpenTrue;
+    private bool isOpen;
 
-    public void Initialise()
+    private void Start()
     {
-        BoxInteractable = GetComponent<Interactable>();
-        BoxInteractable.OnInteract += ClickOn;
-
         SetOpen(false);
-        Bomb.SetActive(hasBomb);
+        SetBomb(false);
+        BoxInteractable = GetComponent<Interactable>();
+        BoxInteractable.OnInteract += OpenBox;
     }
 
-    void ClickOn()
+    private void OpenBox ()
     {
-        if (!OpenTrue)
-        {
-            OpenTrue = true;
-            SetOpen(true);
-            Debug.Log("box opened");
+        if (isOpen)
+            return;
 
-           // if (hasBomb)
-           //     EventManager.Instance.MicrogameEnd(MicrogameResult.win);
-           
-        }
+        SetOpen(true);
+        OnBoxOpen?.Invoke(this);
+    }
+
+    public void SetBomb(bool enabled)
+    {
+        Bomb.SetActive(enabled);
     }
 
     void SetOpen(bool open)
     {
+        isOpen = open;
         Box_Closed.SetActive(!open);
         Box_Open.SetActive(open);
     }
-
-
-    
 
 
 }
