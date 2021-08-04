@@ -16,6 +16,7 @@ TagManager:
   - DeskBoundary
   - PaperBall
   - Spider
+  - Mail
   layers:
   - Default
   - TransparentFX
