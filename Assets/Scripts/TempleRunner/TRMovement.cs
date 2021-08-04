@@ -11,21 +11,26 @@ public class TRMovement : MonoBehaviour
     public float maxRotation = 30f;
     private float rotation = 0f;
     private Rigidbody rb;
+    private AudioSource source;
     private float initialRotation;
     private bool leftMouse;
     private bool rightMouse;
     private bool stun;
+    private float currentSpeed;
+    private Vector3 lastPos;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        source = GetComponent<AudioSource>();
         initialRotation = transform.rotation.eulerAngles.y;
         InputManager.Instance.OnMouseDownLeft += LeftDown;
         InputManager.Instance.OnMouseUpLeft += LeftUp;
         InputManager.Instance.OnMouseDownRight += RightDown;
         InputManager.Instance.OnMouseUpRight += RightUp;
+        AudioManager.Instance.Play("Wheels", source);
     }
 
     void LeftDown()
@@ -79,7 +84,12 @@ public class TRMovement : MonoBehaviour
         rb.velocity = transform.forward * moveSpeed;
     }
 
-
+    private void FixedUpdate()
+    {
+        source.volume = Mathf.Lerp(0f, 0.5f, (currentSpeed) / 10);
+        currentSpeed = Vector3.Distance(transform.position, lastPos) / Time.deltaTime;
+        lastPos = transform.position;
+    }
 
     public void Pushback(Vector3 Direction)
     {
