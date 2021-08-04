@@ -17,6 +17,27 @@ MonoBehaviour:
     to be \u201Cgotten rid of\u201D. You come up with a brilliant idea and begin
     throwing the paperwork out the window in the form of a paper plane. Move the
     mouse left, right up and down to steer the plane and avoid the obstacles."
+  WinMessage: "WOOHOO! Great shot, Intern!\t"
+  LoseMessage: 
+  OutOfTimeMessage: How did you make such a slow plane?
   SceneName: PaperAirplane
-  TimerLength: 10
-  MicrogameSounds: []
+  TimerLength: 15
+  timerIsWin: 0
+  Sounds:
+  - clips:
+    - {fileID: 8300000, guid: aebec63a88fa0764ab21e611073a8dd8, type: 3}
+    - {fileID: 8300000, guid: 3187bc9b88f156d469b99b0a3865dac0, type: 3}
+    - {fileID: 8300000, guid: 229649557df05a749bba72d5c70543c4, type: 3}
+    source: {fileID: 0}
+    name: PaperImpact
+    volume: 0.25
+    pitch: 2
+    loop: 0
+  Music:
+    clips: []
+    source: {fileID: 0}
+    name: 
+    volume: 1
+    pitch: 1
+    loop: 0
+  showCursor: 0

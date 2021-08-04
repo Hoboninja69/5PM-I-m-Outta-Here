@@ -15,6 +15,25 @@ MonoBehaviour:
   Title: Plant Watering
   Description: Use the scroll-wheel to water the plants up to the green indicator,
     be careful not to overfill them!
+  WinMessage: Ahhh... Nothing like some well-watered plants to fill my empty soul!
+  LoseMessage: "This just won't do... Don't you know these plants are extremely sensitive
+    and will die if they are watered the slightest drop too much?\t"
+  OutOfTimeMessage: 
   SceneName: PlantWatering
   TimerLength: 18
-  MicrogameSounds: []
+  Sounds:
+  - clips:
+    - {fileID: 8300000, guid: bf4bd5612c4b39047a882d95d92584d3, type: 3}
+    source: {fileID: 0}
+    name: Sparkle
+    volume: 1
+    pitch: 1
+    loop: 0
+  Music:
+    clips: []
+    source: {fileID: 0}
+    name: 
+    volume: 1
+    pitch: 1
+    loop: 0
+  showCursor: 0

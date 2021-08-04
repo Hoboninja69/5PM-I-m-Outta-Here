@@ -36,19 +36,21 @@ public class PlantController : MonoBehaviour
     {
         currentCapacity += amount * Time.deltaTime;
         gauge.SetGauge (currentCapacity);
-        if (!full && currentCapacity > maxCapacity)
-        {
-            OnPlantFilled?.Invoke (false);
-            full = true;
-        }
+        //if (!full && currentCapacity > maxCapacity)
+        //{
+        //    //OnPlantFilled?.Invoke (false);
+        //    full = true;
+        //}
     }
 
     public void CheckFull ()
     {
-        if (!full && currentCapacity >= minCapacity)
-        {
-            OnPlantFilled?.Invoke (true);
-            full = true;
-        }
+        //if (!full && currentCapacity >= minCapacity)
+        //{
+        //    OnPlantFilled?.Invoke (true);
+        //    full = true;
+        //}
+        if (currentCapacity >= minCapacity)
+            OnPlantFilled?.Invoke (currentCapacity <= maxCapacity);
     }
 }

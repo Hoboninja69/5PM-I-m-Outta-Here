@@ -10,6 +10,7 @@ public class PlantManager : MonoBehaviour
 
     private int currentIndex;
     private bool currentPlantActive = true;
+    private bool gameOver = false;
 
     private void Start ()
     {
@@ -21,17 +22,25 @@ public class PlantManager : MonoBehaviour
 
     private void OnPlantFilled (bool correctAmount)
     {
+        if (gameOver) return;
+
         if (correctAmount)
         {
+            AudioManager.Instance.PlayAtLocation ("Sparkle", plants[currentIndex].transform, 0.75f, Random.Range (0.75f, 0.9f), Random.Range (0.95f, 1.05f));
             if (++currentIndex >= plants.Length)
             {
                 currentPlantActive = false;
                 EventManager.Instance.MicrogameEnd (MicrogameResult.Win);
+                gameOver = true;
             }
             else
                 StartCoroutine (FocusCurrentPlant ());
         }
-        else EventManager.Instance.MicrogameEnd (MicrogameResult.Lose);
+        else
+        {
+            gameOver = true;
+            EventManager.Instance.MicrogameEnd (MicrogameResult.Lose);
+        }
     }
 
     private IEnumerator FocusCurrentPlant ()

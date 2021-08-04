@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d5479f47d850cf409204feae3bc8e9a, type: 3}
+  m_Name: CoworkerRant
+  m_EditorClassIdentifier: 
+  Title: "Veronica\u2019s Rant"
+  Description: "Your colleague Veronica needs to vent to someone and that someone
+    is you. Listen to her rant with undying attention to win. If you do anything,
+    literally anything, you will lose. Don\u2019t click a damn thing."
+  WinMessage: 
+  LoseMessage: 
+  OutOfTimeMessage: 
+  SceneName: CoworkerRant
+  TimerLength: 20
+  timerIsWin: 1
+  Sounds: []
+  Music:
+    clips: []
+    source: {fileID: 0}
+    name: 
+    volume: 1
+    pitch: 1
+    loop: 0
+  showCursor: 1

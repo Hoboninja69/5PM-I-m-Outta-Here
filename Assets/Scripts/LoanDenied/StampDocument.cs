@@ -11,10 +11,12 @@ public class StampDocument : MonoBehaviour
     private Vector3 startPos;
     private bool stamped = false;
     private bool animating = false;
+    private AudioSource source;
 
-    private void Start ()
+    public void Initialise ()
     {
         startPos = transform.localPosition;
+        source = GetComponent<AudioSource> ();
     }
 
     public void Stamp (Vector3 stampAttemptPoint)
@@ -32,13 +34,19 @@ public class StampDocument : MonoBehaviour
 
     public void FlyIn ()
     {
+        Invoke ("PlaySound", 0.4f);
         StartCoroutine (AnimateInOut (Vector3.zero));
     }
 
     public void FlyOut ()
     {
-        print (-startPos);
+        PlaySound ();
         StartCoroutine (AnimateInOut (-startPos));
+    }
+
+    private void PlaySound ()
+    {
+        AudioManager.Instance.Play ("Swipe", source, UnityEngine.Random.Range (0.8f, 1.2f), UnityEngine.Random.Range (0.8f, 1.2f));
     }
 
     IEnumerator AnimateInOut (Vector3 destination)

@@ -2283,10 +2283,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   following: 0
   gravityMultiplier: 0
-  attractionForce: 17.58
+  attractionForce: 20
   dampening: 34.6
-  velocityLimiting: 56
-  objectRadius: 0.1
+  velocityLimiting: 48.8
+  objectRadius: 0.05
   obstacle:
     serializedVersion: 2
     m_Bits: 64

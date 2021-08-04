@@ -34,6 +34,8 @@ public class StampController : MonoBehaviour
         if (mouseDown && isTouchingSurface && !wasTouchingSurface && Time.time - lastStampTime > stampDelay && hit.collider.CompareTag ("Stampable"))
         {
             Instantiate (deniedStamp, hit.point + Vector3.up * 0.001f, transform.rotation, hit.collider.transform);
+            //AudioManager.Instance.Play ("Stamp", Random.Range (0.8f, 1), Random.Range (0.8f, 1));
+            AudioManager.Instance.PlayAtLocation ("Stamp", hit.point, 0.75f, Random.Range (0.8f, 1), Random.Range (0.8f, 1));
             lastStampTime = Time.time;
 
             if (hit.collider.TryGetComponent<StampDocument> (out StampDocument document))

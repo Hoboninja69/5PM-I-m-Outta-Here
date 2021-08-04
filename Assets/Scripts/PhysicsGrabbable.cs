@@ -41,7 +41,9 @@ public class PhysicsGrabbable : MonoBehaviour
         OnGrabbed?.Invoke ();
         InputManager.Instance.OnMouseUpLeft += Drop;
         if (!snapToCursor)
-            offset = transform.position - Tools.GetRayPlaneIntersectionPoint (useObjectPosition ? transform.position : movementPlane.position, movementPlane.up, InputManager.cursorRay); 
+            offset = Tools.GetRayPlaneIntersectionPoint (movementPlane.position, movementPlane.up,
+                new Ray (Camera.main.transform.position, transform.position - Camera.main.transform.position)) -
+                Tools.GetRayPlaneIntersectionPoint (movementPlane.position, movementPlane.up, InputManager.cursorRay);
         if (hideCursor)
             Cursor.visible = false;
 

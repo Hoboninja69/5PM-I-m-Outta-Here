@@ -1833,8 +1833,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.341985, y: 1.1024197, z: 0.6757064}
+  m_Center: {x: 0.02587693, y: -0.0076536443, z: 0.16214707}
 --- !u!23 &573347070
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1962,10 +1962,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6067185528594298527, guid: 6845a2c0f2813d64aa1c2584057dfcd3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 85f8e6d518e4daa419caaef3d0a3d66d, type: 2}
     - target: {fileID: 919132149155446097, guid: 6845a2c0f2813d64aa1c2584057dfcd3, type: 3}
       propertyPath: m_Name
       value: Paper_plane
       objectReference: {fileID: 0}
+    - target: {fileID: 5901893356585517859, guid: 6845a2c0f2813d64aa1c2584057dfcd3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 85f8e6d518e4daa419caaef3d0a3d66d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6845a2c0f2813d64aa1c2584057dfcd3, type: 3}
 --- !u!4 &586582873 stripped
@@ -3618,8 +3626,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 0.13441592, z: 5.0000005}
-  m_Center: {x: 2.5, y: -0.01720795, z: 2.5000002}
+  m_Size: {x: 5, y: 0.13, z: 5.0000005}
+  m_Center: {x: 2.5, y: 0.04, z: 2.5000002}
 --- !u!4 &1054064004 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 458336, guid: 486ad0e54d42aa846975759d760128d9, type: 3}
@@ -4565,6 +4573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1172314307}
+  - component: {fileID: 1172314305}
   - component: {fileID: 1172314304}
   - component: {fileID: 1172314303}
   - component: {fileID: 1172314302}
@@ -4587,7 +4596,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebff2e4f433c3474cbea4bb3351431d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchSpeed: 10
+  launchSpeed: 3
+  targetSpeed: 7
+  speedLerpTime: 2
   gravityInfluence: 0.25
   rollReturnSpeed: 2
   pitchSensitivity: 0.7
@@ -4621,8 +4632,104 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.08151603, z: 0.63321346}
-  m_Center: {x: 0, y: -0.0007792711, z: 0.031609625}
+  m_Size: {x: 0.2, y: 0.039064407, z: 0.63321346}
+  m_Center: {x: 0, y: 0.010888815, z: 0.031609625}
+--- !u!82 &1172314305
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172314301}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 636504f69177e5a46ad58ab05cd5c0c6, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.757
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.461
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1172314307
 Transform:
   m_ObjectHideFlags: 0
@@ -5866,6 +5973,7 @@ GameObject:
   - component: {fileID: 1552355172}
   - component: {fileID: 1552355174}
   - component: {fileID: 1552355173}
+  - component: {fileID: 1552355175}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: Untagged
@@ -5911,6 +6019,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a84e8263a647946bb0f1fa24c84c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1552355175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552355171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e0b22ab4db7224eab1d6ecce764074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clips:
+    - {fileID: 8300000, guid: aebec63a88fa0764ab21e611073a8dd8, type: 3}
+    - {fileID: 8300000, guid: 3187bc9b88f156d469b99b0a3865dac0, type: 3}
+    - {fileID: 8300000, guid: 229649557df05a749bba72d5c70543c4, type: 3}
+    source: {fileID: 0}
+    name: PaperImpact
+    volume: 0.25
+    pitch: 2
+    loop: 0
 --- !u!1001 &1556629234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6649,7 +6779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 120552, guid: 486ad0e54d42aa846975759d760128d9, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 120552, guid: 486ad0e54d42aa846975759d760128d9, type: 3}
       propertyPath: m_StaticEditorFlags
