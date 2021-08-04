@@ -565,15 +565,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 824702320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d0772ade283b1744946d4cbf709f972, type: 3}
+  m_Script: {fileID: 11500000, guid: dc4d82b0c46e1ca4fb28e3782c91f983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PopUps:
+  killAmountTarget: 10
+  Viruses:
   - {fileID: 9131938943802495794, guid: 990d598317cc39146a401cc9a05c0900, type: 3}
   screenSize: {x: 1.15, y: 0.64}
-  initialDelay: 0.2
-  finalDelay: 0.8
-  delayIncreaseRate: 0.1
+  delay: 0.05
 --- !u!4 &954960918 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 401290, guid: 48904ac029cf0f8478666c43b7e018b3, type: 3}
