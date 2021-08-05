@@ -12,6 +12,7 @@ public class PackageManager: MonoBehaviour
    
     void Start()
     {
+        AudioManager.Instance.Play ("BombTick");
         boxes = GetComponentsInChildren<PackageControl>();
 
         foreach (PackageControl box in boxes)
@@ -26,6 +27,7 @@ public class PackageManager: MonoBehaviour
         {
             box.SetBomb(true);
             bombFound = true;
+            AudioManager.Instance.Stop ("BombTick");
             EventManager.Instance.MicrogameEnd(MicrogameResult.Win);
         }
     }
