@@ -48,13 +48,7 @@ public class VirusSpawner : MonoBehaviour
         yield return new WaitForSeconds (delay);
         PopupController popup = Instantiate (Viruses[Random.Range (0, Viruses.Length)], transform).GetComponent<PopupController> ();
         popup.OnClose += OnPopupClose;
-        popup.transform.localPosition = RandomScreenPosition (popup.popupSize);
-    }
-
-    private Vector2 RandomScreenPosition (Vector2 popupSize)
-    {
-        Vector2 maxOffset = new Vector2 (screenSize.x - popupSize.x, screenSize.y - popupSize.y) / 2;
-        return new Vector2 (Random.Range (-maxOffset.x, maxOffset.x), Random.Range (-maxOffset.y, maxOffset.y));
+        popup.transform.localPosition = Tools.RandomPositionInArea (screenSize, popup.popupSize);
     }
 
     private void OnDrawGizmos ()
