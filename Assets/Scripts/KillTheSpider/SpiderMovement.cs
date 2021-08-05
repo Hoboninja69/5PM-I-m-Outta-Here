@@ -6,6 +6,7 @@ public class SpiderMovement : MonoBehaviour
 {
     public Vector2 screenSize, waitRange;
     public Transform spider;
+    public Animator spiderAnim;
     public float moveSpeed;
 
     private bool alive = true;
@@ -17,6 +18,7 @@ public class SpiderMovement : MonoBehaviour
 
     public void Kill ()
     {
+        spiderAnim.SetTrigger("Die");
         StopAllCoroutines ();
         alive = false;
     }
@@ -25,9 +27,20 @@ public class SpiderMovement : MonoBehaviour
     {
         while (alive)
         {
+            spiderAnim.SetBool("Moving", true);
+
             Vector3 start = spider.localPosition;
             Vector3 target = RandomScreenPosition (); target.z = start.z;
-            float time = Vector2.Distance (start, target) / moveSpeed;
+            Vector3 displacement = target - start;
+            float time = Vector2.Distance(start, target) / moveSpeed;
+
+            float radAngle = Mathf.Atan2(displacement.x, displacement.y);
+            Debug.DrawRay(spider.position, new Vector2 (Mathf.Sin (radAngle), Mathf.Cos (radAngle)), Color.red, time);
+            //Vector3 rotation = new Vector3 (0, 0, radAngle * Mathf.Rad2Deg);
+
+            spider.localRotation = Quaternion.AngleAxis (radAngle * Mathf.Rad2Deg, Vector3.back);
+            //spider.forward = displacement;
+
 
             for (float elapsed = 0; elapsed < time; elapsed += Time.deltaTime)
             {
@@ -37,6 +50,7 @@ public class SpiderMovement : MonoBehaviour
             }
             spider.localPosition = target;
 
+            spiderAnim.SetBool("Moving", false);
             yield return new WaitForSeconds (Random.Range (waitRange.x, waitRange.y));
         }
     }
