@@ -48,4 +48,10 @@ public static class Tools
 
         return corners;
     }
+
+    public static Vector2 RandomPositionInArea (Vector2 areaSize, Vector2 objectSize)
+    {
+        Vector2 maxOffset = new Vector2 (areaSize.x - objectSize.x, areaSize.y - objectSize.y) / 2;
+        return new Vector2 (Random.Range (-maxOffset.x, maxOffset.x), Random.Range (-maxOffset.y, maxOffset.y));
+    }
 }

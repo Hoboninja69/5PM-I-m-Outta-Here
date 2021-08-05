@@ -55,4 +55,9 @@ public class PhysicsFollow : MonoBehaviour
         Vector3 force = -direction * forceMagnitude;
         rb.AddForce (force);
     }
+
+    private void OnDrawGizmos ()
+    {
+        Gizmos.DrawWireSphere (transform.position, objectRadius);
+    }
 }

@@ -28,6 +28,7 @@ public class PackageControl : MonoBehaviour
         if (isOpen)
             return;
 
+        AudioManager.Instance.PlayAtLocation ("BoxOpen", transform, 0.9f, 1, UnityEngine.Random.Range (0.9f, 1.1f));
         SetOpen(true);
         OnBoxOpen?.Invoke(this);
     }
@@ -43,6 +44,4 @@ public class PackageControl : MonoBehaviour
         Box_Closed.SetActive(!open);
         Box_Open.SetActive(open);
     }
-
-
 }
