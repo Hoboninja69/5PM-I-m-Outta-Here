@@ -12,10 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5479f47d850cf409204feae3bc8e9a, type: 3}
   m_Name: TempleRunner
   m_EditorClassIdentifier: 
-  Title: Office Chair Joyride
-  Description: Your colleagues legs are numb from sitting in an office chair all
-    day. Give them a hand by pushing them, in their office chair, down the hallway
-    using the left and right mouse buttons to steer. Watch out for obstacles!
+  Infomercial: {fileID: 21300000, guid: 5b1964e7935ccc141935c3aa224539f8, type: 3}
+  WinMessage: Weeee! That was fun. Now get the hell out of my office.
+  LoseMessage: All you had to do was push a chair...How'd it go so wrong?
+  OutOfTimeMessage: All you had to do was push a chair...How'd it go so wrong?
   SceneName: TempleRunnerSample
   TimerLength: 15
-  MicrogameSounds: []
+  timerIsWin: 0
+  Sounds: []
+  Music:
+    clips: []
+    source: {fileID: 0}
+    name: 
+    volume: 1
+    pitch: 1
+    loop: 0
+  showCursor: 0
