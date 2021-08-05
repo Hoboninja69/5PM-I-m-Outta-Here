@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5479f47d850cf409204feae3bc8e9a, type: 3}
   m_Name: LoanDenied
   m_EditorClassIdentifier: 
-  Title: Loan Denied
-  Description: "Using a \u201Cdenied\u201D stamp, click to stamp all the loan documents
-    within the time limit."
-  WinMessage: Phew that was a close one, intern. We almost had to give people money!
-  LoseMessage: 
+  Infomercial: {fileID: 21300000, guid: 8b156411fff4f4849a9596611de4480e, type: 3}
+  WinMessage: Wow! You can use a stamp! You must be so proud of yourself.
+  LoseMessage: How did you even manage to screw this up?
   OutOfTimeMessage: How did you even manage to screw this up?
   SceneName: LoanDenied
   TimerLength: 10
+  timerIsWin: 0
   Sounds:
   - clips:
     - {fileID: 8300000, guid: b03518fc5ddedb6489ddf4272d73ef11, type: 3}
