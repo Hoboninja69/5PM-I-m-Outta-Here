@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5479f47d850cf409204feae3bc8e9a, type: 3}
   m_Name: CoworkerRant
   m_EditorClassIdentifier: 
-  Title: "Veronica\u2019s Rant"
-  Description: "Your colleague Veronica needs to vent to someone and that someone
-    is you. Listen to her rant with undying attention to win. If you do anything,
-    literally anything, you will lose. Don\u2019t click a damn thing."
-  WinMessage: 
-  LoseMessage: 
+  Infomercial: {fileID: 21300000, guid: 0c1e6339d3c691047abde0bf34922070, type: 3}
+  WinMessage: 'You''re such a good listener!
+
+    But she''s still not going to go
+    out with you, bro.'
+  LoseMessage: You misogynistic asshole.
   OutOfTimeMessage: 
   SceneName: CoworkerRant
   TimerLength: 20

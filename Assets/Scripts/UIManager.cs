@@ -10,7 +10,9 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject infoScreen, timer, resultScreen, canvas;
     [SerializeField]
-    private Text infoScreenTitle, infoScreenDescription, timerText, timerShadowText, resultScreenTitle, resultScreenSubtitle;
+    private Text timerText, timerShadowText, resultScreenTitle, resultScreenSubtitle;
+    [SerializeField]
+    private Image infoScreenImage;
 
     public void Initialise ()
     {
@@ -48,8 +50,7 @@ public class UIManager : MonoBehaviour
     {
         Cursor.visible = true;
         infoScreen.SetActive (true);
-        infoScreenTitle.text = microgame.Title;
-        infoScreenDescription.text = microgame.Description;
+        infoScreenImage.sprite = microgame.Infomercial;
     }
 
     private void OnMicrogameStart (Microgame microgame)
