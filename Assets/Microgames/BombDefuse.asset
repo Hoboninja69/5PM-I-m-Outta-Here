@@ -12,10 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5479f47d850cf409204feae3bc8e9a, type: 3}
   m_Name: BombDefuse
   m_EditorClassIdentifier: 
-  Title: 'Bomb Scare! '
-  Description: Someone has called in a bomb scare! Click the packages and find the
-    bomb in time and you get to live another day. Yay!
+  Infomercial: {fileID: 21300000, guid: 5176dde4ecf12c0429cae7b2635a8c6b, type: 3}
+  WinMessage: Well done on not exploding.
+  LoseMessage: Well, the good news is everyone evacuated the building. Except you...
+  OutOfTimeMessage: Well, the good news is everyone evacuated the building. Except
+    you...
   SceneName: BombDefuse
   TimerLength: 5
-  MicrogameSounds: []
+  timerIsWin: 0
+  Sounds: []
+  Music:
+    clips: []
+    source: {fileID: 0}
+    name: 
+    volume: 1
+    pitch: 1
+    loop: 0
   showCursor: 1

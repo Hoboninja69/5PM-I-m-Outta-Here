@@ -12,15 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5479f47d850cf409204feae3bc8e9a, type: 3}
   m_Name: PlantWatering
   m_EditorClassIdentifier: 
-  Title: Plant Watering
-  Description: Use the scroll-wheel to water the plants up to the green indicator,
-    be careful not to overfill them!
-  WinMessage: Ahhh... Nothing like some well-watered plants to fill my empty soul!
-  LoseMessage: "This just won't do... Don't you know these plants are extremely sensitive
-    and will die if they are watered the slightest drop too much?\t"
-  OutOfTimeMessage: 
+  Infomercial: {fileID: 21300000, guid: 8a47b1ea3accd754fbfb82991c4225ec, type: 3}
+  WinMessage: If you get fired, at least you'll have gardening to fall back on, I
+    guess.
+  LoseMessage: You couldn't even keep a plastic plant alive...
+  OutOfTimeMessage: Great, those plants are going to die now because of you.
   SceneName: PlantWatering
   TimerLength: 18
+  timerIsWin: 0
   Sounds:
   - clips:
     - {fileID: 8300000, guid: bf4bd5612c4b39047a882d95d92584d3, type: 3}

@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu (fileName = "MicrogameName", menuName = "Microgame")]
 public class Microgame : ScriptableObject
 {
-    public string Title;
+    public Sprite Infomercial;
     [Multiline ()]
-    public string Description, WinMessage, LoseMessage, OutOfTimeMessage;
+    public string WinMessage, LoseMessage, OutOfTimeMessage;
     public string SceneName;
     public int TimerLength;
     public bool timerIsWin = false;

@@ -14,4 +14,10 @@ public class FailOnInput : MonoBehaviour
     {
         EventManager.Instance.MicrogameEnd (MicrogameResult.Lose, 1f);
     }
+
+    private void OnDestroy ()
+    {
+        InputManager.Instance.OnMouseDownLeft -= OnInput;
+        InputManager.Instance.OnMouseDownRight -= OnInput;
+    }
 }

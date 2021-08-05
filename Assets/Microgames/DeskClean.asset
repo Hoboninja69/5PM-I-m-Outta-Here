@@ -12,13 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5479f47d850cf409204feae3bc8e9a, type: 3}
   m_Name: DeskClean
   m_EditorClassIdentifier: 
-  Title: Surprise Desk Inspection
-  Description: "There\u2019s about to be a surprise desk inspection and your colleague
-    is too busy running errands to clean their desk in time! Help them clean their
-    desk by picking up a cloth and wiping everything onto the floor!"
-  WinMessage: 
-  LoseMessage: 
-  OutOfTimeMessage: 
+  Infomercial: {fileID: 21300000, guid: 504a5de1af3c11c4fa848796679141c5, type: 3}
+  WinMessage: Now that desk is as barren and empty as your social life...
+  LoseMessage: All that time spent on Tinder, and you're not even good at swiping...
+  OutOfTimeMessage: All that time spent on Tinder, and you're not even good at swiping...
   SceneName: DeskClean
   TimerLength: 12
   timerIsWin: 0
