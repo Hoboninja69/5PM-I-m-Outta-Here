@@ -7,7 +7,7 @@ public class LeanController : MonoBehaviour
     public StackLeaner stack;
     public float fallSpeed, leanControl, leanControlAcceleration;
 
-    private float lean, controlDirection, controlMult;
+    private float lean, targetLeanInfluence, leanInfluence;
 
     private void Start ()
     {
@@ -17,27 +17,24 @@ public class LeanController : MonoBehaviour
 
     private void Update ()
     {
-        print ($"direction: {controlDirection}, mult: {controlMult}");
-        lean += fallSpeed * Time.deltaTime * (lean * 1.5f + 0.05f) + controlDirection * controlMult;
+        leanInfluence = Mathf.Lerp (leanInfluence, targetLeanInfluence, leanControlAcceleration * Time.deltaTime);
+        lean += (fallSpeed * (lean * 1.25f + 0.01f) + leanInfluence) * Time.deltaTime;
         lean = Mathf.Clamp (lean,-1, 1);
+
         if (Mathf.Abs (lean) == 1)
             stack.Fall ();
         stack.SetLean (lean);
+
+        targetLeanInfluence = 0;
     }
 
     private void MouseStayLeft ()
     {
-        if (controlDirection < 0)
-            controlMult = 0;
-        controlDirection = leanControl;
-        controlMult = Mathf.Clamp01 (controlMult += leanControlAcceleration * Time.deltaTime);
+        targetLeanInfluence = leanControl;
     }
 
     private void MouseStayRight ()
     {
-        if (controlDirection > 0)
-            controlMult = 0;
-        controlDirection = -leanControl;
-        controlMult = Mathf.Clamp01 (controlMult += leanControlAcceleration * Time.deltaTime);
+        targetLeanInfluence = -leanControl;
     }
 }

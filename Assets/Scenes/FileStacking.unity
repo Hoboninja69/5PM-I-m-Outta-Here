@@ -3299,7 +3299,8 @@ PrefabInstance:
       propertyPath: Suits.Array.size
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114866559164041680, guid: 64d444672c854794683605370e750f5d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 64d444672c854794683605370e750f5d, type: 3}
 --- !u!1001 &1364573050
 PrefabInstance:
@@ -4918,7 +4919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161eba3c27ff7e94e95835c667c1e04f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLeanIncrement: 6
+  maxLeanIncrement: 8
 --- !u!114 &1982008333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4932,9 +4933,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stack: {fileID: 1982008332}
-  fallSpeed: 1.4
-  leanControl: 0.1
-  leanControlAcceleration: 0.1
+  fallSpeed: 1.5
+  leanControl: 2
+  leanControlAcceleration: 0.75
 --- !u!1001 &2040649497
 PrefabInstance:
   m_ObjectHideFlags: 0
