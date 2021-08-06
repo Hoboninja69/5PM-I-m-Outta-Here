@@ -1574,7 +1574,7 @@ MonoBehaviour:
   infoScreen: {fileID: 1947363799}
   timer: {fileID: 662876699}
   resultScreen: {fileID: 100170030}
-  canvas: {fileID: 1150721645}
+  canvasObject: {fileID: 1799700454}
   timerText: {fileID: 2145806543}
   timerShadowText: {fileID: 309154960}
   resultScreenTitle: {fileID: 1428404189}

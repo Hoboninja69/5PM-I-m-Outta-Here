@@ -8,32 +8,41 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
 
     [SerializeField]
-    private GameObject infoScreen, timer, resultScreen, canvas;
+    private GameObject infoScreen, timer, resultScreen, canvasObject;
     [SerializeField]
     private Text timerText, timerShadowText, resultScreenTitle, resultScreenSubtitle;
     [SerializeField]
     private Image infoScreenImage;
 
+    private Canvas canvas;
+
     public void Initialise ()
     {
         if (Instance != null)
         {
-            Destroy (canvas);
+            Destroy (canvasObject);
             Destroy (this);
             return;
         }
         else
         {
             Instance = this;
-            DontDestroyOnLoad (canvas);
+            DontDestroyOnLoad (canvasObject);
             DontDestroyOnLoad (gameObject);
         }
+
+        canvas = canvasObject.GetComponent<Canvas> ();
 
         EventManager.Instance.OnUIButtonPressed += OnUIButtonPressed;
         EventManager.Instance.OnMicrogameLoad += OnMicrogameLoad;
         EventManager.Instance.OnMicrogameStart += OnMicrogameStart;
         EventManager.Instance.OnTimerTick += OnTimerTick;
         EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
+    }
+
+    public void SetUseWorldSpace (bool useWorldSpace)
+    {
+        canvas.renderMode = useWorldSpace ? RenderMode.WorldSpace : RenderMode.ScreenSpaceOverlay;
     }
 
     private void OnUIButtonPressed (string buttonName)
