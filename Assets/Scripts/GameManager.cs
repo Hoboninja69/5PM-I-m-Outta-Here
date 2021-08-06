@@ -48,8 +48,7 @@ public class GameManager : MonoBehaviour
         //EventManager.Instance.MicrogameLoad ();
 
         //MicrogameManager.Instance.LoadCurrent ();
-        if (MicrogameManager.Instance != null)
-            MicrogameManager.Instance.LoadHallway ();
+        EventManager.Instance.GameLoad ();
     }
 
     private void InitialiseScripts ()

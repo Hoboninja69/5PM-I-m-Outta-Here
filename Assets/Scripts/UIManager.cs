@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
 
     [SerializeField]
-    private GameObject infoScreen, timer, resultScreen, canvasObject;
+    private GameObject infoScreen, timer, resultScreen, canvasObject, menuScreen;
     [SerializeField]
     private Text timerText, timerShadowText, resultScreenTitle, resultScreenSubtitle;
     [SerializeField]
@@ -34,6 +34,7 @@ public class UIManager : MonoBehaviour
         canvas = canvasObject.GetComponent<Canvas> ();
 
         EventManager.Instance.OnUIButtonPressed += OnUIButtonPressed;
+        EventManager.Instance.OnGameLoad += OnGameLoad;
         EventManager.Instance.OnMicrogameLoad += OnMicrogameLoad;
         EventManager.Instance.OnMicrogameStart += OnMicrogameStart;
         EventManager.Instance.OnTimerTick += OnTimerTick;
@@ -43,16 +44,29 @@ public class UIManager : MonoBehaviour
     public void SetUseWorldSpace (bool useWorldSpace)
     {
         canvas.renderMode = useWorldSpace ? RenderMode.WorldSpace : RenderMode.ScreenSpaceOverlay;
+        if (useWorldSpace)
+            canvas.worldCamera = Camera.current;
     }
 
     private void OnUIButtonPressed (string buttonName)
     {
         switch (buttonName)
         {
+            case "StartGame":
+                menuScreen.SetActive (false);
+                SetUseWorldSpace (false);
+                EventManager.Instance.GameStart ();
+                break;
             case "MicrogameResultOK":
                 resultScreen.SetActive (false);
-                return;
+                break;
         }
+    }
+
+    private void OnGameLoad ()
+    {
+        menuScreen.SetActive (true);
+        SetUseWorldSpace (true);
     }
 
     private void OnMicrogameLoad (Microgame microgame)
