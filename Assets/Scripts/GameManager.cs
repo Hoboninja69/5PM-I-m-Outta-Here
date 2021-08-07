@@ -48,7 +48,8 @@ public class GameManager : MonoBehaviour
         //EventManager.Instance.MicrogameLoad ();
 
         //MicrogameManager.Instance.LoadCurrent ();
-        EventManager.Instance.GameLoad ();
+        if (EventManager.Instance != null)
+            EventManager.Instance.GameLoad ();
     }
 
     private void InitialiseScripts ()

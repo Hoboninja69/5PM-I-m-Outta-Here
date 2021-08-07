@@ -42,7 +42,7 @@ public class HallwaySequence : MonoBehaviour
 
         menuDoorAnimator.SetTrigger ("Open");
         print ("Open");
-        yield return new WaitForSeconds (3f);
+        yield return new WaitForSeconds (2.75f);
 
         StartCoroutine (TransitionSequence ());
     }

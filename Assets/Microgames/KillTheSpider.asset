@@ -10,32 +10,40 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d5479f47d850cf409204feae3bc8e9a, type: 3}
-  m_Name: TempleRunner
+  m_Name: KillTheSpider
   m_EditorClassIdentifier: 
-  Infomercial: {fileID: 21300000, guid: 5b1964e7935ccc141935c3aa224539f8, type: 3}
-  WinMessage: Weeee! That was fun. Now get the hell out of my office.
-  LoseMessage: All you had to do was push a chair...How'd it go so wrong?
-  OutOfTimeMessage: All you had to do was push a chair...How'd it go so wrong?
-  SceneName: TempleRunnerSample
-  TimerLength: 15
+  Infomercial: {fileID: 0}
+  WinMessage: 
+  LoseMessage: 
+  OutOfTimeMessage: 
+  SceneName: KilltheSpider
+  TimerLength: 10
   timerIsWin: 0
   Sounds:
   - clips:
-    - {fileID: 8300000, guid: 0e47eb2b0c5e1214e84afa19e86c5e41, type: 3}
+    - {fileID: 8300000, guid: 28f8559fc55deee45b4747daa67bf755, type: 3}
+    - {fileID: 8300000, guid: 53a6e2edc41289e41a375ffdf2cb0992, type: 3}
     source: {fileID: 0}
-    name: Wheels
+    name: Thwack
     volume: 1
-    pitch: 1
-    loop: 1
+    pitch: 0.75
+    loop: 0
   - clips:
     - {fileID: 8300000, guid: 54489d13b5661b14b96eb6ec81d3e26b, type: 3}
     - {fileID: 8300000, guid: 7630c00ced41bf74796029a5b1825bb8, type: 3}
     - {fileID: 8300000, guid: 753ef980de8caaa49941849295437595, type: 3}
     source: {fileID: 0}
-    name: Impact
+    name: Punch
     volume: 1
     pitch: 1
     loop: 0
+  - clips:
+    - {fileID: 8300000, guid: a07d62241f29d804fa726f82ae6345d5, type: 3}
+    source: {fileID: 0}
+    name: SpiderCrawl
+    volume: 2
+    pitch: 1.5
+    loop: 1
   Music:
     clips: []
     source: {fileID: 0}

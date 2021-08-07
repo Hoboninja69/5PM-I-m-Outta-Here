@@ -30,7 +30,15 @@ public class TRMovement : MonoBehaviour
         InputManager.Instance.OnMouseUpLeft += LeftUp;
         InputManager.Instance.OnMouseDownRight += RightDown;
         InputManager.Instance.OnMouseUpRight += RightUp;
-        AudioManager.Instance.Play("Wheels", source);
+        if (EventManager.Instance != null) 
+            EventManager.Instance.OnMicrogameStart += OnMicrogameStart;
+        else 
+            AudioManager.Instance.Play ("Wheels", source);
+    }
+
+    void OnMicrogameStart (Microgame microgame)
+    {
+        AudioManager.Instance.Play ("Wheels", source);
     }
 
     void LeftDown()
@@ -86,8 +94,9 @@ public class TRMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        source.volume = Mathf.Lerp(0f, 0.5f, (currentSpeed) / 10);
         currentSpeed = Vector3.Distance(transform.position, lastPos) / Time.deltaTime;
+        source.volume = Mathf.Lerp (0f, 0.5f, (currentSpeed) / 10);
+        source.pitch = Mathf.Lerp (0.9f, 1.2f, (currentSpeed) / 10);
         lastPos = transform.position;
     }
 

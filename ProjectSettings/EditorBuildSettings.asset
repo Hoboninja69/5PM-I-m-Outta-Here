@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/PlantWatering.unity
     guid: 14602ed64c6f9aa4882163c6903f9b64
   - enabled: 1
-    path: Assets/Scenes/BombDefuse.unity
-    guid: efb3f21f781bb52478cbffab0a25fd1d
-  - enabled: 1
     path: Assets/Scenes/DeskClean.unity
     guid: d438d39eab96f894595fb58ec10e8418
   - enabled: 1
@@ -35,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CoworkerRant.unity
     guid: 03ecec462b5eba8459f6c022c1ba0886
+  - enabled: 1
+    path: Assets/Scenes/Bomb_scene.unity
+    guid: 89d625dc6aea3cc4dba49aa7e27623a1
   m_configObjects: {}
