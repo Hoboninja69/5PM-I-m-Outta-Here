@@ -19,7 +19,43 @@ MonoBehaviour:
   SceneName: DeskClean
   TimerLength: 12
   timerIsWin: 0
-  Sounds: []
+  Sounds:
+  - clips:
+    - {fileID: 8300000, guid: 03ccdf11cf17fda43b63fee3e6ee5f4f, type: 3}
+    - {fileID: 8300000, guid: 3fddfae00aabc0a4e9d4ddc78b3b4e2c, type: 3}
+    source: {fileID: 0}
+    name: Impact
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clips:
+    - {fileID: 8300000, guid: 833c95a020537d546a100bdf869f300b, type: 3}
+    source: {fileID: 0}
+    name: ImpactMetal
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clips:
+    - {fileID: 8300000, guid: f117f1dbfc0449c43b9f3892a973d852, type: 3}
+    - {fileID: 8300000, guid: b1641ddf5e2f2f943a86ace76f4068d3, type: 3}
+    - {fileID: 8300000, guid: aebec63a88fa0764ab21e611073a8dd8, type: 3}
+    - {fileID: 8300000, guid: 3187bc9b88f156d469b99b0a3865dac0, type: 3}
+    - {fileID: 8300000, guid: c1d8888afc4bb0141b6bf23c9f092c0f, type: 3}
+    - {fileID: 8300000, guid: 0bd33f3988679a247807ab20c91b1bf0, type: 3}
+    source: {fileID: 0}
+    name: ImpactPaper
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clips:
+    - {fileID: 8300000, guid: d89d4a7a926220e4ea1fe70973a283ee, type: 3}
+    - {fileID: 8300000, guid: 03ccdf11cf17fda43b63fee3e6ee5f4f, type: 3}
+    - {fileID: 8300000, guid: 51660096c98ccd145b065cc6a309018b, type: 3}
+    source: {fileID: 0}
+    name: ImpactBig
+    volume: 1
+    pitch: 1
+    loop: 0
   Music:
     clips: []
     source: {fileID: 0}
