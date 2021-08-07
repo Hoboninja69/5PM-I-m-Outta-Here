@@ -31,13 +31,17 @@ public class PackageManager: MonoBehaviour
     {
         if (!bombFound && ++openCount >= minOpenCount && Random.Range(0, boxes.Length - openCount + 1) == 0)
         {
+            AudioManager.Instance.Stop ("BombTick");
             box.SetBomb(true);
             bombFound = true;
-            AudioManager.Instance.Stop ("BombTick");
             EventManager.Instance.MicrogameEnd(MicrogameResult.Win, 1.5f);
         }
     }
 
     private void OnMicrogameStart (Microgame microgame) => AudioManager.Instance.Play ("BombTick");
-    private void OnMicrogameEnd (MicrogameResult result) { if (result == MicrogameResult.OutOfTime) AudioManager.Instance.Play ("Explosion"); }
+    private void OnMicrogameEnd (MicrogameResult result) 
+    {
+        AudioManager.Instance.Stop ("BombTick");
+        if (result == MicrogameResult.OutOfTime) AudioManager.Instance.Play ("Explosion"); 
+    }
 }
