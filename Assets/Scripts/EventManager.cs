@@ -13,6 +13,12 @@ public class EventManager : MonoBehaviour
     public event Action OnUnfreeze;
     public void Unfreeze () => OnUnfreeze?.Invoke ();
 
+    public event Action OnGameLoad;
+    public void GameLoad () => OnGameLoad?.Invoke ();
+
+    public event Action OnGameStart;
+    public void GameStart () => OnGameStart?.Invoke ();
+
     public event Action OnTransitionSceneEnd;
     public void TransitionSceneEnd () => OnTransitionSceneEnd?.Invoke ();
 

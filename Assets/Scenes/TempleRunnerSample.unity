@@ -284,7 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05371d0e4987014e96981a76b47b91d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushBack: 5
+  pushBack: 10
 --- !u!1 &226873595
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,6 +389,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8, y: 3.1, z: 1}
   m_Center: {x: -0.00000023841858, y: 1.5091082, z: 0.0000005364418}
+--- !u!114 &232285642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232285640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05371d0e4987014e96981a76b47b91d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushBack: 10
 --- !u!1001 &286431133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1525,7 +1538,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &1030572188
 BoxCollider:
@@ -1918,7 +1931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05371d0e4987014e96981a76b47b91d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushBack: 5
+  pushBack: 10
 --- !u!1001 &1262259631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2493,7 +2506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05371d0e4987014e96981a76b47b91d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushBack: 5
+  pushBack: 10
 --- !u!65 &1695392005
 BoxCollider:
   m_ObjectHideFlags: 0
