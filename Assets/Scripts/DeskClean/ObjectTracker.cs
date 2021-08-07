@@ -31,7 +31,7 @@ public class ObjectTracker : MonoBehaviour
         {
             gameWon = true;
             print(gameWon);
-            EventManager.Instance.MicrogameEnd(MicrogameResult.Win);
+            EventManager.Instance.MicrogameEnd(MicrogameResult.Win, 1);
         }
     }
 }
