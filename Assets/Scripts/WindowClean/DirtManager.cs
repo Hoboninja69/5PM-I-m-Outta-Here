@@ -27,7 +27,7 @@ public class DirtManager : MonoBehaviour
         AudioManager.Instance.PlayAtLocation ("Sparkle", dirt.transform, 0.75f, Random.Range (0.75f, 0.9f), Random.Range (0.95f, 1.05f));
         dirt.OnCleaned -= OnDirtCleaned;
         if (--remaining <= 0)
-            EventManager.Instance.MicrogameEnd (MicrogameResult.Win);
+            EventManager.Instance.MicrogameEnd (MicrogameResult.Win, 0.5f);
     }
 
     private void OnDrawGizmos ()
