@@ -12,7 +12,13 @@ public class PackageManager: MonoBehaviour
    
     void Start()
     {
-        AudioManager.Instance.Play ("BombTick");
+        if (EventManager.Instance != null)
+        {
+            EventManager.Instance.OnMicrogameStart += OnMicrogameStart;
+            EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
+        }
+        else AudioManager.Instance.Play ("BombTick");
+
         boxes = GetComponentsInChildren<PackageControl>();
 
         foreach (PackageControl box in boxes)
@@ -28,7 +34,10 @@ public class PackageManager: MonoBehaviour
             box.SetBomb(true);
             bombFound = true;
             AudioManager.Instance.Stop ("BombTick");
-            EventManager.Instance.MicrogameEnd(MicrogameResult.Win);
+            EventManager.Instance.MicrogameEnd(MicrogameResult.Win, 1.5f);
         }
     }
+
+    private void OnMicrogameStart (Microgame microgame) => AudioManager.Instance.Play ("BombTick");
+    private void OnMicrogameEnd (MicrogameResult result) { if (result == MicrogameResult.OutOfTime) AudioManager.Instance.Play ("Explosion"); }
 }

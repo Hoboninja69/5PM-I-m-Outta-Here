@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Bomb_scene.unity
     guid: 89d625dc6aea3cc4dba49aa7e27623a1
+  - enabled: 1
+    path: Assets/Scenes/KilltheSpider.unity
+    guid: e590ee288e0680e4982483ab25d9a7df
   m_configObjects: {}

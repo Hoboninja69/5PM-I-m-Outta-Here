@@ -655,7 +655,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 753ef980de8caaa49941849295437595, type: 3}
     source: {fileID: 0}
     name: Punch
-    volume: 1
+    volume: 2
     pitch: 1
     loop: 0
   - clips:

@@ -38,13 +38,19 @@ public class NewspaperController : MonoBehaviour
             if (hit.CompareTag ("Spider"))
             {
                 spiderHit = true;
-                print ("WON!");
                 AudioManager.Instance.PlayAtLocation ("Punch", hit.transform, 0.9f, pitchMult: Random.Range (0.9f, 1.1f));
                 if (hit.transform.parent.TryGetComponent (out SpiderMovement spider))
                     spider.Kill ();
+                if (EventManager.Instance != null)
+                    EventManager.Instance.MicrogameEnd (MicrogameResult.Win, 0.5f);
                 break;
             }
         }
+    }
+
+    private void OnDestroy ()
+    {
+        InputManager.Instance.OnMouseDownLeft -= TriggerThwack;
     }
 
     private void OnDrawGizmos ()

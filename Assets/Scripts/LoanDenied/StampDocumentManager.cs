@@ -31,6 +31,6 @@ public class StampDocumentManager : MonoBehaviour
             currentDocument.FlyIn ();
             currentDocument.OnDocumentStamped += NextDocument;
         }
-        else EventManager.Instance.MicrogameEnd (MicrogameResult.Win);
+        else EventManager.Instance.MicrogameEnd (MicrogameResult.Win, 0.5f);
     }
 }
