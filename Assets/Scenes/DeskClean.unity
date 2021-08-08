@@ -735,26 +735,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 406502, guid: 0bf8a1d180451d0428cae6cdd04c80d1, type: 3}
   m_PrefabInstance: {fileID: 311065642}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &311065647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 311065643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundName: 
-  randomisePitch: 0
-  useAttachedSource: 0
-  minimumVolume: 0.05
-  spatialBlend: 1
-  startDelay: 0.5
-  velocityRange: {x: 0, y: 4}
-  randomPitchRange: {x: 0, y: 0}
 --- !u!114 &311065649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -769,7 +749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundName: Impact
   randomisePitch: 1
-  useAttachedSource: 1
+  useAttachedSource: 0
   minimumVolume: 0
   spatialBlend: 1
   startDelay: 0.5
@@ -2754,7 +2734,7 @@ MonoBehaviour:
   following: 0
   gravityMultiplier: 0
   attractionForce: 20
-  dampening: 34.6
+  dampening: 30.9
   velocityLimiting: 48.8
   objectRadius: 0.05
   obstacle:

@@ -20,6 +20,9 @@ public class GunController : MonoBehaviour
     private void Shoot ()
     {
         if (Physics.Raycast (InputManager.cursorRay, out RaycastHit hit, 20))
-            Instantiate (bulletHole, hit.point, Quaternion.LookRotation (hit.normal, hit.normal));
+        {
+            Transform hole = Instantiate (bulletHole, hit.point + hit.normal * 0.01f, Quaternion.LookRotation (hit.normal, hit.normal)).transform;
+            hole.up = hit.normal;
+        }
     }
 }
