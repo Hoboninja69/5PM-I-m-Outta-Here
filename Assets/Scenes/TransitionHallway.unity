@@ -2235,7 +2235,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cd4fed68fafeec741b6476c36485bc87, type: 2}
   - {fileID: 11400000, guid: 3970f859b260edd49b0231af720493d5, type: 2}
   microgamesPerGame: 10
-  failCount: 0
+  winCount: 0
 --- !u!114 &1799700457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2308,6 +2308,8 @@ MonoBehaviour:
   resultScreenTitle: {fileID: 1428404189}
   resultScreenSubtitle: {fileID: 1828746626}
   infoScreenImage: {fileID: 879382215}
+  cursorUp: {fileID: 2800000, guid: 1f79531a73a923741b5bb59a0a605314, type: 3}
+  cursorDown: {fileID: 2800000, guid: 8b5593a6beabb3246b0c56fabbee766b, type: 3}
 --- !u!114 &1799700462
 MonoBehaviour:
   m_ObjectHideFlags: 0

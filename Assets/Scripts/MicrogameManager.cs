@@ -20,7 +20,7 @@ public class MicrogameManager : MonoBehaviour
     public int currentMicrogameIndex { get; private set; }
     public int remainingMicrogames { get { return microgameQueue.Length - currentMicrogameIndex; } }
     [HideInInspector]
-    public int failCount;
+    public int winCount;
 
     public void Initialise ()
     {
@@ -79,8 +79,8 @@ public class MicrogameManager : MonoBehaviour
 
     private void OnMicrogameEnd (MicrogameResult result)
     {
-        if (result != MicrogameResult.Win)
-            failCount++;
+        if (result == MicrogameResult.Win)
+            winCount++;
 
         GameManager.Instance.PauseGame ();
     }
@@ -96,9 +96,7 @@ public class MicrogameManager : MonoBehaviour
             case "MicrogameResultOK":
                 GameManager.Instance.ResumeGame ();
                 currentMicrogameIndex++;
-                //if (failCount < 3)
-                    LoadHallway ();
-                //else load fail scene
+                LoadHallway ();
                 break;
         }
     }
