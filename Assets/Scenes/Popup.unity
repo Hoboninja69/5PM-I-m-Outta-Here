@@ -614,6 +614,7 @@ GameObject:
   - component: {fileID: 1721672190}
   - component: {fileID: 1721672188}
   - component: {fileID: 1721672187}
+  - component: {fileID: 1721672191}
   m_Layer: 0
   m_Name: Input
   m_TagString: Untagged
@@ -676,6 +677,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a84e8263a647946bb0f1fa24c84c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1721672191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721672186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e0b22ab4db7224eab1d6ecce764074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clips:
+    - {fileID: 8300000, guid: 7a4fdde499142774384c1630f4872eba, type: 3}
+    - {fileID: 8300000, guid: 62e24f69928c5fd45936386726a99a56, type: 3}
+    - {fileID: 8300000, guid: 8944b977bb068f843b4e7c995fff6200, type: 3}
+    source: {fileID: 0}
+    name: Pop
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clips:
+    - {fileID: 8300000, guid: 46006de8eba4fa34d8c74f151567234a, type: 3}
+    source: {fileID: 0}
+    name: PopupOpen
+    volume: 0.5
+    pitch: 1
+    loop: 0
 --- !u!1001 &1836472506
 PrefabInstance:
   m_ObjectHideFlags: 0
