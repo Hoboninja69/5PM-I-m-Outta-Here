@@ -17,10 +17,31 @@ MonoBehaviour:
   LoseMessage: Well, the good news is everyone evacuated the building. Except you...
   OutOfTimeMessage: Well, the good news is everyone evacuated the building. Except
     you...
-  SceneName: BombDefuse
-  TimerLength: 5
+  SceneName: Bomb_Scene
+  TimerLength: 12
   timerIsWin: 0
-  Sounds: []
+  Sounds:
+  - clips:
+    - {fileID: 8300000, guid: c68aef3226943bf4498a78a4d7d4ff82, type: 3}
+    source: {fileID: 0}
+    name: BombTick
+    volume: 0.5
+    pitch: 1
+    loop: 1
+  - clips:
+    - {fileID: 8300000, guid: aebec63a88fa0764ab21e611073a8dd8, type: 3}
+    source: {fileID: 0}
+    name: BoxOpen
+    volume: 1
+    pitch: 0.9
+    loop: 0
+  - clips:
+    - {fileID: 8300000, guid: e00862a882ce318458da4ccf709b045e, type: 3}
+    source: {fileID: 0}
+    name: Explosion
+    volume: 1
+    pitch: 1
+    loop: 0
   Music:
     clips: []
     source: {fileID: 0}

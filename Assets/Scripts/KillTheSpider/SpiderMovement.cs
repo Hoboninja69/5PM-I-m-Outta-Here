@@ -7,6 +7,7 @@ public class SpiderMovement : MonoBehaviour
     public Vector2 screenSize, waitRange;
     public Transform spider;
     public Animator spiderAnim;
+    public AudioSource spiderSource;
     public float moveSpeed;
 
     private bool alive = true;

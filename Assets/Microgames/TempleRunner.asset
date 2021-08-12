@@ -19,7 +19,23 @@ MonoBehaviour:
   SceneName: TempleRunnerSample
   TimerLength: 15
   timerIsWin: 0
-  Sounds: []
+  Sounds:
+  - clips:
+    - {fileID: 8300000, guid: 0e47eb2b0c5e1214e84afa19e86c5e41, type: 3}
+    source: {fileID: 0}
+    name: Wheels
+    volume: 1
+    pitch: 1
+    loop: 1
+  - clips:
+    - {fileID: 8300000, guid: 54489d13b5661b14b96eb6ec81d3e26b, type: 3}
+    - {fileID: 8300000, guid: 7630c00ced41bf74796029a5b1825bb8, type: 3}
+    - {fileID: 8300000, guid: 753ef980de8caaa49941849295437595, type: 3}
+    source: {fileID: 0}
+    name: Impact
+    volume: 1
+    pitch: 1
+    loop: 0
   Music:
     clips: []
     source: {fileID: 0}

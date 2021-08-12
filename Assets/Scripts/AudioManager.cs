@@ -64,6 +64,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        sound.source = source;
         source.volume = sound.volume * volumeMult;
         source.pitch = sound.pitch * pitchMult;
         source.loop = sound.loop;
@@ -116,6 +117,18 @@ public class AudioManager : MonoBehaviour
             Destroy (source, source.clip.length * Mathf.Abs (source.pitch));
 
         return source;
+    }
+
+    public void SetMult (string soundName, float volumeMult = 1, float pitchMult = 1)
+    {
+        if (!FindSound (soundName, out Sound sound))
+        {
+            Debug.LogError ("Could not set multipliers for sound \"" + soundName + "\" (not found)");
+            return;
+        }
+
+        sound.source.volume = sound.volume * volumeMult;
+        sound.source.pitch = sound.pitch * pitchMult;
     }
 
     public void Stop (string soundName)

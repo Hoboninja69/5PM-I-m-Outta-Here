@@ -31,18 +31,26 @@ public class NewspaperController : MonoBehaviour
 
     public void ThwackConnect ()
     {
+        AudioManager.Instance.Play ("Thwack", pitchMult: Random.Range (0.9f, 1.1f));
         Collider[] hits = Physics.OverlapSphere (sphereCenter.position, sphereRadius);
         foreach (Collider hit in hits)
         {
             if (hit.CompareTag ("Spider"))
             {
                 spiderHit = true;
-                print ("WON!");
+                AudioManager.Instance.PlayAtLocation ("Punch", hit.transform, 0.9f, pitchMult: Random.Range (0.9f, 1.1f));
                 if (hit.transform.parent.TryGetComponent (out SpiderMovement spider))
                     spider.Kill ();
+                if (EventManager.Instance != null)
+                    EventManager.Instance.MicrogameEnd (MicrogameResult.Win, 0.5f);
                 break;
             }
         }
+    }
+
+    private void OnDestroy ()
+    {
+        InputManager.Instance.OnMouseDownLeft -= TriggerThwack;
     }
 
     private void OnDrawGizmos ()
