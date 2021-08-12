@@ -252,4 +252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeButtonInteractable: {fileID: 905390783368070875}
+  openSoundName: Pop
+  closeSoundName: Pop
   popupSize: {x: 0.305, y: 0.23}
+  openPitchRange: {x: 1.75, y: 2}
+  closePitchRange: {x: 0.5, y: 0.75}
