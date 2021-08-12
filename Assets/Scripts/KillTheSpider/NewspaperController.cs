@@ -7,7 +7,6 @@ public class NewspaperController : MonoBehaviour
     public Transform movementPlane, sphereCenter;
     public Animator animator;
     public float verticalOffset, sphereRadius;
-    public LayerMask mask;
 
     private PhysicsFollow follow;
     private bool spiderHit = false;

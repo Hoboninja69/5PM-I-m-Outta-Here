@@ -2234,7 +2234,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 468d8678eae2ac446b773fbf05d3167c, type: 2}
   - {fileID: 11400000, guid: cd4fed68fafeec741b6476c36485bc87, type: 2}
   - {fileID: 11400000, guid: 3970f859b260edd49b0231af720493d5, type: 2}
-  microgamesPerGame: 10
+  - {fileID: 11400000, guid: e8b6479992d55b04dad0fcc4185bd462, type: 2}
+  microgamesPerGame: 11
   winCount: 0
 --- !u!114 &1799700457
 MonoBehaviour:

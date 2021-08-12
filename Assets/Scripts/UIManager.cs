@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     private Texture2D cursorUp, cursorDown;
 
     private Canvas canvas;
+    private readonly Vector2 cursorHotspot = new Vector2 (19, 10);
 
     public void Initialise ()
     {
@@ -73,12 +74,12 @@ public class UIManager : MonoBehaviour
 
     private void OnMouseDown ()
     {
-        Cursor.SetCursor (cursorDown, new Vector2 (25, 25), CursorMode.ForceSoftware);
+        Cursor.SetCursor (cursorDown, cursorHotspot, CursorMode.ForceSoftware);
     }
 
     private void OnMouseUp ()
     {
-        Cursor.SetCursor (cursorUp, new Vector2 (25, 25), CursorMode.ForceSoftware);
+        Cursor.SetCursor (cursorUp, cursorHotspot, CursorMode.ForceSoftware);
     }
 
     private void OnGameLoad ()
