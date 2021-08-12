@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5479f47d850cf409204feae3bc8e9a, type: 3}
   m_Name: KillTheSpider
   m_EditorClassIdentifier: 
-  Infomercial: {fileID: 0}
+  Infomercial: {fileID: 21300000, guid: f46a8444967a01549ac5f353d75c4a27, type: 3}
   WinMessage: 
   LoseMessage: 
   OutOfTimeMessage: 

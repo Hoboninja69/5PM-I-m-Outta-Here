@@ -56,8 +56,8 @@ public class GameManager : MonoBehaviour
     {
         FindObjectOfType<EventManager> ()?.Initialise ();
         FindObjectOfType<MicrogameManager> ()?.Initialise ();
-        FindObjectOfType<UIManager> ()?.Initialise ();
         FindObjectOfType<InputManager> ()?.Initialise ();
+        FindObjectOfType<UIManager> ()?.Initialise ();
         FindObjectOfType<CursorInteraction> ()?.Initialise ();
         FindObjectOfType<AudioManager> ()?.Initialise ();
         FindObjectOfType<CountDownTimer> ()?.Initialise ();

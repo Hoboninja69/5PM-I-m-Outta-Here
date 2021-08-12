@@ -21,8 +21,8 @@ public class GunController : MonoBehaviour
     {
         if (Physics.Raycast (InputManager.cursorRay, out RaycastHit hit, 20))
         {
-            Transform hole = Instantiate (bulletHole, hit.point + hit.normal * 0.01f, Quaternion.LookRotation (hit.normal, hit.normal)).transform;
-            hole.up = hit.normal;
+            Transform hole = Instantiate (bulletHole, hit.point + hit.normal * 0.01f, Quaternion.Euler (0, Random.Range (0, 360), 0)).transform;
+            hole.forward = hit.normal;
         }
     }
 }

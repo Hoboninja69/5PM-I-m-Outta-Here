@@ -5,13 +5,15 @@ using UnityEngine;
 public class PopupController : MonoBehaviour
 {
     public Interactable closeButtonInteractable;
-    public Vector2 popupSize;
+    public string openSoundName, closeSoundName;
+    public Vector2 popupSize, openPitchRange, closePitchRange;
     public event System.Action<PopupController> OnClose;
 
     private void Start ()
     {
         closeButtonInteractable.OnInteract += OnCloseDown;
         closeButtonInteractable.OnInteractUp += OnCloseUp;
+        AudioManager.Instance.PlayAtLocation (openSoundName, transform.position, 0.5f, pitchMult: Random.Range (openPitchRange.x, openPitchRange.y));
     }
 
     private void OnCloseDown ()
@@ -23,6 +25,7 @@ public class PopupController : MonoBehaviour
     {
         //play close animation
         OnClose?.Invoke (this);
+        AudioManager.Instance.PlayAtLocation (closeSoundName, transform.position, 0.5f, Random.Range (closePitchRange.x, closePitchRange.y));
         Destroy (gameObject);
     }
 

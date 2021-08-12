@@ -13,8 +13,11 @@ public class UIManager : MonoBehaviour
     private Text timerText, timerShadowText, resultScreenTitle, resultScreenSubtitle;
     [SerializeField]
     private Image infoScreenImage;
+    [SerializeField]
+    private Texture2D cursorUp, cursorDown;
 
     private Canvas canvas;
+    private readonly Vector2 cursorHotspot = new Vector2 (19, 10);
 
     public void Initialise ()
     {
@@ -39,6 +42,12 @@ public class UIManager : MonoBehaviour
         EventManager.Instance.OnMicrogameStart += OnMicrogameStart;
         EventManager.Instance.OnTimerTick += OnTimerTick;
         EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
+        InputManager.Instance.OnMouseDownLeft += OnMouseDown;
+        InputManager.Instance.OnMouseDownRight += OnMouseDown;
+        InputManager.Instance.OnMouseUpLeft += OnMouseUp;
+        InputManager.Instance.OnMouseUpRight += OnMouseUp;
+
+        OnMouseUp ();
     }
 
     public void SetUseWorldSpace (bool useWorldSpace)
@@ -61,6 +70,16 @@ public class UIManager : MonoBehaviour
                 resultScreen.SetActive (false);
                 break;
         }
+    }
+
+    private void OnMouseDown ()
+    {
+        Cursor.SetCursor (cursorDown, cursorHotspot, CursorMode.ForceSoftware);
+    }
+
+    private void OnMouseUp ()
+    {
+        Cursor.SetCursor (cursorUp, cursorHotspot, CursorMode.ForceSoftware);
     }
 
     private void OnGameLoad ()
@@ -114,6 +133,7 @@ public class UIManager : MonoBehaviour
                 break;
         }
     }
+
 
     private void OnDestroy ()
     {
