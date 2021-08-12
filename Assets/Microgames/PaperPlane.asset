@@ -12,16 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5479f47d850cf409204feae3bc8e9a, type: 3}
   m_Name: PaperPlane
   m_EditorClassIdentifier: 
-  Title: Plane Yeeting
-  Description: "The shredder isn\u2019t working but there\u2019s paperwork that needs
-    to be \u201Cgotten rid of\u201D. You come up with a brilliant idea and begin
-    throwing the paperwork out the window in the form of a paper plane. Move the
-    mouse left, right up and down to steer the plane and avoid the obstacles."
-  WinMessage: "WOOHOO! Great shot, Intern!\t"
-  LoseMessage: 
+  Infomercial: {fileID: 21300000, guid: 375ac46433ae1b04bafbd29e94cdf565, type: 3}
+  WinMessage: Don't get too excited. This doesn't make you Tom Cruise.
+  LoseMessage: MAYDAY! MAAAYYDAAAYYY!
   OutOfTimeMessage: How did you make such a slow plane?
   SceneName: PaperAirplane
-  TimerLength: 10
+  TimerLength: 15
+  timerIsWin: 0
   Sounds:
   - clips:
     - {fileID: 8300000, guid: aebec63a88fa0764ab21e611073a8dd8, type: 3}

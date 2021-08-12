@@ -128,7 +128,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 198772, guid: 97d40a9af22bd854daa7b0d13030f005, type: 3}
       propertyPath: m_Name
@@ -215,12 +215,37 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: d09c3d4051dece14d97a7a1722021c72, type: 3}
+--- !u!4 &50435075 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 415278, guid: 97d40a9af22bd854daa7b0d13030f005, type: 3}
+  m_PrefabInstance: {fileID: 50435071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &50435076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50435072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: Impact
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 1.8, y: 2.2}
 --- !u!1001 &137490729
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 182104, guid: 1ab07e421a5657542b596f27c803c3b4, type: 3}
       propertyPath: m_Name
@@ -307,6 +332,31 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: e173a749c38fb084db95b85a294db1ef, type: 3}
+--- !u!4 &137490733 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 425026, guid: 1ab07e421a5657542b596f27c803c3b4, type: 3}
+  m_PrefabInstance: {fileID: 137490729}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &137490735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137490730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: ImpactBig
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 0.8, y: 1.3}
 --- !u!1001 &159673867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -403,16 +453,16 @@ BoxCollider:
   m_GameObject: {fileID: 201044864}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 0, z: 5}
-  m_Center: {x: -2.5, y: 0, z: 2.5}
+  m_Size: {x: 8.09208, y: 0, z: 6.26147}
+  m_Center: {x: -2.4854517, y: 0, z: 1.8692799}
 --- !u!1001 &218576856
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 122938, guid: 35e186d74eccd3e418055057d130be45, type: 3}
       propertyPath: m_Name
@@ -499,6 +549,31 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 5d53956d26b131b478be4e322844120c, type: 3}
+--- !u!4 &218576860 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 470802, guid: 35e186d74eccd3e418055057d130be45, type: 3}
+  m_PrefabInstance: {fileID: 218576856}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &218576861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218576857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: ImpactPaper
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 1, y: 1.2}
 --- !u!1001 &251316225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -569,7 +644,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 182806, guid: 0bf8a1d180451d0428cae6cdd04c80d1, type: 3}
       propertyPath: m_Name
@@ -655,6 +730,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.57529783, y: 0.24353611, z: 0.862431}
   m_Center: {x: -0.0014030632, y: 0.12176746, z: -0.0016728338}
+--- !u!4 &311065646 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 406502, guid: 0bf8a1d180451d0428cae6cdd04c80d1, type: 3}
+  m_PrefabInstance: {fileID: 311065642}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &311065649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311065643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: Impact
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 5}
+  randomPitchRange: {x: 0.8, y: 1.2}
 --- !u!1 &343225490
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,7 +790,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 140606, guid: 213800715606c5e448fa9ae88e2dffbd, type: 3}
       propertyPath: m_Name
@@ -776,12 +876,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1942469, y: 0.08470094, z: 0.48777673}
   m_Center: {x: 1.7580036e-15, y: 0.04235059, z: 0.000000014901161}
+--- !u!4 &574603717 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 493624, guid: 213800715606c5e448fa9ae88e2dffbd, type: 3}
+  m_PrefabInstance: {fileID: 574603713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &574603718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574603714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: Impact
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 0.8, y: 1.2}
 --- !u!1001 &742199481
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 177450, guid: b2d95bb4b2a95bb42a3e7ac3f0b627ba, type: 3}
       propertyPath: m_Name
@@ -867,12 +992,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9185623, y: 0.08270848, z: 0.5922201}
   m_Center: {x: 6.970869e-18, y: 0.04135424, z: 0.00000017881392}
+--- !u!4 &742199485 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 401458, guid: b2d95bb4b2a95bb42a3e7ac3f0b627ba, type: 3}
+  m_PrefabInstance: {fileID: 742199481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &742199486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742199482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: ImpactPaper
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 1, y: 1.2}
 --- !u!1001 &758845230
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 197536, guid: 9754d181f2e999b47a7a5a7a6404b9bb, type: 3}
       propertyPath: m_Name
@@ -958,12 +1108,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.049980775, y: 0.048660457, z: 0.47921088}
   m_Center: {x: 0.00000040140006, y: 0.01881668, z: -0.000000074505806}
+--- !u!4 &758845234 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 418104, guid: 9754d181f2e999b47a7a5a7a6404b9bb, type: 3}
+  m_PrefabInstance: {fileID: 758845230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &758845235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758845231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: Impact
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 4, y: 5}
 --- !u!1001 &924268560
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 179622, guid: 7cc1418e9853873428f92758e6ec1d8d, type: 3}
       propertyPath: m_Name
@@ -1049,6 +1224,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.24698737, y: 0.58674645, z: 0.32127678}
   m_Center: {x: 0.0011707691, y: 0.29337323, z: 0.000092506314}
+--- !u!4 &924268564 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 409878, guid: 7cc1418e9853873428f92758e6ec1d8d, type: 3}
+  m_PrefabInstance: {fileID: 924268560}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &924268565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924268561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: ImpactMetal
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 0.8, y: 1.2}
 --- !u!1001 &979073767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1184,7 +1384,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 177676, guid: 3fa2a79e7a110e640b32488741ea714b, type: 3}
       propertyPath: m_Name
@@ -1283,12 +1483,37 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 82e34d98eedb65f49b76e38d79b5d6d6, type: 3}
+--- !u!4 &1226581415 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 419050, guid: 3fa2a79e7a110e640b32488741ea714b, type: 3}
+  m_PrefabInstance: {fileID: 1226581411}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1226581416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226581412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: Impact
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 1.8, y: 2.2}
 --- !u!1001 &1337194842
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 165732, guid: 04635ce003793804fa2690462188d79e, type: 3}
       propertyPath: m_Name
@@ -1375,6 +1600,31 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 2de5dbf4bbc063543913591aee7ec9b8, type: 3}
+--- !u!4 &1337194846 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 494032, guid: 04635ce003793804fa2690462188d79e, type: 3}
+  m_PrefabInstance: {fileID: 1337194842}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1337194847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337194843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: Impact
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 0.8, y: 1.2}
 --- !u!1 &1356920824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,6 +1637,7 @@ GameObject:
   - component: {fileID: 1356920827}
   - component: {fileID: 1356920826}
   - component: {fileID: 1356920825}
+  - component: {fileID: 1356920829}
   m_Layer: 0
   m_Name: Input
   m_TagString: Untagged
@@ -1449,6 +1700,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1356920829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356920824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e0b22ab4db7224eab1d6ecce764074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clips:
+    - {fileID: 8300000, guid: 03ccdf11cf17fda43b63fee3e6ee5f4f, type: 3}
+    - {fileID: 8300000, guid: 3fddfae00aabc0a4e9d4ddc78b3b4e2c, type: 3}
+    source: {fileID: 0}
+    name: Impact
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clips:
+    - {fileID: 8300000, guid: 833c95a020537d546a100bdf869f300b, type: 3}
+    source: {fileID: 0}
+    name: ImpactMetal
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clips:
+    - {fileID: 8300000, guid: f117f1dbfc0449c43b9f3892a973d852, type: 3}
+    - {fileID: 8300000, guid: b1641ddf5e2f2f943a86ace76f4068d3, type: 3}
+    - {fileID: 8300000, guid: aebec63a88fa0764ab21e611073a8dd8, type: 3}
+    - {fileID: 8300000, guid: 3187bc9b88f156d469b99b0a3865dac0, type: 3}
+    - {fileID: 8300000, guid: c1d8888afc4bb0141b6bf23c9f092c0f, type: 3}
+    - {fileID: 8300000, guid: 0bd33f3988679a247807ab20c91b1bf0, type: 3}
+    source: {fileID: 0}
+    name: ImpactPaper
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clips:
+    - {fileID: 8300000, guid: d89d4a7a926220e4ea1fe70973a283ee, type: 3}
+    - {fileID: 8300000, guid: 03ccdf11cf17fda43b63fee3e6ee5f4f, type: 3}
+    - {fileID: 8300000, guid: 51660096c98ccd145b065cc6a309018b, type: 3}
+    source: {fileID: 0}
+    name: ImpactBig
+    volume: 1
+    pitch: 1
+    loop: 0
 --- !u!1 &1442569150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,7 +1847,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 108830, guid: 42ba2b069fffb1e48b99b0acc4ca4eb8, type: 3}
       propertyPath: m_Name
@@ -1634,6 +1934,31 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 721b24798cabe814badc8c060ec127dd, type: 3}
+--- !u!4 &1539673442 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 481878, guid: 42ba2b069fffb1e48b99b0acc4ca4eb8, type: 3}
+  m_PrefabInstance: {fileID: 1539673438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1539673443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539673439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: ImpactMetal
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 0.8, y: 1.2}
 --- !u!1 &1549607117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,7 +2047,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 145496, guid: 277c5f3188dcb964389c2028661dfe26, type: 3}
       propertyPath: m_Name
@@ -1809,6 +2134,31 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8220c410918c2e7428145069db6371a3, type: 3}
+--- !u!4 &1569233386 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 407724, guid: 277c5f3188dcb964389c2028661dfe26, type: 3}
+  m_PrefabInstance: {fileID: 1569233382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1569233387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569233383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: Impact
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 1.8, y: 2.2}
 --- !u!1001 &1704608390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1887,7 +2237,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 197536, guid: 9754d181f2e999b47a7a5a7a6404b9bb, type: 3}
       propertyPath: m_Name
@@ -1973,12 +2323,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.049980775, y: 0.048660457, z: 0.47921088}
   m_Center: {x: 0.00000040140006, y: 0.01881668, z: -0.000000074505806}
+--- !u!4 &1704887399 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 418104, guid: 9754d181f2e999b47a7a5a7a6404b9bb, type: 3}
+  m_PrefabInstance: {fileID: 1704887395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1704887400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704887396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: Impact
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 4, y: 5}
 --- !u!1001 &1736215769
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 159100, guid: 982c73d957f34584bbe910091f6a5e77, type: 3}
       propertyPath: m_Name
@@ -2065,12 +2440,37 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: c39385e567d763743acd2d92010d7955, type: 3}
+--- !u!4 &1736215773 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 472784, guid: 982c73d957f34584bbe910091f6a5e77, type: 3}
+  m_PrefabInstance: {fileID: 1736215769}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1736215774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736215770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: Impact
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 1.8, y: 2.2}
 --- !u!1001 &1757990331
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 113862, guid: 5f6e8054d9c0eee478cfe3d939614431, type: 3}
       propertyPath: m_Name
@@ -2143,6 +2543,31 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!4 &1757990334 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 453398, guid: 5f6e8054d9c0eee478cfe3d939614431, type: 3}
+  m_PrefabInstance: {fileID: 1757990331}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1757990335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757990332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: Impact
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 0.8, y: 1.2}
 --- !u!65 &1757990337
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2161,7 +2586,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 176564, guid: 06c5c75b75e3e8847b4a2b03b6a2cbd2, type: 3}
       propertyPath: m_Name
@@ -2248,6 +2673,31 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: efab1337e9189ef4da9f2533a359b82e, type: 3}
+--- !u!4 &1834482864 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 476618, guid: 06c5c75b75e3e8847b4a2b03b6a2cbd2, type: 3}
+  m_PrefabInstance: {fileID: 1834482860}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1834482865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834482861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: ImpactBig
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 0.8, y: 1.2}
 --- !u!1 &1878903418
 GameObject:
   m_ObjectHideFlags: 0
@@ -2284,7 +2734,7 @@ MonoBehaviour:
   following: 0
   gravityMultiplier: 0
   attractionForce: 20
-  dampening: 34.6
+  dampening: 30.9
   velocityLimiting: 48.8
   objectRadius: 0.05
   obstacle:
@@ -2347,6 +2797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4189eea2e99e83a4991581cc8aa442ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 1
 --- !u!114 &1878903427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2369,7 +2820,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 122364, guid: 8b3785fa97e5a394c949aa49211757f0, type: 3}
       propertyPath: m_Name
@@ -2455,12 +2906,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.049980775, y: 0.048660457, z: 0.47921088}
   m_Center: {x: 0.00000040140006, y: 0.01881668, z: -0.000000074505806}
+--- !u!4 &1940813548 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 498632, guid: 8b3785fa97e5a394c949aa49211757f0, type: 3}
+  m_PrefabInstance: {fileID: 1940813544}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1940813549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940813545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: Impact
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 4, y: 5}
 --- !u!1001 &2064497559
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 107008, guid: b4edcc3196a1c26448c69020f186a226, type: 3}
       propertyPath: m_Name
@@ -2547,84 +3023,88 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8337320245f9c8f42ad17049ee0c0a7b, type: 3}
---- !u!1001 &2070938253
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 105414, guid: 7fae65c11e694cd479898a287b81f6a2, type: 3}
-      propertyPath: m_Name
-      value: SO_Desk_02
-      objectReference: {fileID: 0}
-    - target: {fileID: 105414, guid: 7fae65c11e694cd479898a287b81f6a2, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: 437666, guid: 7fae65c11e694cd479898a287b81f6a2, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 437666, guid: 7fae65c11e694cd479898a287b81f6a2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437666, guid: 7fae65c11e694cd479898a287b81f6a2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437666, guid: 7fae65c11e694cd479898a287b81f6a2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.08373138
-      objectReference: {fileID: 0}
-    - target: {fileID: 437666, guid: 7fae65c11e694cd479898a287b81f6a2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.707338
-      objectReference: {fileID: 0}
-    - target: {fileID: 437666, guid: 7fae65c11e694cd479898a287b81f6a2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437666, guid: 7fae65c11e694cd479898a287b81f6a2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7068755
-      objectReference: {fileID: 0}
-    - target: {fileID: 437666, guid: 7fae65c11e694cd479898a287b81f6a2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437666, guid: 7fae65c11e694cd479898a287b81f6a2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437666, guid: 7fae65c11e694cd479898a287b81f6a2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -89.963
-      objectReference: {fileID: 0}
-    - target: {fileID: 437666, guid: 7fae65c11e694cd479898a287b81f6a2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7fae65c11e694cd479898a287b81f6a2, type: 3}
---- !u!1 &2070938254 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 105414, guid: 7fae65c11e694cd479898a287b81f6a2, type: 3}
-  m_PrefabInstance: {fileID: 2070938253}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2070938255 stripped
+--- !u!4 &2064497563 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 437666, guid: 7fae65c11e694cd479898a287b81f6a2, type: 3}
-  m_PrefabInstance: {fileID: 2070938253}
+  m_CorrespondingSourceObject: {fileID: 492968, guid: b4edcc3196a1c26448c69020f186a226, type: 3}
+  m_PrefabInstance: {fileID: 2064497559}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2064497564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064497560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: Impact
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 0.8, y: 1.2}
+--- !u!33 &2067978923
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071042379}
+  m_Mesh: {fileID: 4300000, guid: c44947af3e0dc2c479f1278b87bca16a, type: 3}
+--- !u!23 &2069121299
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071042379}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 0fa29dbb24d023c4f815d0a00e41584a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &2070938256
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070938254}
+  m_GameObject: {fileID: 2071042379}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -2637,7 +3117,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070938254}
+  m_GameObject: {fileID: 2071042379}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44b251c25f01bb24b8084dfb58e4abee, type: 3}
@@ -2650,19 +3130,74 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070938254}
+  m_GameObject: {fileID: 2071042379}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.6860194, y: 1.5732598, z: 5.1090803}
   m_Center: {x: -0.056105673, y: 0.7866299, z: 2.7699076e-12}
+--- !u!1 &2071042379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2071375663}
+  - component: {fileID: 2067978923}
+  - component: {fileID: 2069121299}
+  - component: {fileID: 2070938256}
+  - component: {fileID: 2070938258}
+  - component: {fileID: 2070938257}
+  m_Layer: 0
+  m_Name: SO_Desk_02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &2071375663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071042379}
+  m_LocalRotation: {x: -0, y: -0.7068755, z: -0, w: 0.707338}
+  m_LocalPosition: {x: 0, y: 0, z: -0.08373138}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 137490733}
+  - {fileID: 311065646}
+  - {fileID: 1539673442}
+  - {fileID: 1757990334}
+  - {fileID: 1337194846}
+  - {fileID: 1736215773}
+  - {fileID: 574603717}
+  - {fileID: 742199485}
+  - {fileID: 2064497563}
+  - {fileID: 924268564}
+  - {fileID: 2126987051}
+  - {fileID: 2128107310}
+  - {fileID: 758845234}
+  - {fileID: 1940813548}
+  - {fileID: 50435075}
+  - {fileID: 1834482864}
+  - {fileID: 218576860}
+  - {fileID: 1704887399}
+  - {fileID: 1569233386}
+  - {fileID: 1226581415}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: -89.963, z: 0}
 --- !u!1001 &2126987047
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 137108, guid: 85c14a5184927774eaf8186be057f5ee, type: 3}
       propertyPath: m_Name
@@ -2748,12 +3283,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.58867353, y: 0.08984107, z: 0.932222}
   m_Center: {x: -9.2944925e-18, y: 0.044920594, z: -0.00000023841856}
+--- !u!4 &2126987051 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 458580, guid: 85c14a5184927774eaf8186be057f5ee, type: 3}
+  m_PrefabInstance: {fileID: 2126987047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2126987052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126987048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: ImpactPaper
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 1, y: 1.2}
 --- !u!1001 &2128107306
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070938255}
+    m_TransformParent: {fileID: 2071375663}
     m_Modifications:
     - target: {fileID: 133514, guid: 56bb6dadbaaf9214b8133793ef62c41a, type: 3}
       propertyPath: m_Name
@@ -2840,3 +3400,28 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: d85c515392b7ae54989177c7f1a6e31f, type: 3}
+--- !u!4 &2128107310 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 478494, guid: 56bb6dadbaaf9214b8133793ef62c41a, type: 3}
+  m_PrefabInstance: {fileID: 2128107306}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2128107311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128107307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: Impact
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0.05
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 1.8, y: 2.2}

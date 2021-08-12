@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5479f47d850cf409204feae3bc8e9a, type: 3}
   m_Name: PaperToss
   m_EditorClassIdentifier: 
-  Title: Paper Toss
-  Description: Use the mouse to throw the paper ball into the bin.
-  WinMessage: good job.
-  LoseMessage: 
-  OutOfTimeMessage: you fucked.
+  Infomercial: {fileID: 21300000, guid: 8965db41753202b488c00998aa808471, type: 3}
+  WinMessage: KOBE!
+  LoseMessage: That's what you get for trying to have fun at work.
+  OutOfTimeMessage: That's what you get for trying to have fun at work.
   SceneName: PaperToss
   TimerLength: 15
+  timerIsWin: 0
   Sounds:
   - clips:
     - {fileID: 8300000, guid: aebec63a88fa0764ab21e611073a8dd8, type: 3}
