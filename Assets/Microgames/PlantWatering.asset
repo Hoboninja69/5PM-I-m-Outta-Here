@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5479f47d850cf409204feae3bc8e9a, type: 3}
   m_Name: PlantWatering
   m_EditorClassIdentifier: 
-  Infomercial: {fileID: 21300000, guid: 8a47b1ea3accd754fbfb82991c4225ec, type: 3}
+  Infomercial: {fileID: 21300000, guid: 4299ab2c4557de64795d5a1710b58f75, type: 3}
   WinMessage: If you get fired, at least you'll have gardening to fall back on, I
     guess.
   LoseMessage: You couldn't even keep a plastic plant alive...
