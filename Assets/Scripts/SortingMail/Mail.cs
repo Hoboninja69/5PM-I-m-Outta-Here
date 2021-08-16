@@ -6,6 +6,8 @@ public class Mail : MonoBehaviour
 {
     public Category category;
     public bool sorted = false;
+
+    [HideInInspector]
     public PhysicsFollow follow;
 
     private void Start ()

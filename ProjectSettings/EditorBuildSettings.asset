@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FileStacking.unity
     guid: 17d736e0386fa3840b08ad597b9dd1bf
+  - enabled: 1
+    path: Assets/Scenes/SortingMail.unity
+    guid: f3b7067f5574dc44fb03b12c48feceb9
   m_configObjects: {}

@@ -9,6 +9,7 @@ public class MailManager : MonoBehaviour
     public int spawnAmount;
 
     private int remaining;
+    public bool failed = false;
 
     private void Start ()
     {
@@ -22,14 +23,15 @@ public class MailManager : MonoBehaviour
         if (other.TryGetComponent (out Mail mail) && !mail.sorted && !mail.follow.following)
         {
             //if correct category
-            if ((mail.category == Category.Category1 && isLeft) || (mail.category == Category.Category2 && !isLeft))
-                print ("Correct");
-            else
-                print ("Incorrect");
+            if (!failed && ((mail.category == Category.Category1 && !isLeft) || (mail.category == Category.Category2 && isLeft)))
+            {
+                failed = true;
+                EventManager.Instance.MicrogameEnd (MicrogameResult.Lose, 0.5f);
+            }
 
             mail.Deactivate ();
             if (--remaining <= 0)
-                EventManager.Instance.MicrogameEnd (MicrogameResult.Win);
+                EventManager.Instance.MicrogameEnd (MicrogameResult.Win, 0.5f);
         }
     }
 
@@ -37,7 +39,6 @@ public class MailManager : MonoBehaviour
     {
         for (int i = 0; i < spawnAmount; i++)
         {
-            print ("Spawn");
             Vector3 spawnOffset = new Vector3 (Random.Range (-0.5f, 0.5f), i * 0.25f, Random.Range (-0.5f, 0.5f));
             Instantiate (mailObjects[Random.Range (0, mailObjects.Length)], transform.position + spawnOffset, Quaternion.identity, transform).GetComponent<PhysicsGrabbable> ().movementPlane = movementPlane;
         }
