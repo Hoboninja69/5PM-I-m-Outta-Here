@@ -2238,8 +2238,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allMicrogames:
+  - {fileID: 11400000, guid: 542e4ae3b7901ea42a81aa16ea8f122c, type: 2}
   - {fileID: 11400000, guid: 5e1efed991e4a7640bba25b80d10899f, type: 2}
-  microgamesPerGame: 20
+  - {fileID: 11400000, guid: aefb1d239b1875f47b4a91c92c2b45cf, type: 2}
+  - {fileID: 11400000, guid: 3970f859b260edd49b0231af720493d5, type: 2}
+  - {fileID: 11400000, guid: 139f88cd50933c242bcc37eb5a847293, type: 2}
+  - {fileID: 11400000, guid: 3acd12937cfbcae4c9f2b3eb88064e7b, type: 2}
+  - {fileID: 11400000, guid: fb902c1d32662f54b948475614bdad12, type: 2}
+  - {fileID: 11400000, guid: 113c92289e5687e4a88bd381a61674d5, type: 2}
+  - {fileID: 11400000, guid: 468d8678eae2ac446b773fbf05d3167c, type: 2}
+  - {fileID: 11400000, guid: e8b6479992d55b04dad0fcc4185bd462, type: 2}
+  - {fileID: 11400000, guid: ef1ddf87134ec414ab19e3d13c283574, type: 2}
+  - {fileID: 11400000, guid: 5e7b1eb58228a8e439e21bc5debed127, type: 2}
+  - {fileID: 11400000, guid: cd4fed68fafeec741b6476c36485bc87, type: 2}
+  microgamesPerGame: 13
   winCount: 0
 --- !u!114 &1799700457
 MonoBehaviour:
