@@ -909,7 +909,7 @@ MonoBehaviour:
   - clips:
     - {fileID: 8300000, guid: 54489d13b5661b14b96eb6ec81d3e26b, type: 3}
     source: {fileID: 0}
-    name: VirusKill
+    name: VirusDie
     volume: 1
     pitch: 1
     loop: 0

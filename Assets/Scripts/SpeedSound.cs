@@ -18,7 +18,10 @@ public class SpeedSound : MonoBehaviour
         if (!playOnAwake) return;
 
         if (EventManager.Instance != null)
+        {
             EventManager.Instance.OnMicrogameStart += OnMicrogameStart;
+            EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
+        }
         else
             Play ();
     }
@@ -26,6 +29,11 @@ public class SpeedSound : MonoBehaviour
     private void OnMicrogameStart (Microgame microgame)
     {
         Play ();
+    }
+
+    private void OnMicrogameEnd (MicrogameResult result)
+    {
+        Stop ();
     }
 
     public void Play ()
@@ -38,7 +46,7 @@ public class SpeedSound : MonoBehaviour
         AudioManager.Instance.Stop (soundName);
     }
 
-    private void Update ()
+    private void FixedUpdate ()
     {
         currentSpeed = Vector3.Distance (transform.position, lastPos) / Time.deltaTime;
         float ratio = Mathf.InverseLerp (speedRange.x, speedRange.y, currentSpeed);
@@ -47,5 +55,11 @@ public class SpeedSound : MonoBehaviour
         lastPos = transform.position;
 
         if (debugSpeed) print (currentSpeed);
+    }
+
+    private void OnDestroy ()
+    {
+        EventManager.Instance.OnMicrogameStart -= OnMicrogameStart;
+        EventManager.Instance.OnMicrogameEnd -= OnMicrogameEnd;
     }
 }
