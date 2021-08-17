@@ -40,6 +40,11 @@ public class GameManager : MonoBehaviour
         EventManager.Instance.Unfreeze ();
     }
 
+    private void ResetGame ()
+    {
+        
+    }
+
     private void StartGame ()
     {
         //usually the hallway scene would be loaded first

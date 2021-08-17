@@ -17,8 +17,9 @@ GameObject:
   - component: {fileID: 7970320934981647298}
   - component: {fileID: 7970320934981647293}
   - component: {fileID: 7970320934981647299}
+  - component: {fileID: 1953605614543176602}
   m_Layer: 8
-  m_Name: Mail
+  m_Name: MailBlue
   m_TagString: Mail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0fa29dbb24d023c4f815d0a00e41584a, type: 2}
+  - {fileID: 2100000, guid: 907aa0dd1e0cc204fb55f8141288e098, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -184,3 +185,23 @@ MonoBehaviour:
   category: 0
   sorted: 0
   follow: {fileID: 0}
+--- !u!114 &1953605614543176602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7970320934981647292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee412a0dd1fc63439f05baa0c7b8e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: ImpactPaper
+  randomisePitch: 1
+  useAttachedSource: 0
+  minimumVolume: 0
+  spatialBlend: 1
+  startDelay: 0.5
+  velocityRange: {x: 0, y: 4}
+  randomPitchRange: {x: 1, y: 1.2}

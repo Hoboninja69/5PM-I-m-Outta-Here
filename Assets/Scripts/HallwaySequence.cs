@@ -8,7 +8,6 @@ public class HallwaySequence : MonoBehaviour
     public GameObject menuScene;
     private HallwayGenerator generator;
 
-    private static List<HallChunkConfig> remainingConfigs;
     private GameObject endChunk;
 
     private void Start()
@@ -16,16 +15,15 @@ public class HallwaySequence : MonoBehaviour
         generator = GetComponent<HallwayGenerator> ();
 
         //if first boot
-        if (remainingConfigs == null)
+        if (MicrogameManager.Instance.remainingConfigs == null)
         {
             menuScene.SetActive (true);
-            remainingConfigs = new List<HallChunkConfig> (generator.Generate (MicrogameManager.Instance.remainingMicrogames + 1, out endChunk));
+            MicrogameManager.Instance.remainingConfigs = new List<HallChunkConfig> (generator.Generate (MicrogameManager.Instance.remainingMicrogames + 1, out endChunk));
             EventManager.Instance.OnGameStart += OnGameStart;
         }
         else
         {
-            remainingConfigs.RemoveAt (0);
-            generator.Generate (remainingConfigs.ToArray (), out endChunk);
+            generator.Generate (MicrogameManager.Instance.remainingConfigs.ToArray (), out endChunk);
             StartCoroutine (TransitionSequence ());
         }
     }
@@ -67,7 +65,9 @@ public class HallwaySequence : MonoBehaviour
             camAnimator.SetTrigger ("HallwayExit");
             yield return new WaitForSeconds (3.5f);
 
-            Application.Quit ();
+            //show results
+
+            EventManager.Instance.GameReset ();
         }
     }
 
