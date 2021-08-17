@@ -30,8 +30,11 @@ public class TRMovement : MonoBehaviour
         InputManager.Instance.OnMouseUpLeft += LeftUp;
         InputManager.Instance.OnMouseDownRight += RightDown;
         InputManager.Instance.OnMouseUpRight += RightUp;
-        if (EventManager.Instance != null) 
+        if (EventManager.Instance != null)
+        {
             EventManager.Instance.OnMicrogameStart += OnMicrogameStart;
+            EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
+        }
         else 
             AudioManager.Instance.Play ("Wheels", source);
     }
@@ -39,6 +42,11 @@ public class TRMovement : MonoBehaviour
     void OnMicrogameStart (Microgame microgame)
     {
         AudioManager.Instance.Play ("Wheels", source);
+    }
+
+    void OnMicrogameEnd (MicrogameResult result)
+    {
+        AudioManager.Instance.Stop ("Wheels");
     }
 
     void LeftDown()
@@ -112,6 +120,9 @@ public class TRMovement : MonoBehaviour
         stun = false;
     }
 
-  
-
+    private void OnDestroy ()
+    {
+        EventManager.Instance.OnMicrogameStart -= OnMicrogameStart;
+        EventManager.Instance.OnMicrogameEnd -= OnMicrogameEnd;
+    }
 }

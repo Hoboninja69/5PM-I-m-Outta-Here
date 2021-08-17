@@ -187,7 +187,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245864392}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -11.66}
+  m_LocalPosition: {x: 0, y: 0, z: -11.466}
   m_LocalScale: {x: 0.0072568976, y: 0.0072568976, z: 0.0072568976}
   m_Children:
   - {fileID: 1620177314}
@@ -199,7 +199,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -958.06, y: -511.75183}
+  m_AnchoredPosition: {x: -958.06, y: -526.35706}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &309154958
@@ -888,6 +888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundName: Footstep
   useAttachedSource: 0
+  playOnAwake: 0
   randomPitchRange: {x: 0.7, y: 1.3}
   randomVolumeRange: {x: 0.8, y: 1}
 --- !u!1 &879382213
@@ -1452,6 +1453,7 @@ GameObject:
   - component: {fileID: 1150721650}
   - component: {fileID: 1150721649}
   - component: {fileID: 1150721648}
+  - component: {fileID: 1150721646}
   m_Layer: 5
   m_Name: PersistentCanvas
   m_TagString: Untagged
@@ -1459,6 +1461,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1150721646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150721645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e258ce3220d400540bad91eb4d6f7fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1150721648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1529,7 +1543,7 @@ RectTransform:
   m_GameObject: {fileID: 1150721645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.54322916, y: 0.54322916, z: 0.54322916}
+  m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
   m_Children:
   - {fileID: 938245991}
   - {fileID: 245864393}
@@ -1541,8 +1555,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 521.5, y: 280.5}
-  m_SizeDelta: {x: 1920, y: 1032.7134}
+  m_AnchoredPosition: {x: 528, y: 292}
+  m_SizeDelta: {x: 1920, y: 1061.8181}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1157805804
 GameObject:
@@ -2224,8 +2238,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allMicrogames:
-  - {fileID: 11400000, guid: 542e4ae3b7901ea42a81aa16ea8f122c, type: 2}
-  microgamesPerGame: 11
+  - {fileID: 11400000, guid: 5e1efed991e4a7640bba25b80d10899f, type: 2}
+  microgamesPerGame: 20
   winCount: 0
 --- !u!114 &1799700457
 MonoBehaviour:
@@ -2289,10 +2303,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb8f0fa0a338d3741b52421e14528a3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasObject: {fileID: 1150721645}
   infoScreen: {fileID: 1947363799}
   timer: {fileID: 662876699}
   resultScreen: {fileID: 100170030}
-  canvasObject: {fileID: 1150721645}
   menuScreen: {fileID: 245864392}
   timerText: {fileID: 2145806543}
   timerShadowText: {fileID: 309154960}

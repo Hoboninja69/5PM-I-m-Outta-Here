@@ -44,4 +44,10 @@ public class PackageManager: MonoBehaviour
         AudioManager.Instance.Stop ("BombTick");
         if (result == MicrogameResult.OutOfTime) AudioManager.Instance.Play ("Explosion"); 
     }
+
+    private void OnDestroy ()
+    {
+        EventManager.Instance.OnMicrogameStart -= OnMicrogameStart;
+        EventManager.Instance.OnMicrogameEnd -= OnMicrogameEnd;
+    }
 }

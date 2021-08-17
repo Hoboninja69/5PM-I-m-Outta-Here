@@ -82,7 +82,7 @@ public class MicrogameManager : MonoBehaviour
     {
         remainingConfigs = null;
         RandomiseMicrogameQueue ();
-        SceneManager.UnloadSceneAsync (SceneManager.GetActiveScene ());
+        EventManager.Instance.GameLoad ();
         LoadHallway ();
     }
 

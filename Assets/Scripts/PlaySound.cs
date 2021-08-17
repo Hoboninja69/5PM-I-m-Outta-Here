@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlaySound : MonoBehaviour
 {
     public string soundName;
-    public bool useAttachedSource;
+    public bool useAttachedSource, playOnAwake = false;
     public Vector2 randomPitchRange, randomVolumeRange;
 
     private AudioSource source;
@@ -14,6 +14,7 @@ public class PlaySound : MonoBehaviour
     {
         if (useAttachedSource)
             source = GetComponent<AudioSource> ();
+        if (playOnAwake) Play ();
     }
 
     public void Play ()

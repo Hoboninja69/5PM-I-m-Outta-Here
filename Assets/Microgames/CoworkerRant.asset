@@ -20,9 +20,16 @@ MonoBehaviour:
   LoseMessage: You misogynistic asshole.
   OutOfTimeMessage: 
   SceneName: CoworkerRant
-  TimerLength: 20
+  TimerLength: 21
   timerIsWin: 1
-  Sounds: []
+  Sounds:
+  - clips:
+    - {fileID: 8300000, guid: 7415bdbdb9bc2e444a99bfb8850cba0b, type: 3}
+    source: {fileID: 0}
+    name: Rant
+    volume: 1
+    pitch: 1
+    loop: 0
   Music:
     clips: []
     source: {fileID: 0}

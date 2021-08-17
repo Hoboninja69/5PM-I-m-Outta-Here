@@ -7,8 +7,9 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
+    public GameObject canvasObject;
     [SerializeField]
-    private GameObject infoScreen, timer, resultScreen, canvasObject, menuScreen;
+    private GameObject infoScreen, timer, resultScreen, menuScreen;
     [SerializeField]
     private Text timerText, timerShadowText, resultScreenTitle, resultScreenSubtitle;
     [SerializeField]
@@ -54,7 +55,7 @@ public class UIManager : MonoBehaviour
     {
         canvas.renderMode = useWorldSpace ? RenderMode.WorldSpace : RenderMode.ScreenSpaceOverlay;
         if (useWorldSpace)
-            canvas.worldCamera = Camera.current;
+            canvas.worldCamera = Camera.main;
     }
 
     private void OnUIButtonPressed (string buttonName)
