@@ -19,6 +19,9 @@ public class EventManager : MonoBehaviour
     public event Action OnGameStart;
     public void GameStart () => OnGameStart?.Invoke ();
 
+    public event Action OnGameReset;
+    public void GameReset () => OnGameReset?.Invoke ();
+
     public event Action OnTransitionSceneEnd;
     public void TransitionSceneEnd () => OnTransitionSceneEnd?.Invoke ();
 

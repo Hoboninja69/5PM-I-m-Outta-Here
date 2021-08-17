@@ -8,6 +8,7 @@ public class MicrogameManager : MonoBehaviour
     public static MicrogameManager Instance;
 
     public Microgame currentMicrogame { get { return microgameQueue[currentMicrogameIndex]; } }
+    public List<HallChunkConfig> remainingConfigs;
 
     [SerializeField]
     private Microgame[] allMicrogames;
@@ -38,6 +39,7 @@ public class MicrogameManager : MonoBehaviour
         EventManager.Instance.OnTransitionSceneEnd += LoadCurrent;
         EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
         EventManager.Instance.OnUIButtonPressed += OnUIButtonPressed;
+        EventManager.Instance.OnGameReset += OnGameReset;
 
         RandomiseMicrogameQueue ();
     }
@@ -76,12 +78,20 @@ public class MicrogameManager : MonoBehaviour
         Cursor.visible = currentMicrogame.showCursor;
     }
 
+    private void OnGameReset ()
+    {
+        remainingConfigs = null;
+        RandomiseMicrogameQueue ();
+        SceneManager.UnloadSceneAsync (SceneManager.GetActiveScene ());
+        LoadHallway ();
+    }
 
     private void OnMicrogameEnd (MicrogameResult result)
     {
         if (result == MicrogameResult.Win)
             winCount++;
 
+        remainingConfigs.RemoveAt (0);
         GameManager.Instance.PauseGame ();
     }
 
