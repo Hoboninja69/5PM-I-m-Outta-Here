@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SortingMail.unity
     guid: f3b7067f5574dc44fb03b12c48feceb9
+  - enabled: 1
+    path: Assets/Scenes/WindowClean.unity
+    guid: 2c72aed417fcd3b4395795ef13f0daee
   m_configObjects: {}

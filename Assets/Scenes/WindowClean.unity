@@ -310,10 +310,12 @@ GameObject:
   - component: {fileID: 222872467}
   - component: {fileID: 222872466}
   - component: {fileID: 222872465}
+  - component: {fileID: 222872470}
   - component: {fileID: 222872464}
   - component: {fileID: 222872463}
   - component: {fileID: 222872462}
   - component: {fileID: 222872468}
+  - component: {fileID: 222872469}
   m_Layer: 8
   m_Name: Towel
   m_TagString: Untagged
@@ -430,6 +432,121 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affectRadius: 0.28
+--- !u!114 &222872469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222872461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35c5771019ec672489d1342803b1ca95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 222872470}
+  soundName: Scrub
+  playOnAwake: 1
+  volumeRange: {x: 0, y: 1}
+  pitchRange: {x: 0.01, y: 1.5}
+  speedRange: {x: 0, y: 20}
+  debugSpeed: 0
+--- !u!82 &222872470
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222872461}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.883
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &355389952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,11 +1124,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 705713677}
-  - component: {fileID: 705713676}
   - component: {fileID: 705713674}
-  - component: {fileID: 705713673}
-  - component: {fileID: 705713672}
+  - component: {fileID: 705713676}
   - component: {fileID: 705713675}
+  - component: {fileID: 705713673}
   m_Layer: 0
   m_Name: Input
   m_TagString: Untagged
@@ -1019,18 +1135,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &705713672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705713671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad35c187d8db6614eae5aa7a2df8e30a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &705713673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1051,6 +1155,13 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+  - clips:
+    - {fileID: 8300000, guid: e80e93d96961ce2478c9067079dc7ae3, type: 3}
+    source: {fileID: 0}
+    name: Scrub
+    volume: 1
+    pitch: 1
+    loop: 1
 --- !u!114 &705713674
 MonoBehaviour:
   m_ObjectHideFlags: 0

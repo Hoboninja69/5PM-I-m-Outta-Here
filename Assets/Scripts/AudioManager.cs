@@ -151,7 +151,7 @@ public class AudioManager : MonoBehaviour
         }    
 
         microgameSounds = microgame.Sounds;
-        foreach (Sound sound in sounds)
+        foreach (Sound sound in microgameSounds)
             AddSoundSource (sound);
     }
 
