@@ -30,6 +30,13 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+  - clips:
+    - {fileID: 8300000, guid: 076e79e1ab78cb04abc033d058527449, type: 3}
+    source: {fileID: 0}
+    name: Interrupted
+    volume: 1
+    pitch: 1
+    loop: 0
   Music:
     clips: []
     source: {fileID: 0}

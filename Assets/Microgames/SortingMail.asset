@@ -34,6 +34,20 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+  - clips:
+    - {fileID: 8300000, guid: 320f2214a8fadf649953d17236673a91, type: 3}
+    source: {fileID: 0}
+    name: Correct
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clips:
+    - {fileID: 8300000, guid: 076e79e1ab78cb04abc033d058527449, type: 3}
+    source: {fileID: 0}
+    name: Incorrect
+    volume: 1
+    pitch: 1
+    loop: 0
   Music:
     clips: []
     source: {fileID: 0}

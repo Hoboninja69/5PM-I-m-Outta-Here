@@ -11,11 +11,11 @@ public class PopupController : MonoBehaviour
 
     private void Start ()
     {
-        closeButtonInteractable.OnInteract += OnCloseDown;
+        closeButtonInteractable.OnInteractUp += OnCloseUp;
         AudioManager.Instance.PlayAtLocation (openSoundName, transform.position, 0.5f, pitchMult: Random.Range (openPitchRange.x, openPitchRange.y));
     }
 
-    private void OnCloseDown ()
+    private void OnCloseUp ()
     {
         //play close animation
         OnClose?.Invoke (this);
@@ -30,6 +30,6 @@ public class PopupController : MonoBehaviour
 
     private void OnDestroy ()
     {
-        closeButtonInteractable.OnInteract -= OnCloseDown;
+        closeButtonInteractable.OnInteract -= OnCloseUp;
     }
 }

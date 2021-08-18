@@ -17,7 +17,7 @@ MonoBehaviour:
   LoseMessage: 
   OutOfTimeMessage: 
   SceneName: WindowClean
-  TimerLength: 10
+  TimerLength: 12
   timerIsWin: 0
   Sounds:
   - clips:

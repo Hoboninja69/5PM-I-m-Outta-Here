@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WindowClean.unity
     guid: 2c72aed417fcd3b4395795ef13f0daee
+  - enabled: 1
+    path: Assets/Scenes/Virus.unity
+    guid: c88a5a4953b711242953baf85b8854d2
   m_configObjects: {}

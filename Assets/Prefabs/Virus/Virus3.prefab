@@ -10,10 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7227111072502194781}
   - component: {fileID: 3450938919421520736}
-  - component: {fileID: 5419085084114550175}
-  - component: {fileID: 7100993988705191226}
   - component: {fileID: 406379218762291840}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: VirusSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,32 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5419085084114550175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5906284147057245843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4189eea2e99e83a4991581cc8aa442ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active: 1
---- !u!65 &7100993988705191226
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5906284147057245843}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2, z: 0.0001}
-  m_Center: {x: 0, y: 0, z: 0.0001}
 --- !u!95 &406379218762291840
 Animator:
   serializedVersion: 3
@@ -140,7 +112,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7038000674960518233}
-  - component: {fileID: 3122886131159254330}
+  - component: {fileID: -4934337137952897797}
+  - component: {fileID: -1167179994612627016}
   m_Layer: 0
   m_Name: Virus3
   m_TagString: Untagged
@@ -163,7 +136,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3122886131159254330
+--- !u!65 &-4934337137952897797
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9131938943802495794}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.25, z: 0.001}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-1167179994612627016
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,12 +158,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 9131938943802495794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cb5970c0a4254c47aa711af647d35f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 54897cd02b92fe6479eb08f6e6ca5e78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closeButtonInteractable: {fileID: 5419085084114550175}
   openSoundName: VirusSpawn
   closeSoundName: VirusDie
-  popupSize: {x: 0.2, y: 0.2}
+  popupSize: {x: 0.25, y: 0.25}
   openPitchRange: {x: 0.8, y: 1.2}
   closePitchRange: {x: 0.8, y: 1.2}
