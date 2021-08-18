@@ -9,7 +9,6 @@ public class NewspaperController : MonoBehaviour
     public float verticalOffset, sphereRadius;
 
     private PhysicsFollow follow;
-    private bool spiderHit = false;
 
     private void Start ()
     {
@@ -36,7 +35,6 @@ public class NewspaperController : MonoBehaviour
         {
             if (hit.CompareTag ("Spider"))
             {
-                spiderHit = true;
                 AudioManager.Instance.PlayAtLocation ("Punch", hit.transform, 0.9f, pitchMult: Random.Range (0.9f, 1.1f));
                 if (hit.transform.parent.TryGetComponent (out SpiderMovement spider))
                     spider.Kill ();

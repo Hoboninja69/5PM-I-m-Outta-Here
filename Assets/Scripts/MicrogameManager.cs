@@ -36,7 +36,6 @@ public class MicrogameManager : MonoBehaviour
             DontDestroyOnLoad (gameObject);
         }
 
-        EventManager.Instance.OnTransitionSceneEnd += LoadCurrent;
         EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
         EventManager.Instance.OnUIButtonPressed += OnUIButtonPressed;
         EventManager.Instance.OnGameReset += OnGameReset;
@@ -64,11 +63,13 @@ public class MicrogameManager : MonoBehaviour
         SceneManager.LoadScene ("TransitionHallway");
     }
 
-    public void LoadCurrent ()
+    public AsyncOperation LoadCurrentAsync ()
     {
-        SceneManager.LoadScene (currentMicrogame.SceneName);
-        GameManager.Instance.PauseGame ();
-        EventManager.Instance.MicrogameLoad (currentMicrogame);
+        AsyncOperation scene = SceneManager.LoadSceneAsync (currentMicrogame.SceneName, LoadSceneMode.Additive);
+        scene.allowSceneActivation = false;
+        return scene;
+        //GameManager.Instance.PauseGame ();
+        //EventManager.Instance.MicrogameLoad (currentMicrogame);
     }
 
     public void StartCurrent ()
@@ -113,7 +114,6 @@ public class MicrogameManager : MonoBehaviour
 
     private void OnDestroy ()
     {
-        EventManager.Instance.OnTransitionSceneEnd -= LoadCurrent;
         EventManager.Instance.OnMicrogameEnd -= OnMicrogameEnd;
         EventManager.Instance.OnUIButtonPressed -= OnUIButtonPressed;
     }

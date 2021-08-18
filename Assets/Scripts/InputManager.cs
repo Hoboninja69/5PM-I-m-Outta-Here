@@ -20,6 +20,7 @@ public class InputManager : MonoBehaviour
     public event Action<float> OnMouseWheel;
 
     private bool frozen = false;
+    bool test;
 
     public void Initialise ()
     {
@@ -57,6 +58,12 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown (0))
             OnMouseDownLeft?.Invoke ();
+
+        //if (Input.GetMouseButtonDown (0))
+        //{
+        //    UIManager.Instance.SetUseWorldSpace (test);
+        //    test = !test;
+        //}
 
         if (Input.GetMouseButtonUp (0))
             OnMouseUpLeft?.Invoke ();

@@ -38,12 +38,10 @@ MonoBehaviour:
     loop: 0
   Music:
     clips:
-    - {fileID: 8300000, guid: 5c9fbb03ed0ff4840820c8713cc1a4da, type: 3}
-    - {fileID: 8300000, guid: c94a7d455acc5934f92b4c568d3c7022, type: 3}
-    - {fileID: 8300000, guid: 4eceae0e231475b4dbcb205cc2cc19ec, type: 3}
+    - {fileID: 8300000, guid: fd95d2dfc4081954d8f1630e16b741cd, type: 3}
     source: {fileID: 0}
     name: Music
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 1
   showCursor: 0

@@ -12,7 +12,6 @@ public class PlantController : MonoBehaviour
     private float maxCapacity;
     private float minCapacity; 
     private float currentCapacity = 0;
-    private bool full = false;
 
     private void Start ()
     {

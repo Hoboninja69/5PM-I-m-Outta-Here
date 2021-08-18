@@ -30,10 +30,12 @@ MonoBehaviour:
     pitch: 2
     loop: 0
   Music:
-    clips: []
+    clips:
+    - {fileID: 8300000, guid: c5d760d24c4c32849b10b26dca9f6e5b, type: 3}
+    - {fileID: 8300000, guid: 4eceae0e231475b4dbcb205cc2cc19ec, type: 3}
     source: {fileID: 0}
-    name: 
-    volume: 1
+    name: Music
+    volume: 0.5
     pitch: 1
     loop: 0
   showCursor: 0

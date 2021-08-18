@@ -24,7 +24,7 @@ public class AudioManager : MonoBehaviour
         if (EventManager.Instance != null)
         {
             EventManager.Instance.OnMicrogameLoad += GetMicrogameSounds;
-            EventManager.Instance.OnMicrogameLoad += PlayMicrogameMusic;
+            EventManager.Instance.OnMicrogameStart += PlayMicrogameMusic;
             EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
         }
 
@@ -78,6 +78,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource PlayAtLocation (string soundName, Vector3 location, float spatialBlend, float volumeMult = 1, float pitchMult = 1)
     {
+        print (soundName);
         if (!FindSound (soundName, out Sound sound))
         {
             Debug.LogError ("Could not Play sound \"" + soundName + "\" at location (not found)");
@@ -167,7 +168,10 @@ public class AudioManager : MonoBehaviour
         if (currentSong.source != null)
             SetSoundSource (currentSong.source, currentSong);
         else
+        {
             AddSoundSource (currentSong);
+            currentSong.source.playOnAwake = false;
+        }
 
         currentSong.source.Play ();
     }

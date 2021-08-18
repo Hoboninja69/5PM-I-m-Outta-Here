@@ -42,14 +42,15 @@ MonoBehaviour:
     - {fileID: 8300000, guid: f32799d2bcd170748a6e16b3d9b03887, type: 3}
     source: {fileID: 0}
     name: PistolShoot
-    volume: 1
+    volume: 0.75
     pitch: 1
     loop: 0
   Music:
-    clips: []
+    clips:
+    - {fileID: 8300000, guid: c94a7d455acc5934f92b4c568d3c7022, type: 3}
     source: {fileID: 0}
-    name: 
-    volume: 1
+    name: Music
+    volume: 0.75
     pitch: 1
     loop: 0
   showCursor: 1
