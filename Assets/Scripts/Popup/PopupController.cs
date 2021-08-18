@@ -11,14 +11,8 @@ public class PopupController : MonoBehaviour
 
     private void Start ()
     {
-        closeButtonInteractable.OnInteract += OnCloseDown;
         closeButtonInteractable.OnInteractUp += OnCloseUp;
         AudioManager.Instance.PlayAtLocation (openSoundName, transform.position, 0.5f, pitchMult: Random.Range (openPitchRange.x, openPitchRange.y));
-    }
-
-    private void OnCloseDown ()
-    {
-        //change button colour
     }
 
     private void OnCloseUp ()
@@ -32,5 +26,10 @@ public class PopupController : MonoBehaviour
     private void OnDrawGizmos ()
     {
         Tools.DrawBox (transform.position, popupSize, transform.rotation.eulerAngles, Color.blue);
+    }
+
+    private void OnDestroy ()
+    {
+        closeButtonInteractable.OnInteract -= OnCloseUp;
     }
 }

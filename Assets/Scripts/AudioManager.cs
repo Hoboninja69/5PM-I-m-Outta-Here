@@ -64,6 +64,9 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        if (sound.source.gameObject == gameObject)
+            Destroy (sound.source);
+
         sound.source = source;
         source.volume = sound.volume * volumeMult;
         source.pitch = sound.pitch * pitchMult;
@@ -151,7 +154,7 @@ public class AudioManager : MonoBehaviour
         }    
 
         microgameSounds = microgame.Sounds;
-        foreach (Sound sound in sounds)
+        foreach (Sound sound in microgameSounds)
             AddSoundSource (sound);
     }
 

@@ -8,9 +8,7 @@ using UnityEngine;
 [RequireComponent (typeof (PhysicsFollow))]
 public class PhysicsGrabbable : MonoBehaviour
 {
-    public bool snapToCursor;
-    public bool hideCursor;
-    public bool useObjectPosition;
+    public bool snapToCursor, hideCursor, useObjectPosition, sticky;
     public Transform movementPlane;
     public float maxReleaseVelocity;
     public event Action OnGrabbed;
@@ -39,7 +37,9 @@ public class PhysicsGrabbable : MonoBehaviour
     private void Grab ()
     {
         OnGrabbed?.Invoke ();
-        InputManager.Instance.OnMouseUpLeft += Drop;
+        if (!sticky)
+            InputManager.Instance.OnMouseUpLeft += Drop;
+
         if (!snapToCursor)
             offset = Tools.GetRayPlaneIntersectionPoint (movementPlane.position, movementPlane.up,
                 new Ray (Camera.main.transform.position, transform.position - Camera.main.transform.position)) -
@@ -64,7 +64,7 @@ public class PhysicsGrabbable : MonoBehaviour
     private void OnDestroy ()
     {
         interactable.OnInteract -= Grab;
-        if (follow.following)
+        if (follow.following && !sticky)
             InputManager.Instance.OnMouseUpLeft -= Drop;
     }
 }

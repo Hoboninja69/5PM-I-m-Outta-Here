@@ -6,6 +6,10 @@ public class GunController : MonoBehaviour
 {
     public Transform screenPlane;
     public GameObject bulletHole;
+    public Animator gunAnim;
+    public float delay;
+
+    private float lastShoot;
 
     private void Start ()
     {
@@ -19,10 +23,24 @@ public class GunController : MonoBehaviour
 
     private void Shoot ()
     {
+        if (Time.time - lastShoot < delay) return;
+        lastShoot = Time.time;
+
+        gunAnim.SetTrigger ("Shoot");
         if (Physics.Raycast (InputManager.cursorRay, out RaycastHit hit, 20))
         {
-            Transform hole = Instantiate (bulletHole, hit.point + hit.normal * 0.01f, Quaternion.Euler (0, Random.Range (0, 360), 0)).transform;
+            if (hit.collider.TryGetComponent (out VirusController virus))
+                virus.Shoot ();
+
+            Transform hole = Instantiate (bulletHole, hit.point + hit.normal * 0.01f, Quaternion.identity).transform;
             hole.forward = hit.normal;
+            hole.rotation = hole.rotation.SetEulerZ (Random.Range (0, 360));
+            hole.localScale = Vector3.one * Random.Range (0.9f, 1.1f);
         }
+    }
+
+    private void OnDestroy ()
+    {
+        InputManager.Instance.OnMouseDownLeft -= Shoot;
     }
 }

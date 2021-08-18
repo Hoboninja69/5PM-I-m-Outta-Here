@@ -199,7 +199,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -958.06, y: -526.35706}
+  m_AnchoredPosition: {x: -958.06, y: -525.85815}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &309154958
@@ -1543,7 +1543,7 @@ RectTransform:
   m_GameObject: {fileID: 1150721645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
+  m_LocalScale: {x: 0.55052084, y: 0.55052084, z: 0.55052084}
   m_Children:
   - {fileID: 938245991}
   - {fileID: 245864393}
@@ -1555,8 +1555,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 528, y: 292}
-  m_SizeDelta: {x: 1920, y: 1061.8181}
+  m_AnchoredPosition: {x: 528.5, y: 292}
+  m_SizeDelta: {x: 1920, y: 1060.8136}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1157805804
 GameObject:
@@ -2251,7 +2251,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ef1ddf87134ec414ab19e3d13c283574, type: 2}
   - {fileID: 11400000, guid: 5e7b1eb58228a8e439e21bc5debed127, type: 2}
   - {fileID: 11400000, guid: cd4fed68fafeec741b6476c36485bc87, type: 2}
-  microgamesPerGame: 13
+  - {fileID: 11400000, guid: 14cb5de8a6076d34d92296900e7f76cb, type: 2}
+  - {fileID: 11400000, guid: 23f5f44f477c40d43ab378efe3417510, type: 2}
+  microgamesPerGame: 15
   winCount: 0
 --- !u!114 &1799700457
 MonoBehaviour:
