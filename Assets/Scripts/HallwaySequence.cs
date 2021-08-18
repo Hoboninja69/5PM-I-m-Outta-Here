@@ -35,6 +35,8 @@ public class HallwaySequence : MonoBehaviour
 
     private IEnumerator MenuSequence ()
     {
+        yield return new WaitForSeconds (0.5f);
+
         camAnimator.SetTrigger ("MenuWalk");
         yield return new WaitForSeconds (4.5f);
 
@@ -47,18 +49,31 @@ public class HallwaySequence : MonoBehaviour
 
     private IEnumerator TransitionSequence ()
     {
-        camAnimator.SetTrigger ("HallwayWalk");
-        yield return new WaitForSeconds (2f);
-
         if (MicrogameManager.Instance.remainingMicrogames > 0)
         {
-            generator.configs[1].associatedChunk.SpawnCoworker ();
-            yield return new WaitForSeconds (0.5f);
+            EventManager.Instance.TransitionSceneStart ();
+            AsyncOperation microgameLoad = MicrogameManager.Instance.LoadCurrentAsync ();
 
-            EventManager.Instance.TransitionSceneEnd ();
+            camAnimator.SetTrigger ("HallwayWalk");
+            yield return new WaitForSeconds (2f);
+
+            generator.configs[1].associatedChunk.SpawnCoworker ();
+            float clipLength = AudioManager.Instance.PlayAtLocation 
+                ("Coworker", generator.configs[1].associatedChunk.coworker.transform.position, 0.25f).clip.length;
+            yield return new WaitForSeconds (clipLength + 0.2f);
+
+            microgameLoad.allowSceneActivation = true;
+            yield return new WaitUntil (() => microgameLoad.isDone);
+            GameManager.Instance.PauseGame ();
+
+            UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync ("TransitionHallway");
+            EventManager.Instance.MicrogameLoad (MicrogameManager.Instance.currentMicrogame);
         }
         else
         {
+            camAnimator.SetTrigger ("HallwayWalk");
+            yield return new WaitForSeconds (2f); 
+            
             endChunk.GetComponentInChildren<Animator> ().SetTrigger ("Open");
             yield return new WaitForSeconds (1f);
 

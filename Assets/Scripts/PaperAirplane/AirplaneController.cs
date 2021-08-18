@@ -33,7 +33,7 @@ public class AirplaneController : MonoBehaviour
         if (currentSpeed < targetSpeed)
             currentSpeed = Mathf.Lerp (launchSpeed, targetSpeed, (Time.time - startTime) / speedLerpTime);
 
-        source.volume = Mathf.Lerp (0f, 0.25f, (rb.velocity.magnitude - 6) / 10);
+        source.volume = Mathf.Lerp (0f, 0.75f, (rb.velocity.magnitude - 6) / 10);
         if (fall || autoPilot) return;
 
         roll = Mathf.Lerp (roll, 0, Time.deltaTime * rollReturnSpeed);

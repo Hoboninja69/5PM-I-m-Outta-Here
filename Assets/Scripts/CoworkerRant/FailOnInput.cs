@@ -23,7 +23,7 @@ public class FailOnInput : MonoBehaviour
         AudioManager.Instance.Stop ("Rant");
         AudioManager.Instance.Play ("Interrupted");
         veronica.SetTrigger ("Interrupt");
-        EventManager.Instance.MicrogameEnd (MicrogameResult.Lose, 2f);
+        EventManager.Instance.MicrogameEnd (MicrogameResult.Lose, 2.6f);
     }
 
     private void OnDestroy ()

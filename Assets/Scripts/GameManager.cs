@@ -40,9 +40,14 @@ public class GameManager : MonoBehaviour
         EventManager.Instance.Unfreeze ();
     }
 
-    private void ResetGame ()
+    private void OnUIButtonPressed (string buttonName)
     {
-        
+        switch (buttonName)
+        {
+            case "QuitGame":
+                Application.Quit ();
+                break;
+        }
     }
 
     private void StartGame ()
@@ -70,6 +75,6 @@ public class GameManager : MonoBehaviour
 
     private void SubscribeToEvents ()
     {
-
+        EventManager.Instance.OnUIButtonPressed += OnUIButtonPressed;
     }
 }
