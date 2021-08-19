@@ -52,7 +52,6 @@ public class HallwaySequence : MonoBehaviour
         if (MicrogameManager.Instance.remainingMicrogames > 0)
         {
             EventManager.Instance.TransitionSceneStart ();
-            AsyncOperation microgameLoad = MicrogameManager.Instance.LoadCurrentAsync ();
 
             camAnimator.SetTrigger ("HallwayWalk");
             yield return new WaitForSeconds (2f);
@@ -62,12 +61,9 @@ public class HallwaySequence : MonoBehaviour
                 ("Coworker", generator.configs[1].associatedChunk.coworker.transform.position, 0.25f).clip.length;
             yield return new WaitForSeconds (clipLength + 0.2f);
 
-            microgameLoad.allowSceneActivation = true;
-            yield return new WaitUntil (() => microgameLoad.isDone);
-            GameManager.Instance.PauseGame ();
+            yield return new WaitWhile (() => MicrogameManager.Instance.loadingScene.progress < 0.9f);
 
-            UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync ("TransitionHallway");
-            EventManager.Instance.MicrogameLoad (MicrogameManager.Instance.currentMicrogame);
+            EventManager.Instance.TransitionSceneEnd ();
         }
         else
         {
