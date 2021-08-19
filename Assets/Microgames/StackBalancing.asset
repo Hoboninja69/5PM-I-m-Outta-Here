@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: StackBalancing
   m_EditorClassIdentifier: 
   Infomercial: {fileID: 21300000, guid: 4175ef6622d67964993320edbeeed651, type: 3}
-  WinMessage: 
-  LoseMessage: 
-  OutOfTimeMessage: 
+  WinMessage: 'You can '
+  LoseMessage: Who knew carrying an object would be too difficult for you?
+  OutOfTimeMessage: Who knew carrying an object would be too difficult for you?
   SceneName: FileStacking
   TimerLength: 15
   timerIsWin: 1
