@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: WindowClean
   m_EditorClassIdentifier: 
   Infomercial: {fileID: 21300000, guid: 3839935b3b5bb2d4f836f88d4e812c08, type: 3}
-  WinMessage: 
-  LoseMessage: 
-  OutOfTimeMessage: 
+  WinMessage: Squeaky clean, unlike my criminal record.
+  LoseMessage: This window is as dirty as your mum was last night. Zing!
+  OutOfTimeMessage: This window is as dirty as your mum was last night. Zing!
   SceneName: WindowClean
   TimerLength: 12
   timerIsWin: 0

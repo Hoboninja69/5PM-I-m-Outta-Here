@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: KillTheSpider
   m_EditorClassIdentifier: 
   Infomercial: {fileID: 21300000, guid: f46a8444967a01549ac5f353d75c4a27, type: 3}
-  WinMessage: 
-  LoseMessage: 
-  OutOfTimeMessage: 
+  WinMessage: You won the microgame. But at what cost, you murderer!?
+  LoseMessage: Well, it's time to burn down the office.
+  OutOfTimeMessage: Well, it's time to burn down the office.
   SceneName: KilltheSpider
   TimerLength: 10
   timerIsWin: 0
