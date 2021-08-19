@@ -55,3 +55,46 @@ public static class Tools
         return new Vector2 (Random.Range (-maxOffset.x, maxOffset.x), Random.Range (-maxOffset.y, maxOffset.y));
     }
 }
+
+public static class ExtensionMethods
+{
+    public static Vector3 SetX (this Vector3 v, float value)
+    {
+        v.x = value;
+        return v;
+    }
+
+    public static Vector3 SetY (this Vector3 v, float value)
+    {
+        v.y = value;
+        return v;
+    }
+
+    public static Vector3 SetZ (this Vector3 v, float value)
+    {
+        v.z = value;
+        return v;
+    }
+
+    public static Quaternion SetEulerX (this Quaternion q, float value)
+    {
+        Vector3 qEuler = q.eulerAngles;
+        qEuler.x = value;
+        return Quaternion.Euler (qEuler);
+    }
+
+    public static Quaternion SetEulerY (this Quaternion q, float value)
+    {
+        Vector3 qEuler = q.eulerAngles;
+        qEuler.y = value;
+        return Quaternion.Euler (qEuler);
+    }
+
+    public static Quaternion SetEulerZ (this Quaternion q, float value)
+    {
+        Vector3 qEuler = q.eulerAngles;
+        qEuler.z = value;
+        return Quaternion.Euler (qEuler);
+    }
+}
+

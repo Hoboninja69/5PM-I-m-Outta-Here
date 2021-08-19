@@ -7,6 +7,7 @@ public class StampDocument : MonoBehaviour
 {
     public event Action OnDocumentStamped;
     public Transform stampPoint;
+    public Vector2 documentArea, stampArea;
 
     private Vector3 startPos;
     private bool stamped = false;
@@ -17,6 +18,7 @@ public class StampDocument : MonoBehaviour
     {
         startPos = transform.localPosition;
         source = GetComponent<AudioSource> ();
+        stampPoint.localPosition = Tools.RandomPositionInArea (documentArea, stampArea);
     }
 
     public void Stamp (Vector3 stampAttemptPoint)
@@ -66,5 +68,11 @@ public class StampDocument : MonoBehaviour
 
         transform.localPosition = destination;
         animating = false;
+    }
+
+    private void OnDrawGizmos ()
+    {
+        Tools.DrawBox (stampPoint.parent.position, documentArea, stampPoint.parent.rotation.eulerAngles, Color.white);
+        Tools.DrawBox (stampPoint.position, stampArea, stampPoint.localRotation.eulerAngles, Color.blue);
     }
 }

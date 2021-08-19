@@ -2813,6 +2813,7 @@ MonoBehaviour:
   snapToCursor: 1
   hideCursor: 1
   useObjectPosition: 0
+  sticky: 1
   movementPlane: {fileID: 343225491}
   maxReleaseVelocity: 0
 --- !u!1001 &1940813544
@@ -3123,7 +3124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b251c25f01bb24b8084dfb58e4abee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetHeight: 0.8
+  TargetHeight: 1.3
 --- !u!65 &2070938258
 BoxCollider:
   m_ObjectHideFlags: 0

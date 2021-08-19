@@ -40,6 +40,16 @@ public class GameManager : MonoBehaviour
         EventManager.Instance.Unfreeze ();
     }
 
+    private void OnUIButtonPressed (string buttonName)
+    {
+        switch (buttonName)
+        {
+            case "QuitGame":
+                Application.Quit ();
+                break;
+        }
+    }
+
     private void StartGame ()
     {
         //usually the hallway scene would be loaded first
@@ -56,8 +66,8 @@ public class GameManager : MonoBehaviour
     {
         FindObjectOfType<EventManager> ()?.Initialise ();
         FindObjectOfType<MicrogameManager> ()?.Initialise ();
-        FindObjectOfType<UIManager> ()?.Initialise ();
         FindObjectOfType<InputManager> ()?.Initialise ();
+        FindObjectOfType<UIManager> ()?.Initialise ();
         FindObjectOfType<CursorInteraction> ()?.Initialise ();
         FindObjectOfType<AudioManager> ()?.Initialise ();
         FindObjectOfType<CountDownTimer> ()?.Initialise ();
@@ -65,6 +75,6 @@ public class GameManager : MonoBehaviour
 
     private void SubscribeToEvents ()
     {
-
+        EventManager.Instance.OnUIButtonPressed += OnUIButtonPressed;
     }
 }

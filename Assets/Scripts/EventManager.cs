@@ -19,8 +19,11 @@ public class EventManager : MonoBehaviour
     public event Action OnGameStart;
     public void GameStart () => OnGameStart?.Invoke ();
 
-    public event Action OnTransitionSceneEnd;
-    public void TransitionSceneEnd () => OnTransitionSceneEnd?.Invoke ();
+    public event Action OnGameReset;
+    public void GameReset () => OnGameReset?.Invoke ();
+
+    public event Action OnTransitionSceneStart;
+    public void TransitionSceneStart () => OnTransitionSceneStart?.Invoke ();
 
     public event Action<Microgame> OnMicrogameLoad;
     public void MicrogameLoad (Microgame microgame) => OnMicrogameLoad?.Invoke (microgame);

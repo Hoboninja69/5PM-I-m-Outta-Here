@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d5479f47d850cf409204feae3bc8e9a, type: 3}
+  m_Name: StackBalancing
+  m_EditorClassIdentifier: 
+  Infomercial: {fileID: 21300000, guid: 4175ef6622d67964993320edbeeed651, type: 3}
+  WinMessage: 
+  LoseMessage: 
+  OutOfTimeMessage: 
+  SceneName: FileStacking
+  TimerLength: 15
+  timerIsWin: 1
+  Sounds:
+  - clips:
+    - {fileID: 8300000, guid: 92b7a8d0cd958e54680370ae70421943, type: 3}
+    - {fileID: 8300000, guid: 65774984c974e2042a211a9b0ac0bd4a, type: 3}
+    - {fileID: 8300000, guid: c62b95c1b247cde459e9ecd64cad1b88, type: 3}
+    - {fileID: 8300000, guid: 14906047568e46b449c539b25abf8feb, type: 3}
+    source: {fileID: 0}
+    name: Footstep
+    volume: 0.25
+    pitch: 1
+    loop: 0
+  - clips:
+    - {fileID: 8300000, guid: 03ccdf11cf17fda43b63fee3e6ee5f4f, type: 3}
+    - {fileID: 8300000, guid: 3fddfae00aabc0a4e9d4ddc78b3b4e2c, type: 3}
+    source: {fileID: 0}
+    name: Impact
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clips:
+    - {fileID: 8300000, guid: f117f1dbfc0449c43b9f3892a973d852, type: 3}
+    - {fileID: 8300000, guid: b1641ddf5e2f2f943a86ace76f4068d3, type: 3}
+    - {fileID: 8300000, guid: aebec63a88fa0764ab21e611073a8dd8, type: 3}
+    - {fileID: 8300000, guid: 3187bc9b88f156d469b99b0a3865dac0, type: 3}
+    - {fileID: 8300000, guid: c1d8888afc4bb0141b6bf23c9f092c0f, type: 3}
+    - {fileID: 8300000, guid: 0bd33f3988679a247807ab20c91b1bf0, type: 3}
+    source: {fileID: 0}
+    name: ImpactPaper
+    volume: 1
+    pitch: 1
+    loop: 0
+  Music:
+    clips:
+    - {fileID: 8300000, guid: c94a7d455acc5934f92b4c568d3c7022, type: 3}
+    - {fileID: 8300000, guid: 4eceae0e231475b4dbcb205cc2cc19ec, type: 3}
+    source: {fileID: 0}
+    name: Music
+    volume: 0.75
+    pitch: 1
+    loop: 0
+  showCursor: 0

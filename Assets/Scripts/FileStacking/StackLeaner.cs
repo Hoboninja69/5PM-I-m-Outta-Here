@@ -7,6 +7,7 @@ public class StackLeaner : MonoBehaviour
     public float maxLeanIncrement;
 
     private Transform[] files;
+    bool fallen = false;
 
     private void Start ()
     {
@@ -16,10 +17,7 @@ public class StackLeaner : MonoBehaviour
         foreach (Transform child in children)
         {
             if (child.parent == transform)
-            {
                 fileList.Add (child);
-                print (child.name);
-            }
         }
         files = fileList.ToArray ();
     }
@@ -34,6 +32,9 @@ public class StackLeaner : MonoBehaviour
 
     public void Fall ()
     {
+        if (fallen) return;
+        fallen = true;
+
         foreach (Transform file in files)
         {
             if (file.GetChild (0).TryGetComponent (out Rigidbody rb))

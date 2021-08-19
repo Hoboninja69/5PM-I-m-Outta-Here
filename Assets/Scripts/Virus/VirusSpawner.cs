@@ -7,7 +7,7 @@ public class VirusSpawner : MonoBehaviour
     public int killAmountTarget;
     public GameObject[] Viruses;
     public Vector2 screenSize;
-    public float delay;
+    public Vector2 delayRange;
 
     private int remaining;
 
@@ -30,13 +30,13 @@ public class VirusSpawner : MonoBehaviour
     //    }
     //}
 
-    private void OnPopupClose (PopupController popup)
+    private void OnPopupClose (VirusController popup)
     {
         popup.OnClose -= OnPopupClose;
         if (--remaining <= 0)
         {
             if (EventManager.Instance != null)
-                EventManager.Instance.MicrogameEnd (MicrogameResult.Win);
+                EventManager.Instance.MicrogameEnd (MicrogameResult.Win, 0.5f);
             return;
         }
         StartCoroutine (SpawnPopup ());
@@ -45,8 +45,8 @@ public class VirusSpawner : MonoBehaviour
 
     private IEnumerator SpawnPopup ()
     {
-        yield return new WaitForSeconds (delay);
-        PopupController popup = Instantiate (Viruses[Random.Range (0, Viruses.Length)], transform).GetComponent<PopupController> ();
+        yield return new WaitForSeconds (Random.Range (delayRange.x, delayRange.y));
+        VirusController popup = Instantiate (Viruses[Random.Range (0, Viruses.Length)], transform).GetComponent<VirusController> ();
         popup.OnClose += OnPopupClose;
         popup.transform.localPosition = Tools.RandomPositionInArea (screenSize, popup.popupSize);
     }
