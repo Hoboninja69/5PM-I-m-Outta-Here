@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SortingMail
   m_EditorClassIdentifier: 
   Infomercial: {fileID: 21300000, guid: 749d483da3b11564d98b8baaee422be7, type: 3}
-  WinMessage: 
-  LoseMessage: 
-  OutOfTimeMessage: 
+  WinMessage: Good job. Now instead of sorting mail, sort out your mess of a life.
+  LoseMessage: Did you miss the entire of kindergarten when we learnt colours?
+  OutOfTimeMessage: Did you miss the entire of kindergarten when we learnt colours?
   SceneName: SortingMail
   TimerLength: 15
   timerIsWin: 0

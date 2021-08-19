@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 582019820}
   - component: {fileID: 582019819}
   m_Layer: 0
-  m_Name: Credits
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -654,7 +654,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.19300008}
+  m_AnchoredPosition: {x: 0, y: 1.44}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &582019819
@@ -677,10 +677,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Credits
+  m_text: '5PM: I''m Outta Here!
+
+
+    a game by SpaghettAboutIt Studios'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2274949f0a4540949b69fab936062031, type: 2}
+  m_sharedMaterial: {fileID: 1783828341550604220, guid: 2274949f0a4540949b69fab936062031, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -740,7 +743,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 8, y: 0, z: 8, w: 0}
+  m_margin: {x: 8, y: -0.13071823, z: 8, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -769,7 +772,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 1783828341550604220, guid: 2274949f0a4540949b69fab936062031, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1077,7 +1080,7 @@ GameObject:
   - component: {fileID: 1461867659}
   - component: {fileID: 1461867658}
   m_Layer: 0
-  m_Name: Credits (1)
+  m_Name: Roles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1099,7 +1102,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.95000005}
+  m_AnchoredPosition: {x: 0, y: -6.7}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1461867658
@@ -1122,12 +1125,57 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'role - person
+  m_text: 'Ryan Vigus - Lead Programmer, Director, All Round Legend and King of Code
 
-    role 2 - person 2'
+
+    Jason
+    McKay - Lead Game Designer, Sass Queen
+
+
+    Liz Glass - Lead Writer/Editor &
+    Art Director, Pintmaster
+
+
+    Isaac Holliday - Lead Level Designer, Absolute
+    Hooligan
+
+
+
+    SPECIAL THANKS TO
+
+
+    Matt "Game Dad(dy)" Dyet
+
+
+    Unity
+
+    Photopea
+
+    Beepbox
+
+    GitHub/GitKraken
+
+    RRFreelance/PiXelBurner
+
+    Synty
+    Studios
+
+    MSTK Studios
+
+    Kajaman
+
+    Kalamona
+
+
+
+
+
+
+    Thanks for playing!
+    Now get back to work!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 27c4eb120d2c10b4fb0fb669a2a54fa3, type: 2}
+  m_sharedMaterial: {fileID: -8842327384811003717, guid: 27c4eb120d2c10b4fb0fb669a2a54fa3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1216,7 +1264,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: -8842327384811003717, guid: 27c4eb120d2c10b4fb0fb669a2a54fa3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1366,9 +1414,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b585241f5d7a98f4596703c2db3aac4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHeight: 0
-  endHeight: 5.25
-  scrollSpeed: 1
+  startHeight: -5
+  endHeight: 15
+  scrollSpeed: 0.8
 --- !u!1001 &1626844717
 PrefabInstance:
   m_ObjectHideFlags: 0
