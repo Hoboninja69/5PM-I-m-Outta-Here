@@ -22,6 +22,9 @@ public class MicrogameManager : MonoBehaviour
     public int remainingMicrogames { get { return microgameQueue.Length - currentMicrogameIndex; } }
     [HideInInspector]
     public int winCount;
+    [HideInInspector]
+    public float winRatio { get { return winCount / microgamesPerGame; } }
+    public AsyncOperation loadingScene { get; private set; }
 
     public void Initialise ()
     {
@@ -39,6 +42,8 @@ public class MicrogameManager : MonoBehaviour
         EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
         EventManager.Instance.OnUIButtonPressed += OnUIButtonPressed;
         EventManager.Instance.OnGameReset += OnGameReset;
+        EventManager.Instance.OnTransitionSceneStart += OnTransitionSceneStart;
+        EventManager.Instance.OnTransitionSceneEnd += OnTransitionSceneEnd;
 
         RandomiseMicrogameQueue ();
     }
@@ -63,13 +68,24 @@ public class MicrogameManager : MonoBehaviour
         SceneManager.LoadScene ("TransitionHallway");
     }
 
-    public AsyncOperation LoadCurrentAsync ()
+    public void UnloadHallwayAsync (AsyncOperation loadOp)
     {
-        AsyncOperation scene = SceneManager.LoadSceneAsync (currentMicrogame.SceneName, LoadSceneMode.Additive);
-        scene.allowSceneActivation = false;
-        return scene;
-        //GameManager.Instance.PauseGame ();
-        //EventManager.Instance.MicrogameLoad (currentMicrogame);
+        SceneManager.UnloadSceneAsync ("TransitionHallway");
+        loadingScene = null;
+    }
+
+    private void OnTransitionSceneStart ()
+    {
+        loadingScene = SceneManager.LoadSceneAsync (currentMicrogame.SceneName, LoadSceneMode.Additive);
+        loadingScene.allowSceneActivation = false;
+    }
+
+    private void OnTransitionSceneEnd ()
+    {
+        loadingScene.completed += UnloadHallwayAsync;
+        loadingScene.allowSceneActivation = true;
+        GameManager.Instance.PauseGame ();
+        EventManager.Instance.MicrogameLoad (currentMicrogame);
     }
 
     public void StartCurrent ()
