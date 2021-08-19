@@ -7,9 +7,11 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-    public GameObject canvasObject;
+    public GameObject canvasObject, worldCanvasObject;
     [SerializeField]
     private GameObject infoScreen, timer, resultScreen, menuScreen;
+    [SerializeField]
+    private PayslipFiller payslip;
     [SerializeField]
     private Text timerText, timerShadowText, resultScreenTitle, resultScreenSubtitle;
     [SerializeField]
@@ -18,8 +20,6 @@ public class UIManager : MonoBehaviour
     private Texture2D cursorUp, cursorDown;
 
     private Canvas canvas;
-    private RectTransform canvasRectTransform;
-    private Vector2 canvasPos, canvasSize;
     private readonly Vector2 cursorHotspot = new Vector2 (19, 10);
 
     public void Initialise ()
@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour
         if (Instance != null)
         {
             Destroy (canvasObject);
+            Destroy (worldCanvasObject);
             Destroy (this);
             return;
         }
@@ -34,13 +35,11 @@ public class UIManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad (canvasObject);
+            DontDestroyOnLoad (worldCanvasObject);
             DontDestroyOnLoad (gameObject);
         }
 
-        canvas = canvasObject.GetComponent<Canvas> ();
-        canvasRectTransform = canvasObject.GetComponent<RectTransform> ();
-        canvasPos = canvasRectTransform.anchoredPosition;
-        canvasSize = canvasRectTransform.sizeDelta;
+        //canvas = canvasObject.GetComponent<Canvas> ();
 
         EventManager.Instance.OnUIButtonPressed += OnUIButtonPressed;
         EventManager.Instance.OnGameLoad += OnGameLoad;
@@ -48,6 +47,7 @@ public class UIManager : MonoBehaviour
         EventManager.Instance.OnMicrogameStart += OnMicrogameStart;
         EventManager.Instance.OnTimerTick += OnTimerTick;
         EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
+        EventManager.Instance.OnGameEnd += OnGameEnd;
         InputManager.Instance.OnMouseDownLeft += OnMouseDown;
         InputManager.Instance.OnMouseDownRight += OnMouseDown;
         InputManager.Instance.OnMouseUpLeft += OnMouseUp;
@@ -56,13 +56,20 @@ public class UIManager : MonoBehaviour
         OnMouseUp ();
     }
 
-    public void SetUseWorldSpace (bool useWorldSpace)
+    //public void SetUseWorldSpace (bool useWorldSpace)
+    //{
+    //    canvas.renderMode = useWorldSpace ? RenderMode.WorldSpace : RenderMode.ScreenSpaceOverlay;
+    //    if (useWorldSpace)
+    //        canvas.worldCamera = Camera.main;
+    //}
+
+    private void SetActiveAll (bool active)
     {
-        canvas.renderMode = useWorldSpace ? RenderMode.WorldSpace : RenderMode.ScreenSpaceOverlay;
-        if (useWorldSpace)
-            canvas.worldCamera = Camera.main;
-        canvasRectTransform.anchoredPosition = canvasPos;
-        canvasRectTransform.sizeDelta = canvasSize;
+        infoScreen.SetActive (active);
+        timer.SetActive (active);
+        resultScreen.SetActive (active);
+        menuScreen.SetActive (active);
+        payslip.SetActive (active);
     }
 
     private void OnUIButtonPressed (string buttonName)
@@ -71,11 +78,14 @@ public class UIManager : MonoBehaviour
         {
             case "StartGame":
                 menuScreen.SetActive (false);
-                SetUseWorldSpace (false);
+                //SetUseWorldSpace (false);
                 EventManager.Instance.GameStart ();
                 break;
             case "MicrogameResultOK":
                 resultScreen.SetActive (false);
+                break;
+            case "MainMenu":
+                EventManager.Instance.GameReset ();
                 break;
         }
     }
@@ -92,7 +102,8 @@ public class UIManager : MonoBehaviour
 
     private void OnGameLoad ()
     {
-        SetUseWorldSpace (true);
+        SetActiveAll (false);
+        //SetUseWorldSpace (true);
         menuScreen.SetActive (true);
     }
 
@@ -142,6 +153,11 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void OnGameEnd (float winRatio)
+    {
+        payslip.Fill (winRatio);
+        payslip.SetActive (true);
+    }
 
     private void OnDestroy ()
     {

@@ -22,6 +22,8 @@ public class MicrogameManager : MonoBehaviour
     public int remainingMicrogames { get { return microgameQueue.Length - currentMicrogameIndex; } }
     [HideInInspector]
     public int winCount;
+    [HideInInspector]
+    public float winRatio { get { return winCount / microgamesPerGame; } }
     public AsyncOperation loadingScene { get; private set; }
 
     public void Initialise ()

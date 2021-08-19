@@ -76,9 +76,7 @@ public class HallwaySequence : MonoBehaviour
             camAnimator.SetTrigger ("HallwayExit");
             yield return new WaitForSeconds (3.5f);
 
-            //show results
-
-            EventManager.Instance.GameReset ();
+            EventManager.Instance.GameEnd (MicrogameManager.Instance.winRatio);
         }
     }
 

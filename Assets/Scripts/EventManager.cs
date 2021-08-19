@@ -18,6 +18,9 @@ public class EventManager : MonoBehaviour
 
     public event Action OnGameStart;
     public void GameStart () => OnGameStart?.Invoke ();
+    
+    public event Action<float> OnGameEnd;
+    public void GameEnd (float winRatio) => OnGameEnd?.Invoke (winRatio);
 
     public event Action OnGameReset;
     public void GameReset () => OnGameReset?.Invoke ();
