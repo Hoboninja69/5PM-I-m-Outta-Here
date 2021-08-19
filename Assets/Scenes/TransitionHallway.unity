@@ -1393,7 +1393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &766984382
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1438,11 +1438,18 @@ MonoBehaviour:
   basePay: 12.4
   overtimePayRange: {x: 0.1, y: 17.6}
   comments:
-  - Fail
-  - Bad
-  - Okay
-  - Good
-  - Perfect
+  - Somehow you managed to fail every. Single. Task. You're not only useless, you're
+    fired.
+  - You managed to fail majority of your incredibly simple tasks. I know you're already
+    being paid the bare minimum we can pay you legally, but you're stil demoted.
+  - You managed to fail and succeed at your tasks equally. Nothing says "bland person"
+    more than that. You're just a super average office monkey and you always will
+    be.
+  - You actually succeeded the majority of your tasks. Honestly, looking at you I
+    would have never thought that possible. Still, we only accept perfection here
+    so git gud or get out.
+  - You succeeded all your tasks! You're hired! Oh wait, you already work here? Then
+    what the hell do you want, a medal? See you tomorrow.
 --- !u!114 &766984384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2204,7 +2211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1150721646
 MonoBehaviour:
   m_ObjectHideFlags: 0
