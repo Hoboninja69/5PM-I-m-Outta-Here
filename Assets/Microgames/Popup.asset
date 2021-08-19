@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: Popup
   m_EditorClassIdentifier: 
   Infomercial: {fileID: 21300000, guid: 1aa13c9a2c87b064fab18256b1054665, type: 3}
-  WinMessage: 
-  LoseMessage: 
-  OutOfTimeMessage: 
+  WinMessage: Nice one! Now your co-worker can continue to visit nefarious sites
+    and not be held accountable.
+  LoseMessage: 'You work in an office and yet you''re terrible at clicking a mouse
+    button? Oof. '
+  OutOfTimeMessage: 'You work in an office and yet you''re terrible at clicking a
+    mouse button? Oof. '
   SceneName: Popup
   TimerLength: 10
   timerIsWin: 0
