@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -47,6 +48,9 @@ public class GameManager : MonoBehaviour
             case "QuitGame":
                 Application.Quit ();
                 break;
+            case "Credits":
+                SceneManager.LoadScene ("CreditsScene");
+                break;
         }
     }
 
@@ -75,6 +79,7 @@ public class GameManager : MonoBehaviour
 
     private void SubscribeToEvents ()
     {
-        EventManager.Instance.OnUIButtonPressed += OnUIButtonPressed;
+        if (EventManager.Instance != null)
+            EventManager.Instance.OnUIButtonPressed += OnUIButtonPressed;
     }
 }
