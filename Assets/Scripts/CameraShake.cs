@@ -11,6 +11,11 @@ public class CameraShake : MonoBehaviour
     private Vector3 targetPos;
     private float lastTime;
 
+    private void Start ()
+    {
+        targetPos = transform.localPosition;
+    }
+
     private void Update ()
     {
         if (Time.time - lastTime > delay)

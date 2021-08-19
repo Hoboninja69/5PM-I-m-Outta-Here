@@ -8,6 +8,7 @@ public class MicrogameManager : MonoBehaviour
     public static MicrogameManager Instance;
 
     public Microgame currentMicrogame { get { return microgameQueue[currentMicrogameIndex]; } }
+    public List<HallChunkConfig> remainingConfigs;
 
     [SerializeField]
     private Microgame[] allMicrogames;
@@ -20,7 +21,7 @@ public class MicrogameManager : MonoBehaviour
     public int currentMicrogameIndex { get; private set; }
     public int remainingMicrogames { get { return microgameQueue.Length - currentMicrogameIndex; } }
     [HideInInspector]
-    public int failCount;
+    public int winCount;
 
     public void Initialise ()
     {
@@ -35,9 +36,9 @@ public class MicrogameManager : MonoBehaviour
             DontDestroyOnLoad (gameObject);
         }
 
-        EventManager.Instance.OnTransitionSceneEnd += LoadCurrent;
         EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
         EventManager.Instance.OnUIButtonPressed += OnUIButtonPressed;
+        EventManager.Instance.OnGameReset += OnGameReset;
 
         RandomiseMicrogameQueue ();
     }
@@ -62,11 +63,13 @@ public class MicrogameManager : MonoBehaviour
         SceneManager.LoadScene ("TransitionHallway");
     }
 
-    public void LoadCurrent ()
+    public AsyncOperation LoadCurrentAsync ()
     {
-        SceneManager.LoadScene (currentMicrogame.SceneName);
-        GameManager.Instance.PauseGame ();
-        EventManager.Instance.MicrogameLoad (currentMicrogame);
+        AsyncOperation scene = SceneManager.LoadSceneAsync (currentMicrogame.SceneName, LoadSceneMode.Additive);
+        scene.allowSceneActivation = false;
+        return scene;
+        //GameManager.Instance.PauseGame ();
+        //EventManager.Instance.MicrogameLoad (currentMicrogame);
     }
 
     public void StartCurrent ()
@@ -76,12 +79,20 @@ public class MicrogameManager : MonoBehaviour
         Cursor.visible = currentMicrogame.showCursor;
     }
 
+    private void OnGameReset ()
+    {
+        remainingConfigs = null;
+        RandomiseMicrogameQueue ();
+        EventManager.Instance.GameLoad ();
+        LoadHallway ();
+    }
 
     private void OnMicrogameEnd (MicrogameResult result)
     {
-        if (result != MicrogameResult.Win)
-            failCount++;
+        if (result == MicrogameResult.Win)
+            winCount++;
 
+        remainingConfigs.RemoveAt (0);
         GameManager.Instance.PauseGame ();
     }
 
@@ -96,16 +107,13 @@ public class MicrogameManager : MonoBehaviour
             case "MicrogameResultOK":
                 GameManager.Instance.ResumeGame ();
                 currentMicrogameIndex++;
-                //if (failCount < 3)
-                    LoadHallway ();
-                //else load fail scene
+                LoadHallway ();
                 break;
         }
     }
 
     private void OnDestroy ()
     {
-        EventManager.Instance.OnTransitionSceneEnd -= LoadCurrent;
         EventManager.Instance.OnMicrogameEnd -= OnMicrogameEnd;
         EventManager.Instance.OnUIButtonPressed -= OnUIButtonPressed;
     }

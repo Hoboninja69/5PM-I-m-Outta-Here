@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d5479f47d850cf409204feae3bc8e9a, type: 3}
+  m_Name: SortingMail
+  m_EditorClassIdentifier: 
+  Infomercial: {fileID: 21300000, guid: 749d483da3b11564d98b8baaee422be7, type: 3}
+  WinMessage: 
+  LoseMessage: 
+  OutOfTimeMessage: 
+  SceneName: SortingMail
+  TimerLength: 15
+  timerIsWin: 0
+  Sounds:
+  - clips:
+    - {fileID: 8300000, guid: f117f1dbfc0449c43b9f3892a973d852, type: 3}
+    - {fileID: 8300000, guid: b1641ddf5e2f2f943a86ace76f4068d3, type: 3}
+    - {fileID: 8300000, guid: aebec63a88fa0764ab21e611073a8dd8, type: 3}
+    - {fileID: 8300000, guid: 3187bc9b88f156d469b99b0a3865dac0, type: 3}
+    - {fileID: 8300000, guid: c1d8888afc4bb0141b6bf23c9f092c0f, type: 3}
+    - {fileID: 8300000, guid: 0bd33f3988679a247807ab20c91b1bf0, type: 3}
+    - {fileID: 8300000, guid: 03ccdf11cf17fda43b63fee3e6ee5f4f, type: 3}
+    - {fileID: 8300000, guid: 3fddfae00aabc0a4e9d4ddc78b3b4e2c, type: 3}
+    source: {fileID: 0}
+    name: ImpactPaper
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clips:
+    - {fileID: 8300000, guid: 320f2214a8fadf649953d17236673a91, type: 3}
+    source: {fileID: 0}
+    name: Correct
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clips:
+    - {fileID: 8300000, guid: 076e79e1ab78cb04abc033d058527449, type: 3}
+    source: {fileID: 0}
+    name: Incorrect
+    volume: 1
+    pitch: 1
+    loop: 0
+  Music:
+    clips:
+    - {fileID: 8300000, guid: fd95d2dfc4081954d8f1630e16b741cd, type: 3}
+    source: {fileID: 0}
+    name: Music
+    volume: 0.75
+    pitch: 1
+    loop: 0
+  showCursor: 1

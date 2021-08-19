@@ -22,9 +22,9 @@ public class PopupSpawner : MonoBehaviour
     {
         while (!allClosed)
         {
-            SpawnPopup ();
-
             yield return new WaitForSeconds (delay);
+
+            SpawnPopup ();
 
             if (delay < finalDelay)
                 delay += delayIncreaseRate * delay;
@@ -34,9 +34,13 @@ public class PopupSpawner : MonoBehaviour
     private void OnPopupClose (PopupController popup)
     {
         if (--remaining <= 0)
+        {
             allClosed = true;
+            StopAllCoroutines ();
+            if (EventManager.Instance != null)
+                EventManager.Instance.MicrogameEnd (MicrogameResult.Win);
+        }
         popup.OnClose -= OnPopupClose;
-        print (remaining);
     }
 
     private void SpawnPopup ()

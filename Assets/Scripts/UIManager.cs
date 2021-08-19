@@ -7,14 +7,20 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
+    public GameObject canvasObject;
     [SerializeField]
-    private GameObject infoScreen, timer, resultScreen, canvasObject, menuScreen;
+    private GameObject infoScreen, timer, resultScreen, menuScreen;
     [SerializeField]
     private Text timerText, timerShadowText, resultScreenTitle, resultScreenSubtitle;
     [SerializeField]
     private Image infoScreenImage;
+    [SerializeField]
+    private Texture2D cursorUp, cursorDown;
 
     private Canvas canvas;
+    private RectTransform canvasRectTransform;
+    private Vector2 canvasPos, canvasSize;
+    private readonly Vector2 cursorHotspot = new Vector2 (19, 10);
 
     public void Initialise ()
     {
@@ -32,6 +38,9 @@ public class UIManager : MonoBehaviour
         }
 
         canvas = canvasObject.GetComponent<Canvas> ();
+        canvasRectTransform = canvasObject.GetComponent<RectTransform> ();
+        canvasPos = canvasRectTransform.anchoredPosition;
+        canvasSize = canvasRectTransform.sizeDelta;
 
         EventManager.Instance.OnUIButtonPressed += OnUIButtonPressed;
         EventManager.Instance.OnGameLoad += OnGameLoad;
@@ -39,13 +48,21 @@ public class UIManager : MonoBehaviour
         EventManager.Instance.OnMicrogameStart += OnMicrogameStart;
         EventManager.Instance.OnTimerTick += OnTimerTick;
         EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
+        InputManager.Instance.OnMouseDownLeft += OnMouseDown;
+        InputManager.Instance.OnMouseDownRight += OnMouseDown;
+        InputManager.Instance.OnMouseUpLeft += OnMouseUp;
+        InputManager.Instance.OnMouseUpRight += OnMouseUp;
+
+        OnMouseUp ();
     }
 
     public void SetUseWorldSpace (bool useWorldSpace)
     {
         canvas.renderMode = useWorldSpace ? RenderMode.WorldSpace : RenderMode.ScreenSpaceOverlay;
         if (useWorldSpace)
-            canvas.worldCamera = Camera.current;
+            canvas.worldCamera = Camera.main;
+        canvasRectTransform.anchoredPosition = canvasPos;
+        canvasRectTransform.sizeDelta = canvasSize;
     }
 
     private void OnUIButtonPressed (string buttonName)
@@ -63,10 +80,20 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void OnMouseDown ()
+    {
+        Cursor.SetCursor (cursorDown, cursorHotspot, CursorMode.ForceSoftware);
+    }
+
+    private void OnMouseUp ()
+    {
+        Cursor.SetCursor (cursorUp, cursorHotspot, CursorMode.ForceSoftware);
+    }
+
     private void OnGameLoad ()
     {
-        menuScreen.SetActive (true);
         SetUseWorldSpace (true);
+        menuScreen.SetActive (true);
     }
 
     private void OnMicrogameLoad (Microgame microgame)
@@ -114,6 +141,7 @@ public class UIManager : MonoBehaviour
                 break;
         }
     }
+
 
     private void OnDestroy ()
     {
