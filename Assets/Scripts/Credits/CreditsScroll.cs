@@ -21,7 +21,10 @@ public class CreditsScroll : MonoBehaviour
 
         height += scrollSpeed * Time.deltaTime;
         if (height > Mathf.Max (startHeight, endHeight) || height < Mathf.Min (startHeight, endHeight))
+        {
             finished = true;
+            EventManager.Instance.GameReset ();
+        }
 
         transform.localPosition = new Vector3 (transform.localPosition.x, height, transform.localPosition.z);
     }
