@@ -35,6 +35,7 @@ public class HallwaySequence : MonoBehaviour
 
     private IEnumerator MenuSequence ()
     {
+        AudioManager.Instance.Play ("IntroVoice");
         yield return new WaitForSeconds (0.5f);
 
         camAnimator.SetTrigger ("MenuWalk");

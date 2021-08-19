@@ -3509,6 +3509,13 @@ MonoBehaviour:
     volume: 1
     pitch: 0.6
     loop: 0
+  - clips:
+    - {fileID: 8300000, guid: c0f7b648c33e03f4da77051c28dcfe38, type: 3}
+    source: {fileID: 0}
+    name: IntroVoice
+    volume: 1
+    pitch: 1
+    loop: 0
 --- !u!114 &1799700456
 MonoBehaviour:
   m_ObjectHideFlags: 0
