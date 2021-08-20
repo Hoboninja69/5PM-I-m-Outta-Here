@@ -35,8 +35,10 @@ public class HallwaySequence : MonoBehaviour
 
     private IEnumerator MenuSequence ()
     {
-        AudioManager.Instance.Play ("IntroVoice");
-        yield return new WaitForSeconds (0.5f);
+        AudioManager.Instance.Play ("WatchBeep");
+        yield return new WaitForSeconds (0.75f);
+
+        yield return new WaitForSeconds (AudioManager.Instance.Play ("IntroVoice").clip.length - 1.25f);
 
         camAnimator.SetTrigger ("MenuWalk");
         yield return new WaitForSeconds (4.5f);
@@ -58,9 +60,10 @@ public class HallwaySequence : MonoBehaviour
             yield return new WaitForSeconds (2f);
 
             generator.configs[1].associatedChunk.SpawnCoworker ();
-            float clipLength = AudioManager.Instance.PlayAtLocation 
-                ("Coworker", generator.configs[1].associatedChunk.coworker.transform.position, 0.25f).clip.length;
-            yield return new WaitForSeconds (clipLength + 0.2f);
+            AudioSource source = AudioManager.Instance.PlayAtLocation ("Coworker", generator.configs[1].associatedChunk.coworker.transform.position, 1f);
+            source.minDistance = 100f;
+            source.maxDistance = 200f;
+            yield return new WaitForSeconds (source.clip.length + 0.2f);
 
             yield return new WaitWhile (() => MicrogameManager.Instance.loadingScene.progress < 0.9f);
 

@@ -32,12 +32,12 @@ public class AudioManager : MonoBehaviour
             AddSoundSource (sound);
     }
 
-    public void Play (string soundName, float volumeMult = 1, float pitchMult = 1)
+    public AudioSource Play (string soundName, float volumeMult = 1, float pitchMult = 1)
     {
         if (!FindSound (soundName, out Sound sound))
         {
             Debug.LogError ("Could not Play sound \"" + soundName + "\" (not found)");
-            return;
+            return null;
         }
 
         if (sound.source == null)
@@ -48,6 +48,7 @@ public class AudioManager : MonoBehaviour
         sound.source.clip = sound.GetClip ();
 
         sound.source.Play ();
+        return sound.source;
     }
 
     public void Play (string soundName, AudioSource source, float volumeMult = 1, float pitchMult = 1)
