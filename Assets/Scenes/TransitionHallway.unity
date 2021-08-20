@@ -2184,7 +2184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634632255919610837, guid: aedbd7c67406f0e48bb7f44e80e673f4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aedbd7c67406f0e48bb7f44e80e673f4, type: 3}
@@ -3510,10 +3510,17 @@ MonoBehaviour:
     pitch: 0.6
     loop: 0
   - clips:
-    - {fileID: 8300000, guid: c0f7b648c33e03f4da77051c28dcfe38, type: 3}
+    - {fileID: 8300000, guid: b99b40edc6f57ce4bad8f621026520cf, type: 3}
     source: {fileID: 0}
     name: IntroVoice
     volume: 1
+    pitch: 1
+    loop: 0
+  - clips:
+    - {fileID: 8300000, guid: 21c19bd1fd3b35a4dae0b7d01e13ce17, type: 3}
+    source: {fileID: 0}
+    name: WatchBeep
+    volume: 0.5
     pitch: 1
     loop: 0
 --- !u!114 &1799700456
@@ -3544,7 +3551,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cd4fed68fafeec741b6476c36485bc87, type: 2}
   - {fileID: 11400000, guid: 14cb5de8a6076d34d92296900e7f76cb, type: 2}
   - {fileID: 11400000, guid: 23f5f44f477c40d43ab378efe3417510, type: 2}
-  microgamesPerGame: 2
+  microgamesPerGame: 7
   winCount: 0
 --- !u!114 &1799700457
 MonoBehaviour:

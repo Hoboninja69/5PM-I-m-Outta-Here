@@ -18,7 +18,7 @@ MonoBehaviour:
   OutOfTimeMessage: Well, the good news is everyone evacuated the building. Except
     you...
   SceneName: Bomb_Scene
-  TimerLength: 10
+  TimerLength: 9
   timerIsWin: 0
   Sounds:
   - clips:

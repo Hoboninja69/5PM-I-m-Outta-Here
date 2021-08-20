@@ -23,7 +23,7 @@ public class MicrogameManager : MonoBehaviour
     [HideInInspector]
     public int winCount;
     [HideInInspector]
-    public float winRatio { get { return winCount / microgamesPerGame; } }
+    public float winRatio { get { return (float)winCount / (float)microgamesPerGame; } }
     public AsyncOperation loadingScene { get; private set; }
 
     public void Initialise ()

@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class CreditsScroll : MonoBehaviour
     private void Start ()
     {
         height = startHeight;
+        if (InputManager.Instance != null)
+            InputManager.Instance.OnMouseDownLeft += OnMouseDownLeft;
     }
 
     void Update()
@@ -27,5 +30,16 @@ public class CreditsScroll : MonoBehaviour
         }
 
         transform.localPosition = new Vector3 (transform.localPosition.x, height, transform.localPosition.z);
+    }
+
+    private void OnMouseDownLeft ()
+    {
+        finished = true;
+        EventManager.Instance.GameReset ();
+    }
+
+    private void OnDestroy ()
+    {
+        InputManager.Instance.OnMouseDownLeft -= OnMouseDownLeft;
     }
 }
