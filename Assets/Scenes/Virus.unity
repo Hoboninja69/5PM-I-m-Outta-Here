@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.16909933, g: 0.23851909, b: 0.3773585, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -739,8 +739,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killAmountTarget: 15
   Viruses:
-  - {fileID: 9131938943802495794, guid: 990d598317cc39146a401cc9a05c0900, type: 3}
   - {fileID: 9131938943802495794, guid: eb3d17543faebfa4d818e154f4489a93, type: 3}
+  - {fileID: 9131938943802495794, guid: 990d598317cc39146a401cc9a05c0900, type: 3}
   - {fileID: 9131938943802495794, guid: cb3be3b9ea3f62c468f871dd75d3d41d, type: 3}
   screenSize: {x: 1.15, y: 0.64}
   delayRange: {x: 0.1, y: 0.3}

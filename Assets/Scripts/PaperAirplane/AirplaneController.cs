@@ -20,6 +20,7 @@ public class AirplaneController : MonoBehaviour
         rb = GetComponent<Rigidbody> ();
         source = GetComponent<AudioSource> ();
         InputManager.Instance.OnMouseMoved += MouseMoved;
+        startTime = Time.time;
     }
 
     private void MouseMoved (Vector2 movement)
@@ -88,5 +89,10 @@ public class AirplaneController : MonoBehaviour
             camConstraint.constraintActive = false;
             autoPilot = true;
         }
+    }
+
+    private void OnDestroy ()
+    {
+        InputManager.Instance.OnMouseMoved -= MouseMoved;
     }
 }

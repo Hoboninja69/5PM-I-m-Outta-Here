@@ -23,7 +23,7 @@ public class MicrogameManager : MonoBehaviour
     [HideInInspector]
     public int winCount;
     [HideInInspector]
-    public float winRatio { get { return (float)winCount / (float)microgamesPerGame; } }
+    public float winRatio { get { return (float)winCount / (float)Mathf.Min (microgamesPerGame, allMicrogames.Length); } }
     public AsyncOperation loadingScene { get; private set; }
 
     public void Initialise ()
@@ -71,6 +71,7 @@ public class MicrogameManager : MonoBehaviour
     public void UnloadHallwayAsync (AsyncOperation loadOp)
     {
         SceneManager.UnloadSceneAsync ("TransitionHallway");
+        loadingScene.completed -= UnloadHallwayAsync;
         loadingScene = null;
     }
 
@@ -98,6 +99,7 @@ public class MicrogameManager : MonoBehaviour
     private void OnGameReset ()
     {
         remainingConfigs = null;
+        winCount = 0;
         RandomiseMicrogameQueue ();
         EventManager.Instance.GameLoad ();
         LoadHallway ();
@@ -132,6 +134,9 @@ public class MicrogameManager : MonoBehaviour
     {
         EventManager.Instance.OnMicrogameEnd -= OnMicrogameEnd;
         EventManager.Instance.OnUIButtonPressed -= OnUIButtonPressed;
+        EventManager.Instance.OnGameReset -= OnGameReset;
+        EventManager.Instance.OnTransitionSceneStart -= OnTransitionSceneStart;
+        EventManager.Instance.OnTransitionSceneEnd -= OnTransitionSceneEnd;
     }
 }
 

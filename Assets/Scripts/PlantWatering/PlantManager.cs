@@ -30,7 +30,8 @@ public class PlantManager : MonoBehaviour
             if (++currentIndex >= plants.Length)
             {
                 currentPlantActive = false;
-                EventManager.Instance.MicrogameEnd (MicrogameResult.Win, 0.5f);
+                if (EventManager.Instance != null)
+                        EventManager.Instance.MicrogameEnd (MicrogameResult.Win, 0.5f);
                 gameOver = true;
             }
             else
@@ -39,7 +40,8 @@ public class PlantManager : MonoBehaviour
         else
         {
             gameOver = true;
-            EventManager.Instance.MicrogameEnd (MicrogameResult.Lose, 0.5f);
+            if (EventManager.Instance != null)
+                EventManager.Instance.MicrogameEnd (MicrogameResult.Lose, 0.5f);
         }
     }
 

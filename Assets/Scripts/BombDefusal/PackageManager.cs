@@ -29,6 +29,8 @@ public class PackageManager: MonoBehaviour
 
     private void BoxOpen (PackageControl box)
     {
+        box.OnBoxOpen -= BoxOpen;
+
         if (!bombFound && ++openCount >= minOpenCount && Random.Range(0, boxes.Length - openCount + 1) == 0)
         {
             AudioManager.Instance.Stop ("BombTick");

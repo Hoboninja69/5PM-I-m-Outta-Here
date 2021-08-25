@@ -24,6 +24,7 @@ public class DirtManager : MonoBehaviour
 
     private void OnDirtCleaned (DirtDissolve dirt)
     {
+        dirt.OnCleaned -= OnDirtCleaned;
         AudioManager.Instance.PlayAtLocation ("Sparkle", dirt.transform, 0.75f, Random.Range (0.75f, 0.9f), Random.Range (0.95f, 1.05f));
         dirt.OnCleaned -= OnDirtCleaned;
         if (--remaining <= 0)

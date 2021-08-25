@@ -63,5 +63,6 @@ public class CursorInteraction : MonoBehaviour
     private void OnDestroy ()
     {
         InputManager.Instance.OnMouseDownLeft -= OnMouseDownLeft;
+        InputManager.Instance.OnMouseUpLeft -= OnMouseUpLeft;
     }
 }

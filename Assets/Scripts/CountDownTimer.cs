@@ -59,5 +59,6 @@ public class CountDownTimer : MonoBehaviour
     {
         EventManager.Instance.OnMicrogameStart -= OnMicrogameStart;
         EventManager.Instance.OnMicrogameEnd -= OnMicrogameEnd;
+        EventManager.Instance.OnTimerPause -= OnTimerPause;
     }
 }
