@@ -18,7 +18,7 @@ MonoBehaviour:
   LoseMessage: I literally gave you a gun, how did you stuff this up?
   OutOfTimeMessage: I literally gave you a gun, how did you stuff this up?
   SceneName: Virus
-  TimerLength: 10
+  TimerLength: 12
   timerIsWin: 0
   Sounds:
   - clips:

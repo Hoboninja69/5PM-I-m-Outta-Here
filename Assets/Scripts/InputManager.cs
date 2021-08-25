@@ -102,16 +102,15 @@ public class InputManager : MonoBehaviour
     }
 
     private void OnFreeze () => frozen = true;
-    //void OnFreeze ()
-    //{
-    //    frozen = true;
-    //    //print ("INPUT FROZEN");
-    //}
 
     private void OnUnfreeze () => frozen = false;
-    //void OnUnfreeze ()
-    //{
-    //    frozen = false;
-    //    print ("INPUT UNFROZEN");
-    //}
+
+    private void OnDestroy ()
+    {
+        if (EventManager.Instance != null)
+        {
+            EventManager.Instance.OnFreeze -= OnFreeze;
+            EventManager.Instance.OnUnfreeze -= OnUnfreeze;
+        }
+    }
 }

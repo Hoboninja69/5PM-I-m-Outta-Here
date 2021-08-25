@@ -25,6 +25,8 @@ public class PackageControl : MonoBehaviour
 
     private void OpenBox ()
     {
+        BoxInteractable.OnInteract -= OpenBox;
+
         if (isOpen)
             return;
 

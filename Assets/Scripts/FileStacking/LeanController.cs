@@ -61,4 +61,10 @@ public class LeanController : MonoBehaviour
     {
         targetLeanInfluence = -leanControl;
     }
+
+    private void OnDestroy ()
+    {
+        InputManager.Instance.OnMouseStayLeft -= MouseStayLeft;
+        InputManager.Instance.OnMouseStayRight -= MouseStayRight;
+    }
 }

@@ -53,4 +53,9 @@ public class PourController : MonoBehaviour
         waterMain.startSpeed = Mathf.Lerp (waterStartSpeedRange.x, waterStartSpeedRange.y, unmultPourSpeed);
         waterEmission.rateOverTime = Mathf.Lerp (waterSpawnRateRange.x, waterSpawnRateRange.y, unmultPourSpeed);
     }
+
+    private void OnDestroy ()
+    {
+        InputManager.Instance.OnMouseWheel -= OnMouseWheel;
+    }
 }

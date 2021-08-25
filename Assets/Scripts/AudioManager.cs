@@ -27,6 +27,11 @@ public class AudioManager : MonoBehaviour
             EventManager.Instance.OnMicrogameStart += PlayMicrogameMusic;
             EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
         }
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.OnMouseDownLeftPersistent += OnMouseDownLeft;
+            InputManager.Instance.OnMouseUpLeftPersistent += OnMouseUpLeft;
+        }
 
         foreach (Sound sound in sounds)
             AddSoundSource (sound);
@@ -215,6 +220,24 @@ public class AudioManager : MonoBehaviour
         source.volume = sound.volume;
         source.pitch = sound.pitch;
         source.loop = sound.loop;
+    }
+
+    private void OnMouseDownLeft () { if (Cursor.visible) Play ("ClickDown"); }
+    private void OnMouseUpLeft () { if (Cursor.visible) Play ("ClickUp"); }
+
+    private void OnDestroy ()
+    {
+        if (EventManager.Instance != null)
+        {
+            EventManager.Instance.OnMicrogameLoad -= GetMicrogameSounds;
+            EventManager.Instance.OnMicrogameStart -= PlayMicrogameMusic;
+            EventManager.Instance.OnMicrogameEnd -= OnMicrogameEnd;
+        }
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.OnMouseDownLeftPersistent -= OnMouseDownLeft;
+            InputManager.Instance.OnMouseUpLeftPersistent -= OnMouseUpLeft;
+        }
     }
 }
 

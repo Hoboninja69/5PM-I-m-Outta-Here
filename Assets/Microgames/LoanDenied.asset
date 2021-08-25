@@ -17,7 +17,7 @@ MonoBehaviour:
   LoseMessage: How did you even manage to screw this up?
   OutOfTimeMessage: How did you even manage to screw this up?
   SceneName: LoanDenied
-  TimerLength: 12
+  TimerLength: 11
   timerIsWin: 0
   Sounds:
   - clips:

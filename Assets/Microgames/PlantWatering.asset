@@ -18,7 +18,7 @@ MonoBehaviour:
   LoseMessage: You couldn't even keep a plastic plant alive...
   OutOfTimeMessage: Great, those plants are going to die now because of you.
   SceneName: PlantWatering
-  TimerLength: 18
+  TimerLength: 16
   timerIsWin: 0
   Sounds:
   - clips:

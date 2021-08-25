@@ -17,19 +17,6 @@ public class VirusSpawner : MonoBehaviour
         StartCoroutine (SpawnPopup ());
     }
 
-    //IEnumerator SpawnPopups ()
-    //{
-    //    while (!allClosed)
-    //    {
-    //        SpawnPopup ();
-
-    //        yield return new WaitForSeconds (delay);
-
-    //        if (delay < finalDelay)
-    //            delay += delayIncreaseRate * delay;
-    //    }
-    //}
-
     private void OnPopupClose (VirusController popup)
     {
         popup.OnClose -= OnPopupClose;
