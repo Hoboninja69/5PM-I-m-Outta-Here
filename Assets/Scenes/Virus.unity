@@ -739,8 +739,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killAmountTarget: 15
   Viruses:
-  - {fileID: 9131938943802495794, guid: 990d598317cc39146a401cc9a05c0900, type: 3}
   - {fileID: 9131938943802495794, guid: eb3d17543faebfa4d818e154f4489a93, type: 3}
+  - {fileID: 9131938943802495794, guid: 990d598317cc39146a401cc9a05c0900, type: 3}
   - {fileID: 9131938943802495794, guid: cb3be3b9ea3f62c468f871dd75d3d41d, type: 3}
   screenSize: {x: 1.15, y: 0.64}
   delayRange: {x: 0.1, y: 0.3}

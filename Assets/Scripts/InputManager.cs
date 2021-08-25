@@ -12,7 +12,9 @@ public class InputManager : MonoBehaviour
 
     public event Action<Vector2> OnMouseMoved;
     public event Action OnMouseDownLeft;
+    public event Action OnMouseDownLeftPersistent;
     public event Action OnMouseUpLeft;
+    public event Action OnMouseUpLeftPersistent;
     public event Action OnMouseStayLeft;
     public event Action OnMouseDownRight;
     public event Action OnMouseUpRight;
@@ -46,7 +48,15 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        if (frozen) return;
+        if (frozen)
+        {
+            if (Input.GetMouseButtonDown (0))
+                OnMouseDownLeftPersistent?.Invoke ();
+
+            if (Input.GetMouseButtonUp (0))
+                OnMouseUpLeftPersistent?.Invoke ();
+            return;
+        }
 
         Vector2 mouseInput = new Vector2 (Input.GetAxis ("Mouse X"), Input.GetAxis ("Mouse Y"));
         if (mouseInput.magnitude > 0f)
@@ -57,16 +67,16 @@ public class InputManager : MonoBehaviour
             OnMouseWheel?.Invoke (mouseWheel);
 
         if (Input.GetMouseButtonDown (0))
+        {
             OnMouseDownLeft?.Invoke ();
-
-        //if (Input.GetMouseButtonDown (0))
-        //{
-        //    UIManager.Instance.SetUseWorldSpace (test);
-        //    test = !test;
-        //}
+            OnMouseDownLeftPersistent?.Invoke ();
+        }
 
         if (Input.GetMouseButtonUp (0))
+        {
             OnMouseUpLeft?.Invoke ();
+            OnMouseUpLeftPersistent?.Invoke ();
+        }
 
         if (Input.GetMouseButton (0))
             OnMouseStayLeft?.Invoke ();

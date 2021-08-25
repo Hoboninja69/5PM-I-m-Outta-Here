@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d37fd11765a9ce46bf50594c5576d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredDistanceRange: {x: 5, y: 10}
+  requiredDistanceRange: {x: 5, y: 7}
   sizeRange: {x: 0.7, y: 1.2}
   size: 0
 --- !u!65 &4744930688829456771
