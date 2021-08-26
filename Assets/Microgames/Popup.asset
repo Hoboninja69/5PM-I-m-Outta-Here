@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5479f47d850cf409204feae3bc8e9a, type: 3}
   m_Name: Popup
   m_EditorClassIdentifier: 
-  Infomercial: {fileID: 21300000, guid: 1aa13c9a2c87b064fab18256b1054665, type: 3}
+  Infomercial: {fileID: 21300000, guid: 245f6bab1361f674b80dc2666c64b4a9, type: 3}
   WinMessage: Nice one! Now your co-worker can continue to visit nefarious sites
     and not be held accountable.
   LoseMessage: 'You work in an office and yet you''re terrible at clicking a mouse
