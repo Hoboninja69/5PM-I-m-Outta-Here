@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5479f47d850cf409204feae3bc8e9a, type: 3}
   m_Name: PaperPlane
   m_EditorClassIdentifier: 
-  Infomercial: {fileID: 21300000, guid: 375ac46433ae1b04bafbd29e94cdf565, type: 3}
+  Infomercial: {fileID: 21300000, guid: 88f98188da12e8e45b1967a392c03ec1, type: 3}
   WinMessage: Don't get too excited. This doesn't make you Tom Cruise.
   LoseMessage: MAYDAY! MAAAYYDAAAYYY!
   OutOfTimeMessage: How did you make such a slow plane?
