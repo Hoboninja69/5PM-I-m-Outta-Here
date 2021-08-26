@@ -20,7 +20,7 @@ MonoBehaviour:
   OutOfTimeMessage: 'You work in an office and yet you''re terrible at clicking a
     mouse button? Oof. '
   SceneName: Popup
-  TimerLength: 10
+  TimerLength: 11
   timerIsWin: 0
   Sounds:
   - clips:

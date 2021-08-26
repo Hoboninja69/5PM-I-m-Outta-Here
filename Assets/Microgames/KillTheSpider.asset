@@ -17,7 +17,7 @@ MonoBehaviour:
   LoseMessage: Well, it's time to burn down the office.
   OutOfTimeMessage: Well, it's time to burn down the office.
   SceneName: KilltheSpider
-  TimerLength: 10
+  TimerLength: 12
   timerIsWin: 0
   Sounds:
   - clips:

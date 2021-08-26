@@ -5,6 +5,7 @@ using UnityEngine;
 public class NewspaperController : MonoBehaviour
 {
     public Transform movementPlane, sphereCenter;
+    public Transform[] spheres;
     public Animator animator;
     public float verticalOffset, sphereRadius;
 
@@ -30,19 +31,35 @@ public class NewspaperController : MonoBehaviour
     public void ThwackConnect ()
     {
         AudioManager.Instance.Play ("Thwack", pitchMult: Random.Range (0.9f, 1.1f));
-        Collider[] hits = Physics.OverlapSphere (sphereCenter.position, sphereRadius);
-        foreach (Collider hit in hits)
+        foreach (Transform sphere in spheres)
         {
-            if (hit.CompareTag ("Spider"))
+            Collider[] hits = Physics.OverlapSphere (sphere.position, sphereRadius);
+            foreach (Collider hit in hits)
             {
-                AudioManager.Instance.PlayAtLocation ("Punch", hit.transform, 0.9f, pitchMult: Random.Range (0.9f, 1.1f));
-                if (hit.transform.parent.TryGetComponent (out SpiderMovement spider))
-                    spider.Kill ();
-                if (EventManager.Instance != null)
-                    EventManager.Instance.MicrogameEnd (MicrogameResult.Win, 0.5f);
-                break;
+                if (hit.CompareTag ("Spider"))
+                {
+                    AudioManager.Instance.PlayAtLocation ("Punch", hit.transform, 0.9f, pitchMult: Random.Range (0.9f, 1.1f));
+                    if (hit.transform.parent.TryGetComponent (out SpiderMovement spider))
+                        spider.Kill ();
+                    if (EventManager.Instance != null)
+                        EventManager.Instance.MicrogameEnd (MicrogameResult.Win, 0.5f);
+                    return;
+                }
             }
         }
+        //Collider[] hits = Physics.OverlapSphere (sphereCenter.position, sphereRadius);
+        //foreach (Collider hit in hits)
+        //{
+        //    if (hit.CompareTag ("Spider"))
+        //    {
+        //        AudioManager.Instance.PlayAtLocation ("Punch", hit.transform, 0.9f, pitchMult: Random.Range (0.9f, 1.1f));
+        //        if (hit.transform.parent.TryGetComponent (out SpiderMovement spider))
+        //            spider.Kill ();
+        //        if (EventManager.Instance != null)
+        //            EventManager.Instance.MicrogameEnd (MicrogameResult.Win, 0.5f);
+        //        break;
+        //    }
+        //}
     }
 
     private void OnDestroy ()
@@ -52,6 +69,9 @@ public class NewspaperController : MonoBehaviour
 
     private void OnDrawGizmos ()
     {
-        Gizmos.DrawWireSphere (sphereCenter.position, sphereRadius);
+        foreach (Transform sphere in spheres)
+        {
+            Gizmos.DrawWireSphere (sphere.position, sphereRadius);
+        }
     }
 }

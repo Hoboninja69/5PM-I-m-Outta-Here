@@ -17,7 +17,7 @@ MonoBehaviour:
   LoseMessage: This window is as dirty as your mum was last night. Zing!
   OutOfTimeMessage: This window is as dirty as your mum was last night. Zing!
   SceneName: WindowClean
-  TimerLength: 12
+  TimerLength: 13
   timerIsWin: 0
   Sounds:
   - clips:
