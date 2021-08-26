@@ -14,11 +14,13 @@ public class GunController : MonoBehaviour
     private void Start ()
     {
         InputManager.Instance.OnMouseDownLeft += Shoot;
+        //InputManager.Instance.OnMouseMoved += OnMouseMoved;
     }
 
     private void Update ()
     {
-        transform.forward = Tools.GetRayPlaneIntersectionPoint (screenPlane.position, screenPlane.up, InputManager.cursorRay) - transform.position;
+        if (Time.timeScale > 0)
+            transform.forward = Tools.GetRayPlaneIntersectionPoint (screenPlane.position, screenPlane.up, InputManager.cursorRay) - transform.position;
     }
 
     private void Shoot ()
@@ -42,5 +44,6 @@ public class GunController : MonoBehaviour
     private void OnDestroy ()
     {
         InputManager.Instance.OnMouseDownLeft -= Shoot;
+        //InputManager.Instance.OnMouseMoved -= OnMouseMoved;
     }
 }

@@ -27,17 +27,22 @@ public class AudioManager : MonoBehaviour
             EventManager.Instance.OnMicrogameStart += PlayMicrogameMusic;
             EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
         }
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.OnMouseDownLeftPersistent += OnMouseDownLeft;
+            InputManager.Instance.OnMouseUpLeftPersistent += OnMouseUpLeft;
+        }
 
         foreach (Sound sound in sounds)
             AddSoundSource (sound);
     }
 
-    public void Play (string soundName, float volumeMult = 1, float pitchMult = 1)
+    public AudioSource Play (string soundName, float volumeMult = 1, float pitchMult = 1)
     {
         if (!FindSound (soundName, out Sound sound))
         {
             Debug.LogError ("Could not Play sound \"" + soundName + "\" (not found)");
-            return;
+            return null;
         }
 
         if (sound.source == null)
@@ -48,6 +53,7 @@ public class AudioManager : MonoBehaviour
         sound.source.clip = sound.GetClip ();
 
         sound.source.Play ();
+        return sound.source;
     }
 
     public void Play (string soundName, AudioSource source, float volumeMult = 1, float pitchMult = 1)
@@ -214,6 +220,24 @@ public class AudioManager : MonoBehaviour
         source.volume = sound.volume;
         source.pitch = sound.pitch;
         source.loop = sound.loop;
+    }
+
+    private void OnMouseDownLeft () { if (Cursor.visible) Play ("ClickDown"); }
+    private void OnMouseUpLeft () { if (Cursor.visible) Play ("ClickUp"); }
+
+    private void OnDestroy ()
+    {
+        if (EventManager.Instance != null)
+        {
+            EventManager.Instance.OnMicrogameLoad -= GetMicrogameSounds;
+            EventManager.Instance.OnMicrogameStart -= PlayMicrogameMusic;
+            EventManager.Instance.OnMicrogameEnd -= OnMicrogameEnd;
+        }
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.OnMouseDownLeftPersistent -= OnMouseDownLeft;
+            InputManager.Instance.OnMouseUpLeftPersistent -= OnMouseUpLeft;
+        }
     }
 }
 

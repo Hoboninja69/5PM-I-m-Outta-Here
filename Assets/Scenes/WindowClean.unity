@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1956834538}
-  m_IndirectSpecularColor: {r: 0.41386136, g: 0.4398798, b: 0.45215225, a: 1}
+  m_IndirectSpecularColor: {r: 0.835483, g: 0.8580931, b: 0.8752551, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1730,7 +1730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dirt: {fileID: 5452481961175983233, guid: ab328ba1435984c4498ba904a54ccb33, type: 3}
   screenSize: {x: 4.38, y: 3.37}
-  spawnAmount: 10
+  spawnAmount: 12
 --- !u!1001 &1513626387
 PrefabInstance:
   m_ObjectHideFlags: 0

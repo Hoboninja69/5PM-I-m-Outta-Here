@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Virus.unity
     guid: c88a5a4953b711242953baf85b8854d2
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: d9e512e6761446447834d8fd19bdacfe
   m_configObjects: {}

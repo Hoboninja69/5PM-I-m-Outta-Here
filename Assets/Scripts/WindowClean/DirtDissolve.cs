@@ -26,7 +26,7 @@ public class DirtDissolve : MonoBehaviour
         if (cleaned) return;
 
         totalDistance += distance;
-        renderer.material.color = Transparent (Mathf.Clamp01(1 - (totalDistance / requiredDistance)));
+        renderer.material.color = Transparent (Mathf.Clamp01(1 - Mathf.Pow (totalDistance / requiredDistance, 2)));
 
         if (totalDistance >= requiredDistance)
         {

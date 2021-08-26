@@ -48,9 +48,9 @@ public class UIManager : MonoBehaviour
         EventManager.Instance.OnTimerTick += OnTimerTick;
         EventManager.Instance.OnMicrogameEnd += OnMicrogameEnd;
         EventManager.Instance.OnGameEnd += OnGameEnd;
-        InputManager.Instance.OnMouseDownLeft += OnMouseDown;
+        InputManager.Instance.OnMouseDownLeftPersistent += OnMouseDown;
         InputManager.Instance.OnMouseDownRight += OnMouseDown;
-        InputManager.Instance.OnMouseUpLeft += OnMouseUp;
+        InputManager.Instance.OnMouseUpLeftPersistent += OnMouseUp;
         InputManager.Instance.OnMouseUpRight += OnMouseUp;
 
         OnMouseUp ();
@@ -162,7 +162,15 @@ public class UIManager : MonoBehaviour
     private void OnDestroy ()
     {
         EventManager.Instance.OnUIButtonPressed -= OnUIButtonPressed;
+        EventManager.Instance.OnGameLoad -= OnGameLoad;
         EventManager.Instance.OnMicrogameLoad -= OnMicrogameLoad;
+        EventManager.Instance.OnMicrogameStart -= OnMicrogameStart;
         EventManager.Instance.OnTimerTick -= OnTimerTick;
+        EventManager.Instance.OnMicrogameEnd -= OnMicrogameEnd;
+        EventManager.Instance.OnGameEnd -= OnGameEnd;
+        InputManager.Instance.OnMouseDownLeftPersistent -= OnMouseDown;
+        InputManager.Instance.OnMouseDownRight -= OnMouseDown;
+        InputManager.Instance.OnMouseUpLeftPersistent -= OnMouseUp;
+        InputManager.Instance.OnMouseUpRight -= OnMouseUp;
     }
 }

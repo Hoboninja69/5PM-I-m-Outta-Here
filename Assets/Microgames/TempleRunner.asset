@@ -17,7 +17,7 @@ MonoBehaviour:
   LoseMessage: All you had to do was push a chair...How'd it go so wrong?
   OutOfTimeMessage: All you had to do was push a chair...How'd it go so wrong?
   SceneName: TempleRunnerSample
-  TimerLength: 15
+  TimerLength: 14
   timerIsWin: 0
   Sounds:
   - clips:
